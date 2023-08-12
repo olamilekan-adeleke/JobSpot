@@ -7,12 +7,20 @@
 
 import UIKit
 
-func makeLabel(withText text: String, debug: Bool = false) -> UILabel {
+func makeLabel(
+    withText text: String,
+    ofSize: CGFloat = 17,
+    weight: UIFont.Weight = .medium,
+    textAlignment: NSTextAlignment = .left,
+    debug: Bool = false
+) -> UILabel {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = text
     label.backgroundColor = debug ? UIColor.yellow : UIColor.clear
-    label.font = UIFont.systemFont(ofSize: 17)
+    label.textAlignment = textAlignment
+    label.font = UIFont.systemFont(ofSize: ofSize, weight: weight)
+
     return label
 }
 
@@ -74,14 +82,12 @@ func makeTextField(withPlaceHolderText text: String) -> UITextField {
     return textField
 }
 
-func makeImageView(named: String) -> UIImageView {
+func makeImageView(named: String, debug: Bool = false) -> UIImageView {
     let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
     imageView.contentMode = .scaleAspectFit
     imageView.image = UIImage(named: named)
-
-    // set CHRC
-
+    imageView.backgroundColor = debug ? UIColor.yellow : UIColor.clear
     return imageView
 }
 
@@ -108,13 +114,13 @@ public extension NSLayoutConstraint {
     }
 }
 
-//extension UINavigationController {
+// extension UINavigationController {
 //    override open var preferredStatusBarStyle: UIStatusBarStyle {
 //        return .lightContent
 //    }
-//}
+// }
 //
-//extension UIColor {
+// extension UIColor {
 //    static let darkBlue = UIColor(red: 10/255, green: 132/255, blue: 255/255, alpha: 1)
 //    static let darkGreen = UIColor(red: 48/255, green: 209/255, blue: 88/255, alpha: 1)
 //    static let darkOrange = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
@@ -122,4 +128,4 @@ public extension NSLayoutConstraint {
 //    static let darkTeal = UIColor(red: 90/255, green: 200/255, blue: 250/255, alpha: 1)
 //    static let darkYellow = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1)
 //    static let offBlack = UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)
-//}
+// }
