@@ -39,8 +39,8 @@ class HomeBannerView: UIView {
 
         button.layer.cornerRadius = 6
         button.configuration = UIButton.Configuration.filled()
-        button.backgroundColor = UIColor(red: 1, green: 0.573, blue: 0.157, alpha: 1)
         button.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20)
+        button.configuration?.baseBackgroundColor = UIColor(red: 1, green: 0.573, blue: 0.157, alpha: 1)
         container.addSubview(button)
 
         personImage.contentMode = .scaleAspectFit
@@ -73,7 +73,7 @@ class HomeBannerView: UIView {
 
         // Image
         NSLayoutConstraint.activate([
-            personImage.trailingAnchor.constraint(equalTo: trailingAnchor),
+            personImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10),
             personImage.bottomAnchor.constraint(equalTo: container.bottomAnchor),
             personImage.heightAnchor.constraint(equalToConstant: 140),
         ])
