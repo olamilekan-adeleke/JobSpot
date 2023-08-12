@@ -67,10 +67,10 @@ func makeButton(withText text: String) -> UIButton {
     return button
 }
 
-func makeView() -> UIView {
+func makeView(debug: Bool = false) -> UIView {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false
-    view.backgroundColor = .red
+    view.backgroundColor = debug ? .red : .clear
     return view
 }
 

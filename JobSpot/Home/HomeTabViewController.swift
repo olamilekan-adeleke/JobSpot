@@ -12,6 +12,7 @@ import UIKit
 class HomeTabViewController: UIViewController {
     let stack = makeStack(axis: .vertical, debug: false)
     let header = HomeHeaderView()
+    let banner = HomeBannerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,16 +23,16 @@ class HomeTabViewController: UIViewController {
 
     private func setUpUI() {
         stack.addArrangedSubview(header)
+        stack.addArrangedSubview(banner)
 
         view.addSubview(stack)
     }
 
     private func layout() {
         // Stack
-        stack.spacing = 24
+        stack.spacing = 16
         NSLayoutConstraint.activate([
             stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            stack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             stack.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             stack.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
         ])
