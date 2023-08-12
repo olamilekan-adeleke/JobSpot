@@ -91,13 +91,14 @@ func makeImageView(named: String, debug: Bool = false) -> UIImageView {
     return imageView
 }
 
-func makeStack(axis: NSLayoutConstraint.Axis) -> UIStackView {
+func makeStack(axis: NSLayoutConstraint.Axis, debug: Bool = false) -> UIStackView {
     let stack = UIStackView()
     stack.translatesAutoresizingMaskIntoConstraints = false
     stack.axis = axis
     stack.spacing = 8
     stack.distribution = .fill
     stack.alignment = .fill
+    stack.backgroundColor = debug ? UIColor.yellow : UIColor.clear
     return stack
 }
 

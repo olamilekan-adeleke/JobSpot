@@ -9,8 +9,8 @@ import SwiftUI
 import UIKit
 
 class HomeHeaderView: UIView {
-    let greetingLabel = makeLabel(withText: "Hello \nKod Enigma.", ofSize: 22, weight: .bold, debug: true)
-    let personImage = makeImageView(named: "person", debug: true)
+    let greetingLabel = makeLabel(withText: "Hello \nKod Enigma.", ofSize: 22, weight: .bold)
+    let personImage = makeImageView(named: "person")
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,11 +31,11 @@ class HomeHeaderView: UIView {
         addSubview(personImage)
 
         // Text Alignment
+        greetingLabel.textColor = UIColor(red: 0.051, green: 0.004, blue: 0.251, alpha: 1)
         greetingLabel.numberOfLines = 0
         NSLayoutConstraint.activate([
             greetingLabel.topAnchor.constraint(equalTo: topAnchor),
             greetingLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            greetingLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
 
         // Image
@@ -47,7 +47,6 @@ class HomeHeaderView: UIView {
             personImage.heightAnchor.constraint(equalToConstant: 46),
             personImage.topAnchor.constraint(equalTo: topAnchor),
             personImage.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            greetingLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
 }
