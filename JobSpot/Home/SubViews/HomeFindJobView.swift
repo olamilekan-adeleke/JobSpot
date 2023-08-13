@@ -9,6 +9,7 @@ import SwiftUI
 import UIKit
 
 class HomeFindJobView: UIView {
+    private let headingLabel = makeLabel(withText: "Find Your Job", ofSize: 16, weight: .bold)
     private let remoteJobContainer = HomeFindJobViewItemWidget(frame: .zero, title: "44.5k", subTitle: "Remote Job")
     private let fulltimeJobContainer = HomeFindJobViewItemWidget(frame: .zero, title: "66.8k", subTitle: "Full Time")
     private let partTimeJobContainer = HomeFindJobViewItemWidget(frame: .zero, title: "38.9k", subTitle: "Part Time")
@@ -29,6 +30,8 @@ class HomeFindJobView: UIView {
     }
 
     private func style() {
+        addSubview(headingLabel)
+
         remoteJobContainer.layer.backgroundColor = UIColor(red: 0.686, green: 0.925, blue: 0.996, alpha: 1).cgColor
         remoteJobContainer.layer.cornerRadius = 6
         addSubview(remoteJobContainer)
@@ -43,16 +46,22 @@ class HomeFindJobView: UIView {
     }
 
     private func layout() {
+        NSLayoutConstraint.activate([
+            headingLabel.topAnchor.constraint(equalTo: topAnchor),
+            headingLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+        ])
+
         // Boxes
+        let topAnchor = headingLabel.bottomAnchor
         let halfScreenWidth: CGFloat = (UIScreen.main.bounds.width / 2) - 14 - 10
 
         NSLayoutConstraint.activate([
-            remoteJobContainer.topAnchor.constraint(equalTo: topAnchor),
+            remoteJobContainer.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             remoteJobContainer.leadingAnchor.constraint(equalTo: leadingAnchor),
             remoteJobContainer.widthAnchor.constraint(equalToConstant: halfScreenWidth),
             remoteJobContainer.heightAnchor.constraint(equalToConstant: 170),
 
-            fulltimeJobContainer.topAnchor.constraint(equalTo: topAnchor),
+            fulltimeJobContainer.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             fulltimeJobContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
             fulltimeJobContainer.widthAnchor.constraint(equalToConstant: halfScreenWidth),
             fulltimeJobContainer.heightAnchor.constraint(equalToConstant: 75),
