@@ -9,11 +9,15 @@ import SwiftUI
 import UIKit
 
 class HomeFindJobView: UIView {
-    let remoateJobContainer = makeView()
+    private let remoteJobContainer = HomeFindJobViewItemWidget(
+        frame: CGRect.zero,
+        title: "66.8k",
+        subTitle: "Full Time"
+    )
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        self.backgroundColor = .yellow.withAlphaComponent(0.5)
         style()
         layout()
     }
@@ -24,36 +28,33 @@ class HomeFindJobView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: bounds.width, height: 170)
+        return CGSize(width: bounds.width, height: 270)
     }
 
     private func style() {
-        remoateJobContainer.frame = CGRect(x: 0, y: 0, width: 150, height: 170)
-        remoateJobContainer.layer.backgroundColor = UIColor(red: 0.686, green: 0.925, blue: 0.996, alpha: 1).cgColor
-        remoateJobContainer.layer.cornerRadius = 6
-        addSubview(remoateJobContainer)
+        remoteJobContainer.frame = CGRect(x: 0, y: 0, width: 150, height: 75)
+        remoteJobContainer.layer.backgroundColor = UIColor(red: 0.686, green: 0.925, blue: 0.996, alpha: 1).cgColor
+        remoteJobContainer.layer.cornerRadius = 6
+        addSubview(remoteJobContainer)
     }
 
     private func layout() {
-        //
+        // Boxes
         NSLayoutConstraint.activate([
-            remoateJobContainer.heightAnchor.constraint(equalToConstant: 170),
-            remoateJobContainer.widthAnchor.constraint(equalToConstant: 150),
-            remoateJobContainer.leadingAnchor.constraint(equalTo: leadingAnchor),
+            remoteJobContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
     }
 }
 
 class HomeFindJobViewItemWidget: UIView {
-    let container = makeView()
-    let titleLabel = makeLabel(withText: "", ofSize: 16, weight: .bold)
-    let subtitleLabel = makeLabel(withText: "", ofSize: 14, weight: .light)
+    private let container = makeView()
+    private let titleLabel = makeLabel(withText: "", ofSize: 16, weight: .bold)
+    private let subtitleLabel = makeLabel(withText: "", ofSize: 14, weight: .light)
 
     init(frame: CGRect, title: String, subTitle: String) {
         super.init(frame: frame)
         titleLabel.text = title
         subtitleLabel.text = subTitle
-
         layout()
     }
 
@@ -62,7 +63,25 @@ class HomeFindJobViewItemWidget: UIView {
 
     override var intrinsicContentSize: CGSize { CGSize(width: 150, height: 75) }
 
-    private func layout() {}
+    private func layout() {
+        container.addSubview(titleLabel)
+        container.addSubview(subtitleLabel)
+
+        addSubview(container)
+
+        NSLayoutConstraint.activate([
+            container.widthAnchor.constraint(equalToConstant: frame.width),
+            container.heightAnchor.constraint(equalToConstant: frame.height),
+        ])
+
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 18),
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
+            subtitleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+        ])
+    }
 }
 
 struct HomeFindJobViewRepresentable: UIViewRepresentable {

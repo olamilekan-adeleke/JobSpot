@@ -13,6 +13,7 @@ class HomeTabViewController: UIViewController {
     let stack = makeStack(axis: .vertical, debug: false)
     let header = HomeHeaderView()
     let banner = HomeBannerView()
+    let findJobContainers = HomeFindJobView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class HomeTabViewController: UIViewController {
     private func setUpUI() {
         stack.addArrangedSubview(header)
         stack.addArrangedSubview(banner)
+        stack.addArrangedSubview(findJobContainers)
 
         view.addSubview(stack)
     }
