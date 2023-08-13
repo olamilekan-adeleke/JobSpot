@@ -9,15 +9,13 @@ import SwiftUI
 import UIKit
 
 class HomeFindJobView: UIView {
-    private let remoteJobContainer = HomeFindJobViewItemWidget(
-        frame: CGRect.zero,
-        title: "66.8k",
-        subTitle: "Full Time"
-    )
+    private let fulltimeJobContainer = HomeFindJobViewItemWidget(frame: .zero, title: "66.8k", subTitle: "Full Time")
+    private let partTimeJobContainer = HomeFindJobViewItemWidget(frame: .zero, title: "38.9k", subTitle: "Part Time")
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .yellow.withAlphaComponent(0.5)
+
         style()
         layout()
     }
@@ -32,16 +30,27 @@ class HomeFindJobView: UIView {
     }
 
     private func style() {
-        remoteJobContainer.frame = CGRect(x: 0, y: 0, width: 150, height: 75)
-        remoteJobContainer.layer.backgroundColor = UIColor(red: 0.686, green: 0.925, blue: 0.996, alpha: 1).cgColor
-        remoteJobContainer.layer.cornerRadius = 6
-        addSubview(remoteJobContainer)
+        fulltimeJobContainer.layer.backgroundColor = UIColor(red: 0.686, green: 0.925, blue: 0.996, alpha: 1).cgColor
+        fulltimeJobContainer.layer.cornerRadius = 6
+        addSubview(fulltimeJobContainer)
+
+        partTimeJobContainer.layer.backgroundColor = UIColor(red: 1, green: 0.838, blue: 0.68, alpha: 1).cgColor
+        partTimeJobContainer.layer.cornerRadius = 6
+        addSubview(partTimeJobContainer)
     }
 
     private func layout() {
         // Boxes
         NSLayoutConstraint.activate([
-            remoteJobContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
+            fulltimeJobContainer.topAnchor.constraint(equalTo: topAnchor),
+            fulltimeJobContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
+            fulltimeJobContainer.widthAnchor.constraint(equalToConstant: 150),
+            fulltimeJobContainer.heightAnchor.constraint(equalToConstant: 75),
+
+            partTimeJobContainer.topAnchor.constraint(equalTo: fulltimeJobContainer.bottomAnchor, constant: 14),
+            partTimeJobContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
+            partTimeJobContainer.widthAnchor.constraint(equalToConstant: 150),
+            partTimeJobContainer.heightAnchor.constraint(equalToConstant: 75),
         ])
     }
 }
@@ -55,6 +64,7 @@ class HomeFindJobViewItemWidget: UIView {
         super.init(frame: frame)
         titleLabel.text = title
         subtitleLabel.text = subTitle
+        self.translatesAutoresizingMaskIntoConstraints = false
         layout()
     }
 
