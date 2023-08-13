@@ -15,8 +15,6 @@ class HomeFindJobView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .yellow.withAlphaComponent(0.5)
-
         style()
         layout()
     }
@@ -46,7 +44,7 @@ class HomeFindJobView: UIView {
 
     private func layout() {
         // Boxes
-        let halfScreenWidth: CGFloat = (UIScreen.main.bounds.width / 2) - 10
+        let halfScreenWidth: CGFloat = (UIScreen.main.bounds.width / 2) - 14 - 10
 
         NSLayoutConstraint.activate([
             remoteJobContainer.topAnchor.constraint(equalTo: topAnchor),
