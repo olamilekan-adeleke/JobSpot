@@ -14,6 +14,7 @@ class Label: UILabel {
     init(type: LabelType = .regular, debug: Bool = false) {
         self.type = type
         self.debug = debug
+
         super.init(frame: .zero)
         self.commonInit()
     }
@@ -24,6 +25,8 @@ class Label: UILabel {
     }
 
     private func commonInit() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.backgroundColor = self.debug ? UIColor.yellow : UIColor.clear
         self.textColor = .black
         self.font = UIFont.systemFont(ofSize: 14)
         self.textAlignment = .left
@@ -40,13 +43,10 @@ extension Label {
     private func setUp() {
         switch self.type { case .subTitle:
             self.textColor = .gray
-            self.backgroundColor = self.debug ? UIColor.yellow : UIColor.clear
             self.font = UIFont.systemFont(ofSize: 12, weight: .thin)
         case .regular:
-            self.backgroundColor = self.debug ? UIColor.yellow : UIColor.clear
             self.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         case .bold:
-            self.backgroundColor = self.debug ? UIColor.yellow : UIColor.clear
             self.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         case .custom:
             break

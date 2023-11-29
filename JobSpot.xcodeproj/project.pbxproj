@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39011ABA2B174E53002056C0 /* size_helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39011AB92B174E53002056C0 /* size_helper.swift */; };
+		39011ABC2B175095002056C0 /* image_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39011ABB2B175095002056C0 /* image_view.swift */; };
 		3941A4932AFD3CD700FD5DFE /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3941A4922AFD3CD700FD5DFE /* OnboardingView.swift */; };
 		3941A4982AFD3D4E00FD5DFE /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3941A4972AFD3D4E00FD5DFE /* OnBoardingVC.swift */; };
 		3941A49A2AFD3EA600FD5DFE /* OnboardingHeaderWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3941A4992AFD3EA600FD5DFE /* OnboardingHeaderWithImage.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39011AB92B174E53002056C0 /* size_helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = size_helper.swift; sourceTree = "<group>"; };
+		39011ABB2B175095002056C0 /* image_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_view.swift; sourceTree = "<group>"; };
 		3941A4922AFD3CD700FD5DFE /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		3941A4972AFD3D4E00FD5DFE /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
 		3941A4992AFD3EA600FD5DFE /* OnboardingHeaderWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHeaderWithImage.swift; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 		3941A48F2AFD3B5400FD5DFE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				39011AB92B174E53002056C0 /* size_helper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			children = (
 				39FCC2E22A880C6F00A50A7A /* SharedComponent.swift */,
 				3941A49B2AFD3EE900FD5DFE /* CustomLabels.swift */,
+				39011ABB2B175095002056C0 /* image_view.swift */,
 			);
 			path = SharedComponent;
 			sourceTree = "<group>";
@@ -255,10 +261,12 @@
 				3941A49A2AFD3EA600FD5DFE /* OnboardingHeaderWithImage.swift in Sources */,
 				3941A4982AFD3D4E00FD5DFE /* OnBoardingVC.swift in Sources */,
 				39FCC2D12A8807F900A50A7A /* HomeTabViewController.swift in Sources */,
+				39011ABC2B175095002056C0 /* image_view.swift in Sources */,
 				3991633C2A885840003A5343 /* HomeFindJobView.swift in Sources */,
 				39FCC2E92A88174400A50A7A /* HomeBannerView.swift in Sources */,
 				39FCC2E32A880C6F00A50A7A /* SharedComponent.swift in Sources */,
 				3941A49C2AFD3EE900FD5DFE /* CustomLabels.swift in Sources */,
+				39011ABA2B174E53002056C0 /* size_helper.swift in Sources */,
 				39FCC2CD2A8807F900A50A7A /* AppDelegate.swift in Sources */,
 				3941A4932AFD3CD700FD5DFE /* OnboardingView.swift in Sources */,
 			);
