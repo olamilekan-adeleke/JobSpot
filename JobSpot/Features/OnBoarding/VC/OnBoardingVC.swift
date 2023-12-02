@@ -5,21 +5,47 @@
 //  Created by Enigma Kod on 09/11/2023.
 //
 
-import UIKit
-
-
+import SwiftUI
 import UIKit
 
 class OnBoardingVC: UIViewController {
+    let viewBody = OnBoardingView()
+
     override func viewDidLoad() {
+        super.viewDidLoad()
+
         style()
         layout()
     }
 }
 
 extension OnBoardingVC {
-    public func style() {}
-    
-    public func layout() {}
+    public func style() {
+        view.addSubview(viewBody)
+    }
+
+    public func layout() {
+        viewBody.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            viewBody.topAnchor.constraint(equalTo: view.topAnchor),
+            viewBody.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            viewBody.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            viewBody.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        ])
+    }
 }
 
+struct OnBoardingVCRepresentable: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> some UIViewController {
+        return OnBoardingVC()
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
+}
+
+struct OnBoardingVCView_Preview: PreviewProvider {
+    static var previews: some View {
+        return OnBoardingVCRepresentable()
+    }
+}

@@ -8,12 +8,14 @@ import UIKit
 
 class CustomImage: UIView {
     let name: String
+    let type: ImageType
     
-    init?(name: String) {
+    init?(name: String, type: ImageType) {
         self.name = name
+        self.type = type
         super.init()
         
-        self.setUp()
+        setUp()
     }
     
     @available(*, unavailable)
@@ -24,12 +26,22 @@ class CustomImage: UIView {
     // MARK: - Set Up
 
     func setUp() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        let image = UIImage(named: name)?.withRenderingMode(.alwaysOriginal)
+        translatesAutoresizingMaskIntoConstraints = false
+        var image: UIImage? {
+            if type == .local {
+                return UIImage(named: name)?.withRenderingMode(.alwaysOriginal)
+            } else {
+                return UIImage(systemName: name)?.withRenderingMode(.alwaysOriginal)
+            }
+        }
         
         var imageView: UIImageView
         imageView = UIImageView(frame: CGRectMake(10, 50, 100, 300))
         imageView.image = image
-        self.addSubview(imageView)
+        addSubview(imageView)
+    }
+    
+    enum ImageType {
+        case local, icon
     }
 }

@@ -8,3 +8,7 @@
 import Foundation
 
 let DEVICE_WIDTH = 390
+
+enum AppSize {
+    static let kGobalPadding: CGFloat = 16
+}

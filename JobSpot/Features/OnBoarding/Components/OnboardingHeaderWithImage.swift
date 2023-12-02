@@ -34,7 +34,7 @@ extension OnboardingHeaderWithImage {
         translatesAutoresizingMaskIntoConstraints = false
 
         appName.text = "JobSpot"
-        appName.font = UIFont.systemFont(ofSize: 18)
+        appName.font = appName.font.withSize(18)
         addSubview(appName)
 
         imageView.image = UIImage(named: "onboarding.jpg")
@@ -51,7 +51,7 @@ extension OnboardingHeaderWithImage {
 
         // Image
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: appName.bottomAnchor, constant: 120),
+            imageView.topAnchor.constraint(equalTo: appName.bottomAnchor, constant: 80),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
             trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 32),
         ])

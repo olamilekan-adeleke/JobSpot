@@ -10,10 +10,12 @@ import UIKit
 class Label: UILabel {
     let type: LabelType
     let debug: Bool
+    let str: String?
 
-    init(type: LabelType = .regular, debug: Bool = false) {
+    init(type: LabelType, debug: Bool = false, str: String? = nil) {
         self.type = type
         self.debug = debug
+        self.str = str
 
         super.init(frame: .zero)
         self.commonInit()
@@ -28,28 +30,29 @@ class Label: UILabel {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = self.debug ? UIColor.yellow : UIColor.clear
         self.textColor = .black
-        self.font = UIFont.systemFont(ofSize: 14)
+        self.font = getFont()
+        self.text = self.str
         self.textAlignment = .left
-
-        setUp()
     }
 
     enum LabelType {
-        case subTitle, regular, bold, custom
+        case subTitle, regular, bold, thin, custom
     }
 }
 
 extension Label {
-    private func setUp() {
+    private func getFont() -> UIFont {
         switch self.type { case .subTitle:
             self.textColor = .gray
-            self.font = UIFont.systemFont(ofSize: 12, weight: .thin)
+            return UIFont.systemFont(ofSize: 12, weight: .thin)
         case .regular:
-            self.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+            return UIFont.systemFont(ofSize: 14, weight: .regular)
         case .bold:
-            self.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+            return UIFont.systemFont(ofSize: 17, weight: .bold)
+        case .thin:
+            return UIFont.systemFont(ofSize: 13, weight: .thin)
         case .custom:
-            break
+            return UIFont.systemFont(ofSize: 14)
         }
     }
 }
