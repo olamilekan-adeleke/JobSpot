@@ -8,6 +8,35 @@
 import Combine
 import Foundation
 
+enum FormzValidationState {
+    case idel
+    case error(ErrorState)
+    case valid
+
+    enum ErrorState {
+        case empty(String?)
+        case inValidEmail
+        case toShort(String)
+        case custom(String)
+
+        var description: String {
+            switch self { case .empty(let title):
+                    return "\(title ?? "Field") is empty"
+                case .inValidEmail:
+                    return "Invalid email address"
+                case .toShort(let title):
+                    return "\(title) is to short"
+                case .custom(let text):
+                    return text
+            }
+        }
+    }
+}
+
+protocol FormzValidator {
+    func validate(publisher: AnyPublisher<String, Never>) -> AnyPublisher<FormzValidationState, Never>
+}
+
 final class NameViewModel {
     enum NameState: Equatable {
         case idel, error(ErrorState), success
