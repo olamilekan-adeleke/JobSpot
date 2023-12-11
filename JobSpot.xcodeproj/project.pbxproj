@@ -18,6 +18,7 @@
 		39106BE42B253317009BDA0C /* CustomTextField+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BE32B253317009BDA0C /* CustomTextField+ViewModel.swift */; };
 		39106BE72B253B28009BDA0C /* NameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BE62B253B28009BDA0C /* NameViewModel.swift */; };
 		39106BEA2B253DC9009BDA0C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BE92B253DC9009BDA0C /* String+Extension.swift */; };
+		39106BED2B25B814009BDA0C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BEC2B25B814009BDA0C /* UITextField+Extension.swift */; };
 		3941A4932AFD3CD700FD5DFE /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3941A4922AFD3CD700FD5DFE /* OnboardingView.swift */; };
 		3941A4982AFD3D4E00FD5DFE /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3941A4972AFD3D4E00FD5DFE /* OnBoardingVC.swift */; };
 		3941A49A2AFD3EA600FD5DFE /* OnboardingHeaderWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3941A4992AFD3EA600FD5DFE /* OnboardingHeaderWithImage.swift */; };
@@ -44,6 +45,7 @@
 		39106BE32B253317009BDA0C /* CustomTextField+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomTextField+ViewModel.swift"; sourceTree = "<group>"; };
 		39106BE62B253B28009BDA0C /* NameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewModel.swift; sourceTree = "<group>"; };
 		39106BE92B253DC9009BDA0C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		39106BEC2B25B814009BDA0C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		3941A4922AFD3CD700FD5DFE /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		3941A4972AFD3D4E00FD5DFE /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
 		3941A4992AFD3EA600FD5DFE /* OnboardingHeaderWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHeaderWithImage.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 			path = String;
 			sourceTree = "<group>";
 		};
+		39106BEB2B25B7FB009BDA0C /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				39106BEC2B25B814009BDA0C /* UITextField+Extension.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
 		3941A48D2AFD3B1200FD5DFE /* Cores */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +147,7 @@
 		3941A48E2AFD3B3700FD5DFE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				39106BEB2B25B7FB009BDA0C /* UITextField */,
 				39106BE82B253DB6009BDA0C /* String */,
 				39106BD32B24E250009BDA0C /* UIViewController */,
 			);
@@ -357,6 +368,7 @@
 				39106BE72B253B28009BDA0C /* NameViewModel.swift in Sources */,
 				3941A49C2AFD3EE900FD5DFE /* CustomLabels.swift in Sources */,
 				39106BE22B25322F009BDA0C /* CustomTextField+Enums.swift in Sources */,
+				39106BED2B25B814009BDA0C /* UITextField+Extension.swift in Sources */,
 				39011ABA2B174E53002056C0 /* size_helper.swift in Sources */,
 				39FCC2CD2A8807F900A50A7A /* AppDelegate.swift in Sources */,
 				3941A4932AFD3CD700FD5DFE /* OnboardingView.swift in Sources */,

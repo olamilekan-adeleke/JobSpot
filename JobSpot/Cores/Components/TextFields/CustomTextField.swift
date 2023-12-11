@@ -27,6 +27,9 @@ final class CustomTextField: UIView {
         return view
     }()
 
+    private lazy var errorLabel: UILabel = Label(type: .thin)
+    private lazy var expandingVStack: UIStackView = stackView(axis: .vertical, spacing: 10)
+
     // MARK: - Properties
 
     private var viewModel: ViewModel
@@ -57,23 +60,34 @@ extension CustomTextField {
         textField.placeholder = viewModel.placeHolder
         textField.keyboardType = viewModel.keyBoardType
 
-        textFieldBackgroundView.addSubview(textField)
-        addSubview(textFieldBackgroundView)
+        errorLabel.numberOfLines = 0
+        errorLabel.textAlignment = .left
+        errorLabel.textColor = .systemRed
+        errorLabel.isHidden = true
+        errorLabel.font = .preferredFont(forTextStyle: .footnote)
     }
 
     private func layout() {
         translatesAutoresizingMaskIntoConstraints = false
 
+        textFieldBackgroundView.addSubview(textField)
+        addSubview(expandingVStack)
+
+        expandingVStack.addArrangedSubview(textFieldBackgroundView)
+        expandingVStack.addArrangedSubview(errorLabel)
+
         NSLayoutConstraint.activate([
-            textFieldBackgroundView.leftAnchor.constraint(equalTo: leftAnchor),
-            textFieldBackgroundView.rightAnchor.constraint(equalTo: rightAnchor),
+            textFieldBackgroundView.widthAnchor.constraint(equalTo: widthAnchor),
+
             textFieldBackgroundView.topAnchor.constraint(equalTo: textField.topAnchor, constant: -9),
             textFieldBackgroundView.bottomAnchor.constraint(equalTo: textField.bottomAnchor, constant: 9),
 
             textField.leftAnchor.constraint(equalTo: textFieldBackgroundView.leftAnchor, constant: 6),
             textField.rightAnchor.constraint(equalTo: textFieldBackgroundView.rightAnchor, constant: -6),
 
-            heightAnchor.constraint(equalTo: textFieldBackgroundView.heightAnchor),
+            heightAnchor.constraint(equalTo: expandingVStack.heightAnchor),
+
+            errorLabel.widthAnchor.constraint(equalTo: widthAnchor),
         ])
     }
 
@@ -93,6 +107,18 @@ extension CustomTextField {
         }
 
         var borderWidth: CGFloat { return self == .active ? 1 : 0 }
+    }
+
+    func validationStateChanged(state: NameViewModel.NameState) {
+        switch state {
+            case .idel: break
+            case .error(let errorState):
+                errorLabel.text = errorState.description
+                errorLabel.isHidden = false
+            case .success:
+                errorLabel.text = nil
+                errorLabel.isHidden = true
+        }
     }
 }
 
