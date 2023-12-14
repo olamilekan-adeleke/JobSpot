@@ -109,13 +109,13 @@ extension CustomTextField {
         var borderWidth: CGFloat { return self == .active ? 1 : 0 }
     }
 
-    func validationStateChanged(state: NameViewModel.NameState) {
+    func validationStateChanged(state: FormzValidationState) {
         switch state {
             case .idel: break
             case .error(let errorState):
                 errorLabel.text = errorState.description
                 errorLabel.isHidden = false
-            case .success:
+            case .valid:
                 errorLabel.text = nil
                 errorLabel.isHidden = true
         }

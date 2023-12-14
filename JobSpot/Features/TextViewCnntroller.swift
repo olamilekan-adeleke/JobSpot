@@ -16,19 +16,14 @@ class TextViewCnntroller: UIViewController {
     lazy var emailTextField = CustomTextField(viewModel: .init(type: .email))
     lazy var passwordTextField = CustomTextField(viewModel: .init(type: .password))
 
-    private let nameViewModel = NameViewModel()
+//    private let nameViewModel = NameViewModel()
     private var subscriptions = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         style()
         layout()
-
-        bind()
-        nameViewModel.startValidation()
-        nameViewModel.$state
-            .sink { [weak self] state in
-                self?.nameTextField.validationStateChanged(state: state)
-            }.store(in: &subscriptions)
+        
+        startValidation()
     }
 }
 
@@ -51,10 +46,14 @@ extension TextViewCnntroller {
             vStack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -AppSize.kGobalPadding),
         ])
     }
+}
 
-    private func bind() {
-        nameTextField.textField.textFieldTextPublisher()
-            .assign(to: \.firstName, on: nameViewModel)
+extension TextViewCnntroller: FormzValidator {
+    private func startValidation() {
+        validateText(validatorType: .name, publisher: nameTextField.textField.textFieldTextPublisher())
+            .sink { [weak self] state in
+                self?.nameTextField.validationStateChanged(state: state)
+            }
             .store(in: &subscriptions)
     }
 }

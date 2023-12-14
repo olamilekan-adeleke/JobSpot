@@ -9,14 +9,22 @@ import Foundation
 
 extension String {
     func hasNumber() -> Bool {
-        let numberRegex = ".*[0-9]+.*"
-        let numberPredicate = NSPredicate(format: "SELF MATCHES %@", numberRegex)
-        return numberPredicate.evaluate(with: self)
+        return stringFulfillsRegex(regex: ".*[0-9].*")
     }
 
     func hasSpecialChars() -> Bool {
-        let specialCharsRegex = ".*[^A-Za-z0-9].*"
-        let specialCharsPredicate = NSPredicate(format: "SELF MATCHES %@", specialCharsRegex)
-        return specialCharsPredicate.evaluate(with: self)
+        return stringFulfillsRegex(regex: ".*[^A-Za-z0-9].*")
+    }
+
+    func isValidEmail() -> Bool {
+        return stringFulfillsRegex(regex: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
+    }
+
+    private func stringFulfillsRegex(regex: String) -> Bool {
+        let textTest = NSPredicate(format: "SELF MATCHES %@", regex)
+        guard textTest.evaluate(with: self) else {
+            return false
+        }
+        return true
     }
 }
