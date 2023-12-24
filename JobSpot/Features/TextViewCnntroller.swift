@@ -12,7 +12,7 @@ import UIKit
 class TextViewCnntroller: UIViewController {
     private lazy var vStack = stackView()
 
-    lazy var nameTextField = CustomTextField(viewModel: .init(type: .name, placeHolder: "Abeg enter better name oh!"))
+    lazy var nameTextField = CustomTextField(viewModel: .init(type: .name, placeHolder: "Abeg enter better name!"))
     lazy var emailTextField = CustomTextField(viewModel: .init(type: .email))
     lazy var passwordTextField = CustomTextField(viewModel: .init(type: .password))
 
@@ -22,8 +22,6 @@ class TextViewCnntroller: UIViewController {
     override func viewDidLoad() {
         style()
         layout()
-        
-        startValidation()
     }
 }
 
@@ -46,15 +44,10 @@ extension TextViewCnntroller {
             vStack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -AppSize.kGobalPadding),
         ])
     }
-}
 
-extension TextViewCnntroller: FormzValidator {
-    private func startValidation() {
-        validateText(validatorType: .name, publisher: nameTextField.textField.textFieldTextPublisher())
-            .sink { [weak self] state in
-                self?.nameTextField.validationStateChanged(state: state)
-            }
-            .store(in: &subscriptions)
+    private func moveToNext() {
+        let formValid = [nameTextField, emailTextField, passwordTextField].allSatisfy { $0.validationState == .valid }
+        if formValid == false { return }
     }
 }
 

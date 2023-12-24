@@ -5,6 +5,7 @@
 //  Created by Enigma Kod on 09/12/2023.
 //
 
+import Combine
 import UIKit
 
 final class CustomTextField: UIView {
@@ -37,17 +38,26 @@ final class CustomTextField: UIView {
         didSet { updateBorder() }
     }
 
+    private var subscriptions = Set<AnyCancellable>()
+    @Published var validationState: FormzValidationState = .idel
+
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
 
         setUp()
         layout()
+
+        listen()
     }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func didMoveToWindow() {
+        startValidation()
     }
 }
 
@@ -119,6 +129,41 @@ extension CustomTextField {
                 errorLabel.text = nil
                 errorLabel.isHidden = true
         }
+    }
+
+    private func listen() {
+        $validationState
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] state in
+                self?.validationStateChanged(state: state)
+            }.store(in: &subscriptions)
+    }
+}
+
+extension CustomTextField: FormzValidator {
+//    func validateText(validatorType: ValidatorType, publisher: AnyPublisher<String, Never>) -> AnyPublisher<FormzValidationState, Never> {
+//        <#code#>
+//    }
+    
+    private func startValidation() {
+        guard validationState == .idel, let validationType = ValidatorType(rawValue: viewModel.type.rawValue)
+        else { return }
+
+        textField.textFieldTextPublisher()
+            .removeDuplicates()
+            .debounce(for: 0.2, scheduler: RunLoop.main)
+            .validateText(validatorType: validationType)
+            .assign(to: &$validationState)
+
+//        validateText(
+//            validatorType: validationType,
+//            publisher: textField.textFieldTextPublisher()
+//        ).assign(to: &$validationState)
+
+//        .sink { [weak self] state in
+//            self?.validationStateChanged(state: state)
+//        }
+//        .store(in: &subscriptions)
     }
 }
 

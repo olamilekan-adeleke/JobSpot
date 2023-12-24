@@ -8,12 +8,12 @@
 import Combine
 import Foundation
 
-enum FormzValidationState {
+enum FormzValidationState: Equatable {
     case idel
     case error(ErrorState)
     case valid
 
-    enum ErrorState {
+    enum ErrorState: Equatable {
         case empty(String?)
         case inValidEmail
         case toShort(String)
@@ -50,7 +50,14 @@ extension FormzValidator {
     }
 }
 
-enum ValidatorType { case email, password, name }
+extension Publisher where Self.Output == String, Failure == Never {
+    func validateText(validatorType: ValidatorType) -> AnyPublisher<FormzValidationState, Never> {
+        let formzValidator = ValidatorFacory.validatorForType(type: validatorType)
+        return formzValidator.validate(publisher: self.eraseToAnyPublisher())
+    }
+}
+
+enum ValidatorType: String { case email, password, name }
 
 enum ValidatorFacory {
     static func validatorForType(type: ValidatorType) -> FormzValidatable {
@@ -124,7 +131,7 @@ struct EmailValidator: FormzValidatable {
         .removeDuplicates(by: { $0 == $1 })
         .map {
             if $0.0 { return .error(.empty("Email")) }
-            if $0.1 { return .error(.toShort("Email")) }
+            if $0.1 == false { return .error(.toShort("Email")) }
 
             return .valid
         }.eraseToAnyPublisher()
@@ -151,7 +158,7 @@ struct PasswordValidator: FormzValidatable {
     }
 }
 
-//final class NameViewModel {
+// final class NameViewModel {
 //    enum NameState: Equatable {
 //        case idel, error(ErrorState), success
 //
@@ -204,4 +211,4 @@ struct PasswordValidator: FormzValidatable {
 //            return .success
 //        }.assign(to: &$state)
 //    }
-//}
+// }
