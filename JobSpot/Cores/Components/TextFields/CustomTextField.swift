@@ -6,6 +6,7 @@
 //
 
 import Combine
+import SwiftUI
 import UIKit
 
 final class CustomTextField: UIView {
@@ -65,10 +66,10 @@ final class CustomTextField: UIView {
 
 extension CustomTextField {
     private func setUp() {
-        textField.isSecureTextEntry = viewModel.isSecure
-        textField.autocapitalizationType = viewModel.autoCap
+//        textField.isSecureTextEntry = viewModel.isSecure
+//        textField.autocapitalizationType = viewModel.autoCap
         textField.placeholder = viewModel.placeHolder
-        textField.keyboardType = viewModel.keyBoardType
+//        textField.keyboardType = viewModel.keyBoardType
 
         errorLabel.numberOfLines = 0
         errorLabel.textAlignment = .left
@@ -144,7 +145,7 @@ extension CustomTextField: FormzValidator {
 //    func validateText(validatorType: ValidatorType, publisher: AnyPublisher<String, Never>) -> AnyPublisher<FormzValidationState, Never> {
 //        <#code#>
 //    }
-    
+
     private func startValidation() {
         guard validationState == .idel, let validationType = ValidatorType(rawValue: viewModel.type.rawValue)
         else { return }
@@ -173,7 +174,7 @@ extension CustomTextField: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         focusState = .active
     }
-
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         focusState = .inactive
     }

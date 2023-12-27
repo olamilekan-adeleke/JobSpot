@@ -34,10 +34,7 @@ enum FormzValidationState: Equatable {
 }
 
 protocol FormzValidator {
-    func validateText(
-        validatorType: ValidatorType,
-        publisher: AnyPublisher<String, Never>
-    ) -> AnyPublisher<FormzValidationState, Never>
+    func validateText(validatorType: ValidatorType, publisher: AnyPublisher<String, Never>) -> AnyPublisher<FormzValidationState, Never>
 }
 
 extension FormzValidator {
