@@ -8,6 +8,22 @@
 import Combine
 import Foundation
 
+enum ValidatorType: String { case email, password, name }
+
+protocol FormzValidator {
+    func validateText(validatorType: ValidatorType, publisher: AnyPublisher<String, Never>) -> AnyPublisher<FormzValidationState, Never>
+}
+
+extension FormzValidator {
+    func validateText(
+        validatorType: ValidatorType,
+        publisher: AnyPublisher<String, Never>
+    ) -> AnyPublisher<FormzValidationState, Never> {
+        let formzValidator = ValidatorFacory.validatorForType(type: validatorType)
+        return formzValidator.validate(publisher: publisher)
+    }
+}
+
 enum FormzValidationState: Equatable {
     case idel
     case error(ErrorState)
@@ -33,28 +49,12 @@ enum FormzValidationState: Equatable {
     }
 }
 
-protocol FormzValidator {
-    func validateText(validatorType: ValidatorType, publisher: AnyPublisher<String, Never>) -> AnyPublisher<FormzValidationState, Never>
-}
-
-extension FormzValidator {
-    func validateText(
-        validatorType: ValidatorType,
-        publisher: AnyPublisher<String, Never>
-    ) -> AnyPublisher<FormzValidationState, Never> {
-        let formzValidator = ValidatorFacory.validatorForType(type: validatorType)
-        return formzValidator.validate(publisher: publisher)
-    }
-}
-
 extension Publisher where Self.Output == String, Failure == Never {
     func validateText(validatorType: ValidatorType) -> AnyPublisher<FormzValidationState, Never> {
         let formzValidator = ValidatorFacory.validatorForType(type: validatorType)
         return formzValidator.validate(publisher: self.eraseToAnyPublisher())
     }
 }
-
-enum ValidatorType: String { case email, password, name }
 
 enum ValidatorFacory {
     static func validatorForType(type: ValidatorType) -> FormzValidatable {
