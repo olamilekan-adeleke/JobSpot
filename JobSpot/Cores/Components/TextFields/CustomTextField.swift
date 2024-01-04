@@ -66,10 +66,10 @@ final class CustomTextField: UIView {
 
 extension CustomTextField {
     private func setUp() {
-//        textField.isSecureTextEntry = viewModel.isSecure
-//        textField.autocapitalizationType = viewModel.autoCap
+        textField.isSecureTextEntry = viewModel.isSecure
+        textField.autocapitalizationType = viewModel.autoCap
         textField.placeholder = viewModel.placeHolder
-//        textField.keyboardType = viewModel.keyBoardType
+        textField.keyboardType = viewModel.keyBoardType
 
         errorLabel.numberOfLines = 0
         errorLabel.textAlignment = .left
@@ -174,7 +174,7 @@ extension CustomTextField: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         focusState = .active
     }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         focusState = .inactive
     }
