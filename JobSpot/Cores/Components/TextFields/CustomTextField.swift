@@ -142,9 +142,6 @@ extension CustomTextField {
 }
 
 extension CustomTextField: FormzValidator {
-//    func validateText(validatorType: ValidatorType, publisher: AnyPublisher<String, Never>) -> AnyPublisher<FormzValidationState, Never> {
-//        <#code#>
-//    }
 
     private func startValidation() {
         guard validationState == .idel, let validationType = ValidatorType(rawValue: viewModel.type.rawValue)
