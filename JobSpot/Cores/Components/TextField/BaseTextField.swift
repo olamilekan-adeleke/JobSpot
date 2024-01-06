@@ -38,7 +38,7 @@ final class BaseTextField: UIView {
         return label
     }()
 
-    private lazy var vStack = stackView()
+    private lazy var vStack = stackView(spacing: 10)
 
     // MARK: - Properties
 
