@@ -27,6 +27,8 @@
 		39DE805B2B49BBA20034F517 /* BaseTextField+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE80552B49BBA20034F517 /* BaseTextField+Enum.swift */; };
 		39DE805C2B49BBA20034F517 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE80562B49BBA20034F517 /* BaseTextField.swift */; };
 		39DE805F2B49BC280034F517 /* Publisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE805E2B49BC280034F517 /* Publisher+Extension.swift */; };
+		39DE80622B49CF110034F517 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE80612B49CF110034F517 /* LoginVC.swift */; };
+		39DE80652B49DFC30034F517 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE80642B49DFC30034F517 /* UIView+Extension.swift */; };
 		39FCC2CD2A8807F900A50A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCC2CC2A8807F900A50A7A /* AppDelegate.swift */; };
 		39FCC2D12A8807F900A50A7A /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCC2D02A8807F900A50A7A /* HomeTabViewController.swift */; };
 		39FCC2D62A8807FB00A50A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39FCC2D52A8807FB00A50A7A /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		39DE80552B49BBA20034F517 /* BaseTextField+Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTextField+Enum.swift"; sourceTree = "<group>"; };
 		39DE80562B49BBA20034F517 /* BaseTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		39DE805E2B49BC280034F517 /* Publisher+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extension.swift"; sourceTree = "<group>"; };
+		39DE80612B49CF110034F517 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		39DE80642B49DFC30034F517 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		39FCC2C92A8807F900A50A7A /* JobSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39FCC2CC2A8807F900A50A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39FCC2D02A8807F900A50A7A /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 		3941A48E2AFD3B3700FD5DFE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				39DE80632B49DFB00034F517 /* UIView */,
 				39DE805D2B49BBF40034F517 /* Publisher */,
 				39106BEB2B25B7FB009BDA0C /* UITextField */,
 				39106BE82B253DB6009BDA0C /* String */,
@@ -190,6 +195,7 @@
 		3941A4962AFD3D3E00FD5DFE /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				39DE80602B49CF050034F517 /* Login */,
 				3941A4972AFD3D4E00FD5DFE /* OnBoardingVC.swift */,
 			);
 			path = VC;
@@ -245,6 +251,22 @@
 				39DE805E2B49BC280034F517 /* Publisher+Extension.swift */,
 			);
 			path = Publisher;
+			sourceTree = "<group>";
+		};
+		39DE80602B49CF050034F517 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				39DE80612B49CF110034F517 /* LoginVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		39DE80632B49DFB00034F517 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				39DE80642B49DFC30034F517 /* UIView+Extension.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 		39FCC2C02A8807F900A50A7A = {
@@ -396,6 +418,7 @@
 				39DE805A2B49BBA20034F517 /* BaseTextField+ViewModel.swift in Sources */,
 				39106BDB2B24E95A009BDA0C /* TextViewCnntroller.swift in Sources */,
 				39DE805B2B49BBA20034F517 /* BaseTextField+Enum.swift in Sources */,
+				39DE80652B49DFC30034F517 /* UIView+Extension.swift in Sources */,
 				39011ABC2B175095002056C0 /* image_view.swift in Sources */,
 				39106BDE2B24EA08009BDA0C /* CustomStackView.swift in Sources */,
 				39DE805F2B49BC280034F517 /* Publisher+Extension.swift in Sources */,
@@ -406,6 +429,7 @@
 				39DE805C2B49BBA20034F517 /* BaseTextField.swift in Sources */,
 				3941A49C2AFD3EE900FD5DFE /* CustomLabels.swift in Sources */,
 				39106BED2B25B814009BDA0C /* UITextField+Extension.swift in Sources */,
+				39DE80622B49CF110034F517 /* LoginVC.swift in Sources */,
 				39011ABA2B174E53002056C0 /* size_helper.swift in Sources */,
 				39FCC2CD2A8807F900A50A7A /* AppDelegate.swift in Sources */,
 				3941A4932AFD3CD700FD5DFE /* OnboardingView.swift in Sources */,
