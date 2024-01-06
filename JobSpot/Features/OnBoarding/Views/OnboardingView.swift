@@ -48,17 +48,3 @@ extension OnBoardingView {
         ])
     }
 }
-
-struct ViewRepresentable: UIViewRepresentable {
-    func makeUIView(context: Context) -> some UIView {
-        return OnBoardingView()
-    }
-
-    func updateUIView(_ uiView: UIViewType, context: Context) {}
-}
-
-struct OnBoardingViewView_Preview: PreviewProvider {
-    static var previews: some View {
-        return ViewRepresentable()
-    }
-}

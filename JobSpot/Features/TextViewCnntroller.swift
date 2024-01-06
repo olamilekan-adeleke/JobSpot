@@ -1,10 +1,10 @@
-////
-////  TextViewCnntroller.swift
-////  JobSpot
-////
-////  Created by Enigma Kod on 09/12/2023.
-////
 //
+//  TextViewCnntroller.swift
+//  JobSpot
+//
+//  Created by Enigma Kod on 09/12/2023.
+//
+
 //import Combine
 //import SwiftUI
 //import UIKit

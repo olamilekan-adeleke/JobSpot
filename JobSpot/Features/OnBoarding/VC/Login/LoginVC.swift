@@ -5,7 +5,7 @@
 //  Created by Enigma Kod on 06/01/2024.
 //
 
-import Foundation
+import SwiftUI
 
 import UIKit
 
@@ -22,4 +22,10 @@ extension LoginVC {
     }
 
     public func layout() {}
+}
+
+struct Login_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginVC().showPreview()
+    }
 }
