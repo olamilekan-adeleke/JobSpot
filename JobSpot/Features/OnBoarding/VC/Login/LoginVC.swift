@@ -18,7 +18,7 @@ class LoginVC: UIViewController {
 
 extension LoginVC {
     public func style() {
-        view.backgroundColor = .systemTeal
+//        view.backgroundColor = .systemTeal
     }
 
     public func layout() {}
