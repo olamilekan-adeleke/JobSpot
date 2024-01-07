@@ -42,11 +42,11 @@ extension LoginHeaderView {
         addSubview(subtitle)
 
         NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),
+            title.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
             title.centerXAnchor.constraint(equalTo: centerXAnchor),
 
             subtitle.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 0),
-            subtitle.widthAnchor.constraint(equalToConstant: 250),
+//            subtitle.widthAnchor.constraint(equalToConstant: 250),
             subtitle.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
     }
