@@ -9,6 +9,7 @@ import UIKit
 
 final class LogicFormsView: UIView {
     let emailTextField = EmailTextField()
+    let passwordTextField = PasswordTextField()
     let vStack = stackView(spacing: 15)
 
     override init(frame: CGRect) {
@@ -31,6 +32,7 @@ extension LogicFormsView {
 
     public func layout() {
         vStack.addArrangedSubview(emailTextField)
+        vStack.addArrangedSubview(passwordTextField)
 
         addSubview(vStack)
 
