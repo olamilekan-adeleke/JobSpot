@@ -10,6 +10,7 @@ import UIKit
 final class LogicFormsView: UIView {
     let emailTextField = EmailTextField()
     let passwordTextField = PasswordTextField()
+    let forgotPasswordText = Label(type: .regular)
     let vStack = stackView(spacing: 15)
 
     override init(frame: CGRect) {
@@ -28,11 +29,16 @@ final class LogicFormsView: UIView {
 extension LogicFormsView {
     public func style() {
         translatesAutoresizingMaskIntoConstraints = false
+
+        forgotPasswordText.text = "Forgot Password ?"
+        forgotPasswordText.textAlignment = .right
+        forgotPasswordText.font = .systemFont(ofSize: 12, weight: .thin)
     }
 
     public func layout() {
         vStack.addArrangedSubview(emailTextField)
         vStack.addArrangedSubview(passwordTextField)
+        vStack.addArrangedSubview(forgotPasswordText)
 
         addSubview(vStack)
 
