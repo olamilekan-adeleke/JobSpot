@@ -13,8 +13,8 @@ extension UIView {
 
         while let nextResponder = responder?.next {
             if let viewController = nextResponder as? UIViewController {
-                viewController.present(vc, animated: true, completion: nil)
-//                viewController.navigationController?.pushViewController(vc, animated: true)
+//                viewController.present(vc, animated: true, completion: nil)
+                viewController.navigationController?.pushViewController(vc, animated: true)
                 break
             }
 

@@ -1,36 +1,37 @@
 //
-//  LogicFormsView.swift
+//  EmailTextField.swift
 //  JobSpot
 //
-//  Created by Enigma Kod on 06/01/2024.
+//  Created by Enigma Kod on 07/01/2024.
 //
 
 import UIKit
+import Combine
 
-final class LogicFormsView: UIView {
-    let emailTextField = EmailTextField()
-    let vStack = stackView(spacing: 15)
+class EmailTextField: UIView {
+    private let textField = BaseTextField(viewModel: .init(type: .email))
+    private let title = Label(type: .regular)
+    private let vStack = stackView(spacing: 5)
+
+    var text: String? { textField.textField.text }
+    var validationState: Published<FormValidationState>.Publisher { textField.$validationState }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        style()
-        layout()
+        setUp()
     }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
 
-extension LogicFormsView {
-    public func style() {
-        translatesAutoresizingMaskIntoConstraints = false
-    }
+    private func setUp() {
+        title.text = "Email"
 
-    public func layout() {
-        vStack.addArrangedSubview(emailTextField)
+        vStack.addArrangedSubview(title)
+        vStack.addArrangedSubview(textField)
 
         addSubview(vStack)
 

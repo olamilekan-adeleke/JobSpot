@@ -36,7 +36,7 @@ extension BaseFormValidatable {
 
 // MARK: - Factory
 
-enum FormValidatableFatory {
+enum FormValidatableFactory {
     static func validatableForType(type: BaseTextField.TextFieldType) -> BaseFormValidatable {
         switch type {
             case .name:

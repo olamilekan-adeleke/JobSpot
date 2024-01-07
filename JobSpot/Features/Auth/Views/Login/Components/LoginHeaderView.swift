@@ -30,6 +30,7 @@ extension LoginHeaderView {
 
         title.text = "Welcome Back"
         title.font = .systemFont(ofSize: 30, weight: .bold)
+        title.textAlignment = .center
 
         subtitle.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
         subtitle.font = .systemFont(ofSize: 12, weight: .thin)
@@ -42,12 +43,14 @@ extension LoginHeaderView {
         addSubview(subtitle)
 
         NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
-            title.centerXAnchor.constraint(equalTo: centerXAnchor),
+            title.topAnchor.constraint(equalTo: topAnchor),
+            title.leadingAnchor.constraint(equalTo: leadingAnchor),
+            title.trailingAnchor.constraint(equalTo: trailingAnchor),
 
             subtitle.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 0),
-//            subtitle.widthAnchor.constraint(equalToConstant: 250),
-            subtitle.centerXAnchor.constraint(equalTo: centerXAnchor),
+            subtitle.leadingAnchor.constraint(equalTo: leadingAnchor),
+            trailingAnchor.constraint(equalTo: subtitle.trailingAnchor),
+            subtitle.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }

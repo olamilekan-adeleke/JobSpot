@@ -34,7 +34,6 @@ class OnboardingFooterView: UIView {
 
 extension OnboardingFooterView {
     public func style() {
-        print("Test")
         translatesAutoresizingMaskIntoConstraints = false
 
         let firstString = NSMutableAttributedString(string: "Find Your\n", attributes: [

@@ -9,7 +9,6 @@ import Combine
 import SwiftUI
 import UIKit
 
-
 final class BaseTextField: UIView {
     // MARK: -  Component
 
@@ -23,8 +22,8 @@ final class BaseTextField: UIView {
 
     private lazy var textFieldBackgroundView: UIView = {
         let view = UIView(frame: .zero)
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.125)
-        view.layer.cornerRadius = 10
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.055)
+        view.layer.cornerRadius = 8
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -149,7 +148,7 @@ extension BaseTextField {
 
 extension BaseTextField {
     private func startValidation() {
-        let validatable = FormValidatableFatory.validatableForType(type: viewModel.type)
+        let validatable = FormValidatableFactory.validatableForType(type: viewModel.type)
 
         textField.textFieldTextPublisher()
             .removeDuplicates()

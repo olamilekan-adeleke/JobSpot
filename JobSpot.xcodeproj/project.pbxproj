@@ -23,6 +23,11 @@
 		3941A4982AFD3D4E00FD5DFE /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3941A4972AFD3D4E00FD5DFE /* OnBoardingVC.swift */; };
 		3941A49A2AFD3EA600FD5DFE /* OnboardingHeaderWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3941A4992AFD3EA600FD5DFE /* OnboardingHeaderWithImage.swift */; };
 		3941A49C2AFD3EE900FD5DFE /* CustomLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3941A49B2AFD3EE900FD5DFE /* CustomLabels.swift */; };
+		394595C42B4ABCF80097CF7F /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595C32B4ABCF80097CF7F /* EmailTextField.swift */; };
+		394595C62B4ABD0C0097CF7F /* NameValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595C52B4ABD0C0097CF7F /* NameValidatable.swift */; };
+		394595C82B4ABD190097CF7F /* PasswordValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595C72B4ABD190097CF7F /* PasswordValidatable.swift */; };
+		394595CB2B4AC83B0097CF7F /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595CA2B4AC83B0097CF7F /* SpacerView.swift */; };
+		394595CD2B4ACEF00097CF7F /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595CC2B4ACEF00097CF7F /* PasswordTextField.swift */; };
 		3991633C2A885840003A5343 /* HomeFindJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3991633B2A885840003A5343 /* HomeFindJobView.swift */; };
 		39DE80572B49BBA20034F517 /* FormValidationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE80502B49BBA20034F517 /* FormValidationState.swift */; };
 		39DE80582B49BBA20034F517 /* EmailValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE80522B49BBA20034F517 /* EmailValidatable.swift */; };
@@ -59,6 +64,11 @@
 		3941A4972AFD3D4E00FD5DFE /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
 		3941A4992AFD3EA600FD5DFE /* OnboardingHeaderWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHeaderWithImage.swift; sourceTree = "<group>"; };
 		3941A49B2AFD3EE900FD5DFE /* CustomLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabels.swift; sourceTree = "<group>"; };
+		394595C32B4ABCF80097CF7F /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
+		394595C52B4ABD0C0097CF7F /* NameValidatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameValidatable.swift; sourceTree = "<group>"; };
+		394595C72B4ABD190097CF7F /* PasswordValidatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatable.swift; sourceTree = "<group>"; };
+		394595CA2B4AC83B0097CF7F /* SpacerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacerView.swift; sourceTree = "<group>"; };
+		394595CC2B4ACEF00097CF7F /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		3991633B2A885840003A5343 /* HomeFindJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFindJobView.swift; sourceTree = "<group>"; };
 		39DE80502B49BBA20034F517 /* FormValidationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValidationState.swift; sourceTree = "<group>"; };
 		39DE80522B49BBA20034F517 /* EmailValidatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatable.swift; sourceTree = "<group>"; };
@@ -102,6 +112,7 @@
 		39106BD62B24E3D5009BDA0C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				394595C92B4AC8250097CF7F /* Spacer */,
 				39DE804D2B49BBA20034F517 /* TextField */,
 				39106BDC2B24E9EC009BDA0C /* StackView */,
 			);
@@ -244,9 +255,27 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		394595C22B4ABCD60097CF7F /* BaseTextFieldExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				394595C32B4ABCF80097CF7F /* EmailTextField.swift */,
+				394595CC2B4ACEF00097CF7F /* PasswordTextField.swift */,
+			);
+			path = BaseTextFieldExtensions;
+			sourceTree = "<group>";
+		};
+		394595C92B4AC8250097CF7F /* Spacer */ = {
+			isa = PBXGroup;
+			children = (
+				394595CA2B4AC83B0097CF7F /* SpacerView.swift */,
+			);
+			path = Spacer;
+			sourceTree = "<group>";
+		};
 		39DE804D2B49BBA20034F517 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
+				394595C22B4ABCD60097CF7F /* BaseTextFieldExtensions */,
 				39DE804E2B49BBA20034F517 /* ValidationStuff */,
 				39DE80542B49BBA20034F517 /* BaseTextField+ViewModel.swift */,
 				39DE80552B49BBA20034F517 /* BaseTextField+Enum.swift */,
@@ -275,8 +304,10 @@
 		39DE80512B49BBA20034F517 /* Validatable */ = {
 			isa = PBXGroup;
 			children = (
-				39DE80522B49BBA20034F517 /* EmailValidatable.swift */,
 				39DE80532B49BBA20034F517 /* BaseValidatable.swift */,
+				39DE80522B49BBA20034F517 /* EmailValidatable.swift */,
+				394595C52B4ABD0C0097CF7F /* NameValidatable.swift */,
+				394595C72B4ABD190097CF7F /* PasswordValidatable.swift */,
 			);
 			path = Validatable;
 			sourceTree = "<group>";
@@ -442,7 +473,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				394595C42B4ABCF80097CF7F /* EmailTextField.swift in Sources */,
 				393FBD8A2B49EEA800958F14 /* LoginButtonsView.swift in Sources */,
+				394595CD2B4ACEF00097CF7F /* PasswordTextField.swift in Sources */,
 				39FCC2E72A880CF600A50A7A /* HomeHeaderView.swift in Sources */,
 				39DE80572B49BBA20034F517 /* FormValidationState.swift in Sources */,
 				39DE80592B49BBA20034F517 /* BaseValidatable.swift in Sources */,
@@ -455,6 +488,7 @@
 				39FCC2D12A8807F900A50A7A /* HomeTabViewController.swift in Sources */,
 				39DE805A2B49BBA20034F517 /* BaseTextField+ViewModel.swift in Sources */,
 				39106BDB2B24E95A009BDA0C /* TextViewCnntroller.swift in Sources */,
+				394595C62B4ABD0C0097CF7F /* NameValidatable.swift in Sources */,
 				39DE805B2B49BBA20034F517 /* BaseTextField+Enum.swift in Sources */,
 				39DE80652B49DFC30034F517 /* UIView+Extension.swift in Sources */,
 				39011ABC2B175095002056C0 /* image_view.swift in Sources */,
@@ -462,11 +496,13 @@
 				39DE805F2B49BC280034F517 /* Publisher+Extension.swift in Sources */,
 				3991633C2A885840003A5343 /* HomeFindJobView.swift in Sources */,
 				39FCC2E92A88174400A50A7A /* HomeBannerView.swift in Sources */,
+				394595C82B4ABD190097CF7F /* PasswordValidatable.swift in Sources */,
 				39FCC2E32A880C6F00A50A7A /* SharedComponent.swift in Sources */,
 				39DE80582B49BBA20034F517 /* EmailValidatable.swift in Sources */,
 				393FBD8C2B49EEB200958F14 /* LoginView.swift in Sources */,
 				39DE805C2B49BBA20034F517 /* BaseTextField.swift in Sources */,
 				3941A49C2AFD3EE900FD5DFE /* CustomLabels.swift in Sources */,
+				394595CB2B4AC83B0097CF7F /* SpacerView.swift in Sources */,
 				39106BED2B25B814009BDA0C /* UITextField+Extension.swift in Sources */,
 				39DE80622B49CF110034F517 /* LoginVC.swift in Sources */,
 				39011ABA2B174E53002056C0 /* size_helper.swift in Sources */,
