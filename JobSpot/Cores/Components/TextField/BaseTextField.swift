@@ -1,55 +1,64 @@
 //
-//  CustomTextField.swift
-//  JobSpot
+//  BaseTextField.swift
+//  CustomTextField
 //
-//  Created by Enigma Kod on 09/12/2023.
+//  Created by Enigma Kod on 26/12/2023.
 //
 
 import Combine
 import SwiftUI
 import UIKit
 
-final class CustomTextField: UIView {
-    // MARK: - Components
+final class BaseTextField: UIView {
+    // MARK: -  Component
 
     lazy var textField: UITextField = {
         let textField = UITextField(frame: .zero)
-        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textColor = UIColor.label
         textField.delegate = self
+        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
 
     private lazy var textFieldBackgroundView: UIView = {
         let view = UIView(frame: .zero)
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.125)
-        view.layer.cornerRadius = 10
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.055)
+        view.layer.cornerRadius = 8
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    private lazy var errorLabel: UILabel = Label(type: .thin)
-    private lazy var expandingVStack: UIStackView = stackView(axis: .vertical, spacing: 10)
+    private lazy var errorLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.font = .systemFont(ofSize: 14, weight: .thin)
+        label.textColor = .systemRed
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private lazy var vStack = stackView(spacing: 10)
 
     // MARK: - Properties
 
-    private var viewModel: ViewModel
+    private let viewModel: ViewModel
+
+    private var subscriptions = Set<AnyCancellable>()
+    @Published var validationState: FormValidationState = .idel
     private var focusState: FocusState = .inactive {
         didSet { updateBorder() }
     }
 
-    private var subscriptions = Set<AnyCancellable>()
-    @Published var validationState: FormzValidationState = .idel
+    // MARK: - Lifecycle
 
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
-        super.init(frame: .zero)
+        super.init(frame: CGRect.zero)
 
         setUp()
         layout()
 
-        listen()
+        listenForStateChanges()
     }
 
     @available(*, unavailable)
@@ -60,32 +69,28 @@ final class CustomTextField: UIView {
     override func didMoveToWindow() {
         startValidation()
     }
-}
 
-// MARK: - Set Up & Layout
-
-extension CustomTextField {
     private func setUp() {
         textField.isSecureTextEntry = viewModel.isSecure
         textField.autocapitalizationType = viewModel.autoCap
         textField.placeholder = viewModel.placeHolder
-        textField.keyboardType = viewModel.keyBoardType
+        textField.keyboardType = viewModel.keyboard
 
         errorLabel.numberOfLines = 0
         errorLabel.textAlignment = .left
         errorLabel.textColor = .systemRed
         errorLabel.isHidden = true
-        errorLabel.font = .preferredFont(forTextStyle: .footnote)
+        errorLabel.font = .systemFont(ofSize: 10, weight: .thin)
     }
 
     private func layout() {
         translatesAutoresizingMaskIntoConstraints = false
 
         textFieldBackgroundView.addSubview(textField)
-        addSubview(expandingVStack)
+        addSubview(vStack)
 
-        expandingVStack.addArrangedSubview(textFieldBackgroundView)
-        expandingVStack.addArrangedSubview(errorLabel)
+        vStack.addArrangedSubview(textFieldBackgroundView)
+        vStack.addArrangedSubview(errorLabel)
 
         NSLayoutConstraint.activate([
             textFieldBackgroundView.widthAnchor.constraint(equalTo: widthAnchor),
@@ -96,21 +101,16 @@ extension CustomTextField {
             textField.leftAnchor.constraint(equalTo: textFieldBackgroundView.leftAnchor, constant: 6),
             textField.rightAnchor.constraint(equalTo: textFieldBackgroundView.rightAnchor, constant: -6),
 
-            heightAnchor.constraint(equalTo: expandingVStack.heightAnchor),
+            heightAnchor.constraint(equalTo: vStack.heightAnchor),
 
             errorLabel.widthAnchor.constraint(equalTo: widthAnchor),
         ])
     }
-
-    private func updateBorder() {
-        textFieldBackgroundView.layer.borderColor = focusState.borderColor
-        textFieldBackgroundView.layer.borderWidth = focusState.borderWidth
-    }
 }
 
-// MARK: - Foucus State
+// MARK: - State Change
 
-extension CustomTextField {
+extension BaseTextField {
     enum FocusState { case active, inactive
 
         var borderColor: CGColor? {
@@ -120,54 +120,47 @@ extension CustomTextField {
         var borderWidth: CGFloat { return self == .active ? 1 : 0 }
     }
 
-    func validationStateChanged(state: FormzValidationState) {
+    private func validationStateChanged(state: FormValidationState) {
         switch state {
             case .idel: break
-            case .error(let errorState):
+            case .invaild(let errorState):
                 errorLabel.text = errorState.description
                 errorLabel.isHidden = false
             case .valid:
-                errorLabel.text = nil
+                errorLabel.text = ""
                 errorLabel.isHidden = true
         }
     }
 
-    private func listen() {
-        $validationState
-            .receive(on: DispatchQueue.main)
+    private func listenForStateChanges() {
+        $validationState.receive(on: RunLoop.main)
             .sink { [weak self] state in
                 self?.validationStateChanged(state: state)
-            }.store(in: &subscriptions)
+            }
+            .store(in: &subscriptions)
+    }
+
+    private func updateBorder() {
+        textFieldBackgroundView.layer.borderColor = focusState.borderColor
+        textFieldBackgroundView.layer.borderWidth = focusState.borderWidth
     }
 }
 
-extension CustomTextField: FormzValidator {
-
+extension BaseTextField {
     private func startValidation() {
-        guard validationState == .idel, let validationType = ValidatorType(rawValue: viewModel.type.rawValue)
-        else { return }
+        let validatable = FormValidatableFactory.validatableForType(type: viewModel.type)
 
         textField.textFieldTextPublisher()
             .removeDuplicates()
             .debounce(for: 0.2, scheduler: RunLoop.main)
-            .validateText(validatorType: validationType)
+            .validateText(validator: validatable)
             .assign(to: &$validationState)
-
-//        validateText(
-//            validatorType: validationType,
-//            publisher: textField.textFieldTextPublisher()
-//        ).assign(to: &$validationState)
-
-//        .sink { [weak self] state in
-//            self?.validationStateChanged(state: state)
-//        }
-//        .store(in: &subscriptions)
     }
 }
 
 // MARK: - UITextFieldDelegate
 
-extension CustomTextField: UITextFieldDelegate {
+extension BaseTextField: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         focusState = .active
     }

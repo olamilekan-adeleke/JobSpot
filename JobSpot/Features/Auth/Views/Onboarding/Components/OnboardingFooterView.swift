@@ -67,6 +67,10 @@ extension OnboardingFooterView {
         iconButton.layer.cornerRadius = 30
         iconButton.addSubview(arrowIcon)
         addSubview(iconButton)
+
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(onIconTapped))
+        arrowIcon.addGestureRecognizer(gesture)
+        arrowIcon.isUserInteractionEnabled = true
     }
 
     public func layout() {
@@ -92,18 +96,22 @@ extension OnboardingFooterView {
             captionLabel.bottomAnchor.constraint(equalTo: summaryLabel.topAnchor, constant: -8),
         ])
     }
-}
 
-struct OnboardingFooterViewViewRepresentable: UIViewRepresentable {
-    func makeUIView(context: Context) -> some UIView {
-        return OnboardingFooterView()
-    }
-
-    func updateUIView(_ uiView: UIViewType, context: Context) {}
-}
-
-struct OnboardingFooterViewView_Preview: PreviewProvider {
-    static var previews: some View {
-        return OnboardingFooterViewViewRepresentable()
+    @objc func onIconTapped() {
+        pushToVc(vc: LoginVC())
+//        var responder: UIResponder? = self
+//
+//        print("Got here")
+//        while let nextResponder = responder?.next {
+//            if let viewController = nextResponder as? UIViewController {
+//                print("Found")
+        ////                viewController.present(loginVc, animated: true, completion: nil)
+//                viewController.navigationController?.pushViewController(loginVc, animated: true)
+//                break
+//            }
+//
+//            print("Got:: \(String(describing: responder))")
+//            responder = nextResponder
+//        }
     }
 }

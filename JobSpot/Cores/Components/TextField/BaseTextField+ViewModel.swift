@@ -1,27 +1,27 @@
 //
-//  CustomTextField+ViewModel.swift
-//  JobSpot
+//  BaseTextField+ViewModel.swift
+//  CustomTextField
 //
-//  Created by Enigma Kod on 10/12/2023.
+//  Created by Enigma Kod on 26/12/2023.
 //
 
 import UIKit
 
-extension CustomTextField {
+extension BaseTextField {
     struct ViewModel {
-        var type: TextFieldTypes
-        var placeHolder: String?
+        let type: TextFieldType
+        var placeHolder: String
 
-        init(type: TextFieldTypes, placeHolder: String? = nil) {
+        init(type: TextFieldType, placeHolder: String? = nil) {
             self.type = type
             self.placeHolder = placeHolder ?? type.defaultPlaceHolder()
         }
 
-        var isSecure: Bool { return type == .password ? true : false }
+        var isSecure: Bool { return type == .password }
 
-        var keyBoardType: UIKeyboardType {
+        var keyboard: UIKeyboardType {
             switch type {
-                case .name, .password:
+                case .name, .password, .code:
                     return .default
                 case .email:
                     return .emailAddress

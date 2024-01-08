@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
 
-        window?.rootViewController = OnBoardingVC()
+        let rootVc = UINavigationController(rootViewController: OnBoardingVC())
+//        rootVc.navigationController?. = .fullScreen
+        window?.rootViewController = rootVc
 
         return true
     }

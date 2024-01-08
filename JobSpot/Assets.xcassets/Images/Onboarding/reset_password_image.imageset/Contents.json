@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "reset_password_image.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
