@@ -10,6 +10,7 @@ import UIKit
 class LoginView: UIView {
     private let header = LoginHeaderView()
     private let loginForm = LogicFormsView()
+    private let loginButtons = LoginButtonsView()
 
     private let vStack = stackView()
 
@@ -37,6 +38,7 @@ extension LoginView {
         vStack.addArrangedSubview(header)
         vStack.setCustomSpacing(40, after: header)
         vStack.addArrangedSubview(loginForm)
+        vStack.addArrangedSubview(loginButtons)
 
         NSLayoutConstraint.activate([
             vStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
