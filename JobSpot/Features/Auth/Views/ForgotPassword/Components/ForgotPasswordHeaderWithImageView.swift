@@ -35,7 +35,7 @@ extension ForgotPasswordHeaderWithImageView {
         title.font = .systemFont(ofSize: 30, weight: .bold)
         title.textAlignment = .center
 
-        subtitle.text = "To reset your password, you need your email or mobile \nnumber that can be authenticated"
+        subtitle.text = "To reset your password, you need your email or mobile\n number that can be authenticated"
         subtitle.font = .systemFont(ofSize: 12, weight: .thin)
         subtitle.numberOfLines = 0
         subtitle.textAlignment = .center

@@ -5,19 +5,21 @@
 //  Created by Enigma Kod on 07/01/2024.
 //
 
-import UIKit
 import Combine
+import UIKit
 
 class EmailTextField: UIView {
-    private let textField = BaseTextField(viewModel: .init(type: .email))
+//    private let placeHolder: String?
+    private let textField: BaseTextField
     private let title = Label(type: .regular)
     private let vStack = stackView(spacing: 5)
 
     var text: String? { textField.textField.text }
     var validationState: Published<FormValidationState>.Publisher { textField.$validationState }
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(placeHolder: String? = nil) {
+        textField = BaseTextField(viewModel: .init(type: .email, placeHolder: placeHolder))
+        super.init(frame: .zero)
 
         setUp()
     }

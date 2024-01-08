@@ -80,7 +80,7 @@ final class BaseTextField: UIView {
         errorLabel.textAlignment = .left
         errorLabel.textColor = .systemRed
         errorLabel.isHidden = true
-        errorLabel.font = .preferredFont(forTextStyle: .footnote)
+        errorLabel.font = .systemFont(ofSize: 10, weight: .thin)
     }
 
     private func layout() {

@@ -19,6 +19,7 @@
 		39324BF42B4C7A540022D24C /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39324BF32B4C7A540022D24C /* ForgetPasswordView.swift */; };
 		39324BF62B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39324BF52B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift */; };
 		39324BF92B4C80E30022D24C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39324BF82B4C80E30022D24C /* ImageView.swift */; };
+		39324BFB2B4C89CD0022D24C /* ForgotPasswordFieldsAndButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39324BFA2B4C89CD0022D24C /* ForgotPasswordFieldsAndButton.swift */; };
 		393FBD862B49EDCC00958F14 /* LoginHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393FBD852B49EDCC00958F14 /* LoginHeaderView.swift */; };
 		393FBD882B49EE9D00958F14 /* LogicFormsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393FBD872B49EE9D00958F14 /* LogicFormsView.swift */; };
 		393FBD8A2B49EEA800958F14 /* LoginButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393FBD892B49EEA800958F14 /* LoginButtonsView.swift */; };
@@ -35,6 +36,8 @@
 		394595D02B4AD0CC0097CF7F /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595CF2B4AD0CC0097CF7F /* BaseButton.swift */; };
 		394595D22B4C51F80097CF7F /* BaseButton+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595D12B4C51F80097CF7F /* BaseButton+ViewModel.swift */; };
 		394595D42B4C52600097CF7F /* BaseButton+Emun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595D32B4C52600097CF7F /* BaseButton+Emun.swift */; };
+		398A78CE2B4C90D1009F6027 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A78CD2B4C90D0009F6027 /* ResetPasswordView.swift */; };
+		398A78D02B4C92C8009F6027 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A78CF2B4C92C8009F6027 /* ResetPasswordVC.swift */; };
 		3991633C2A885840003A5343 /* HomeFindJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3991633B2A885840003A5343 /* HomeFindJobView.swift */; };
 		39DE80572B49BBA20034F517 /* FormValidationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE80502B49BBA20034F517 /* FormValidationState.swift */; };
 		39DE80582B49BBA20034F517 /* EmailValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE80522B49BBA20034F517 /* EmailValidatable.swift */; };
@@ -67,6 +70,7 @@
 		39324BF32B4C7A540022D24C /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
 		39324BF52B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordHeaderWithImageView.swift; sourceTree = "<group>"; };
 		39324BF82B4C80E30022D24C /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		39324BFA2B4C89CD0022D24C /* ForgotPasswordFieldsAndButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordFieldsAndButton.swift; sourceTree = "<group>"; };
 		393FBD852B49EDCC00958F14 /* LoginHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHeaderView.swift; sourceTree = "<group>"; };
 		393FBD872B49EE9D00958F14 /* LogicFormsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicFormsView.swift; sourceTree = "<group>"; };
 		393FBD892B49EEA800958F14 /* LoginButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonsView.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 		394595CF2B4AD0CC0097CF7F /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		394595D12B4C51F80097CF7F /* BaseButton+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseButton+ViewModel.swift"; sourceTree = "<group>"; };
 		394595D32B4C52600097CF7F /* BaseButton+Emun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseButton+Emun.swift"; sourceTree = "<group>"; };
+		398A78CD2B4C90D0009F6027 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		398A78CF2B4C92C8009F6027 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		3991633B2A885840003A5343 /* HomeFindJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFindJobView.swift; sourceTree = "<group>"; };
 		39DE80502B49BBA20034F517 /* FormValidationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValidationState.swift; sourceTree = "<group>"; };
 		39DE80522B49BBA20034F517 /* EmailValidatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatable.swift; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				39324BEF2B4C73C90022D24C /* ForgotPasswordVC.swift */,
+				398A78CF2B4C92C8009F6027 /* ResetPasswordVC.swift */,
 			);
 			path = ForgotPassword;
 			sourceTree = "<group>";
@@ -172,6 +179,7 @@
 			children = (
 				39324BF22B4C7A3C0022D24C /* Components */,
 				39324BF32B4C7A540022D24C /* ForgetPasswordView.swift */,
+				398A78CD2B4C90D0009F6027 /* ResetPasswordView.swift */,
 			);
 			path = ForgotPassword;
 			sourceTree = "<group>";
@@ -180,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				39324BF52B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift */,
+				39324BFA2B4C89CD0022D24C /* ForgotPasswordFieldsAndButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -535,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				394595C42B4ABCF80097CF7F /* EmailTextField.swift in Sources */,
+				398A78D02B4C92C8009F6027 /* ResetPasswordVC.swift in Sources */,
 				394595D42B4C52600097CF7F /* BaseButton+Emun.swift in Sources */,
 				393FBD8A2B49EEA800958F14 /* LoginButtonsView.swift in Sources */,
 				394595CD2B4ACEF00097CF7F /* PasswordTextField.swift in Sources */,
@@ -546,6 +556,7 @@
 				393FBD882B49EE9D00958F14 /* LogicFormsView.swift in Sources */,
 				39011ABE2B17A0B6002056C0 /* OnboardingFooterView.swift in Sources */,
 				3941A4982AFD3D4E00FD5DFE /* OnBoardingVC.swift in Sources */,
+				398A78CE2B4C90D1009F6027 /* ResetPasswordView.swift in Sources */,
 				394595D02B4AD0CC0097CF7F /* BaseButton.swift in Sources */,
 				39106BD52B24E26D009BDA0C /* UIViewController+Extension.swift in Sources */,
 				39324BF92B4C80E30022D24C /* ImageView.swift in Sources */,
@@ -561,6 +572,7 @@
 				39DE805F2B49BC280034F517 /* Publisher+Extension.swift in Sources */,
 				3991633C2A885840003A5343 /* HomeFindJobView.swift in Sources */,
 				39FCC2E92A88174400A50A7A /* HomeBannerView.swift in Sources */,
+				39324BFB2B4C89CD0022D24C /* ForgotPasswordFieldsAndButton.swift in Sources */,
 				394595C82B4ABD190097CF7F /* PasswordValidatable.swift in Sources */,
 				39FCC2E32A880C6F00A50A7A /* SharedComponent.swift in Sources */,
 				39DE80582B49BBA20034F517 /* EmailValidatable.swift in Sources */,

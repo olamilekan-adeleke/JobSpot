@@ -9,6 +9,8 @@ import UIKit
 
 final class ForgetPasswordView: UIView {
     private let headerWithImage = ForgotPasswordHeaderWithImageView()
+    private let formsAndButton = ForgotPasswordFieldsAndButton()
+
     private let vStack = stackView()
 
     override init(frame: CGRect) {
@@ -32,11 +34,13 @@ extension ForgetPasswordView {
     private func layout() {
         vStack.addArrangedSubview(headerWithImage)
 
+        vStack.setCustomSpacing(150, after: headerWithImage)
+        vStack.addArrangedSubview(formsAndButton)
+
         addSubview(vStack)
 
         NSLayoutConstraint.activate([
             vStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-//            vStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -AppSize.kGobalPadding),
             vStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppSize.kGobalPadding),
             vStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -AppSize.kGobalPadding),
         ])
