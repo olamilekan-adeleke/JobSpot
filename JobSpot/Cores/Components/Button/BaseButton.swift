@@ -20,8 +20,12 @@ final class BaseButton: UIView {
     }
 
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func setOnTap(_ gestureRecognizer: UITapGestureRecognizer) {
+        button.addGestureRecognizer(gestureRecognizer)
     }
 }
 
@@ -34,7 +38,9 @@ extension BaseButton {
         button.clipsToBounds = true
 
         button.backgroundColor = viewModel.backgroundColor
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.setTitle(viewModel.title, for: .normal)
+        button.setTitleColor(viewModel.textColor, for: .normal)
     }
 
     public func layout() {

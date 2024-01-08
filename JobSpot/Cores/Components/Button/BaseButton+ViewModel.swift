@@ -23,5 +23,12 @@ extension BaseButton {
                 case .secondary: return UIColor(red: 0.839, green: 0.804, blue: 0.996, alpha: 1)
             }
         }
+
+        var textColor: UIColor {
+            switch type {
+                case .primary: return UIColor.white
+                case .secondary: return UIColor.black
+            }
+        }
     }
 }

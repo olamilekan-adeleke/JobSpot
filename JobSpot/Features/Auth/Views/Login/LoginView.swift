@@ -38,11 +38,12 @@ extension LoginView {
         vStack.addArrangedSubview(header)
         vStack.setCustomSpacing(40, after: header)
         vStack.addArrangedSubview(loginForm)
+        vStack.setCustomSpacing(120, after: loginForm)
         vStack.addArrangedSubview(loginButtons)
 
         NSLayoutConstraint.activate([
             vStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-//            vStack.bottomAnchor.constraint(equalTo: bottomAnchor),
+            vStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -AppSize.kGobalPadding),
             vStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppSize.kGobalPadding),
             vStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -AppSize.kGobalPadding),
         ])
