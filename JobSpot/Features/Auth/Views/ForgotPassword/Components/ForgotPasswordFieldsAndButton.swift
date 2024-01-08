@@ -36,7 +36,7 @@ extension ForgotPasswordFieldsAndButton {
     private func layout() {
         vStack.addArrangedSubview(emailForm)
 
-        vStack.setCustomSpacing(30, after: emailForm)
+        vStack.setCustomSpacing(40, after: emailForm)
         vStack.addArrangedSubview(submitButton)
 
         addSubview(vStack)

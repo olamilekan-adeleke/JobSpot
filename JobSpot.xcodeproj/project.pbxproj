@@ -38,6 +38,10 @@
 		394595D42B4C52600097CF7F /* BaseButton+Emun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595D32B4C52600097CF7F /* BaseButton+Emun.swift */; };
 		398A78CE2B4C90D1009F6027 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A78CD2B4C90D0009F6027 /* ResetPasswordView.swift */; };
 		398A78D02B4C92C8009F6027 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A78CF2B4C92C8009F6027 /* ResetPasswordVC.swift */; };
+		398A78D22B4C975D009F6027 /* ResetPasswordHeaderWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A78D12B4C975D009F6027 /* ResetPasswordHeaderWidget.swift */; };
+		398A78D42B4C99B3009F6027 /* ResetPasswordTextFieldAndButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A78D32B4C99B3009F6027 /* ResetPasswordTextFieldAndButton.swift */; };
+		398A78D72B4C9BFF009F6027 /* CodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A78D62B4C9BFF009F6027 /* CodeTextField.swift */; };
+		398A78D92B4C9C5B009F6027 /* CodeValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A78D82B4C9C5B009F6027 /* CodeValidatable.swift */; };
 		3991633C2A885840003A5343 /* HomeFindJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3991633B2A885840003A5343 /* HomeFindJobView.swift */; };
 		39DE80572B49BBA20034F517 /* FormValidationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE80502B49BBA20034F517 /* FormValidationState.swift */; };
 		39DE80582B49BBA20034F517 /* EmailValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE80522B49BBA20034F517 /* EmailValidatable.swift */; };
@@ -89,6 +93,10 @@
 		394595D32B4C52600097CF7F /* BaseButton+Emun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseButton+Emun.swift"; sourceTree = "<group>"; };
 		398A78CD2B4C90D0009F6027 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		398A78CF2B4C92C8009F6027 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		398A78D12B4C975D009F6027 /* ResetPasswordHeaderWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordHeaderWidget.swift; sourceTree = "<group>"; };
+		398A78D32B4C99B3009F6027 /* ResetPasswordTextFieldAndButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordTextFieldAndButton.swift; sourceTree = "<group>"; };
+		398A78D62B4C9BFF009F6027 /* CodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextField.swift; sourceTree = "<group>"; };
+		398A78D82B4C9C5B009F6027 /* CodeValidatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeValidatable.swift; sourceTree = "<group>"; };
 		3991633B2A885840003A5343 /* HomeFindJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFindJobView.swift; sourceTree = "<group>"; };
 		39DE80502B49BBA20034F517 /* FormValidationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValidationState.swift; sourceTree = "<group>"; };
 		39DE80522B49BBA20034F517 /* EmailValidatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatable.swift; sourceTree = "<group>"; };
@@ -189,6 +197,8 @@
 			children = (
 				39324BF52B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift */,
 				39324BFA2B4C89CD0022D24C /* ForgotPasswordFieldsAndButton.swift */,
+				398A78D12B4C975D009F6027 /* ResetPasswordHeaderWidget.swift */,
+				398A78D32B4C99B3009F6027 /* ResetPasswordTextFieldAndButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -320,6 +330,7 @@
 			children = (
 				394595C32B4ABCF80097CF7F /* EmailTextField.swift */,
 				394595CC2B4ACEF00097CF7F /* PasswordTextField.swift */,
+				398A78D62B4C9BFF009F6027 /* CodeTextField.swift */,
 			);
 			path = BaseTextFieldExtensions;
 			sourceTree = "<group>";
@@ -335,11 +346,19 @@
 		394595CE2B4AD0AF0097CF7F /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				398A78DA2B4C9DBA009F6027 /* BaseButtonExtension */,
 				394595CF2B4AD0CC0097CF7F /* BaseButton.swift */,
 				394595D12B4C51F80097CF7F /* BaseButton+ViewModel.swift */,
 				394595D32B4C52600097CF7F /* BaseButton+Emun.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		398A78DA2B4C9DBA009F6027 /* BaseButtonExtension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseButtonExtension;
 			sourceTree = "<group>";
 		};
 		39DE804D2B49BBA20034F517 /* TextField */ = {
@@ -378,6 +397,7 @@
 				39DE80522B49BBA20034F517 /* EmailValidatable.swift */,
 				394595C52B4ABD0C0097CF7F /* NameValidatable.swift */,
 				394595C72B4ABD190097CF7F /* PasswordValidatable.swift */,
+				398A78D82B4C9C5B009F6027 /* CodeValidatable.swift */,
 			);
 			path = Validatable;
 			sourceTree = "<group>";
@@ -544,9 +564,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				394595C42B4ABCF80097CF7F /* EmailTextField.swift in Sources */,
+				398A78D22B4C975D009F6027 /* ResetPasswordHeaderWidget.swift in Sources */,
+				398A78D72B4C9BFF009F6027 /* CodeTextField.swift in Sources */,
 				398A78D02B4C92C8009F6027 /* ResetPasswordVC.swift in Sources */,
 				394595D42B4C52600097CF7F /* BaseButton+Emun.swift in Sources */,
 				393FBD8A2B49EEA800958F14 /* LoginButtonsView.swift in Sources */,
+				398A78D92B4C9C5B009F6027 /* CodeValidatable.swift in Sources */,
 				394595CD2B4ACEF00097CF7F /* PasswordTextField.swift in Sources */,
 				39FCC2E72A880CF600A50A7A /* HomeHeaderView.swift in Sources */,
 				39DE80572B49BBA20034F517 /* FormValidationState.swift in Sources */,
@@ -568,6 +591,7 @@
 				39DE805B2B49BBA20034F517 /* BaseTextField+Enum.swift in Sources */,
 				39DE80652B49DFC30034F517 /* UIView+Extension.swift in Sources */,
 				39011ABC2B175095002056C0 /* image_view.swift in Sources */,
+				398A78D42B4C99B3009F6027 /* ResetPasswordTextFieldAndButton.swift in Sources */,
 				39106BDE2B24EA08009BDA0C /* CustomStackView.swift in Sources */,
 				39DE805F2B49BC280034F517 /* Publisher+Extension.swift in Sources */,
 				3991633C2A885840003A5343 /* HomeFindJobView.swift in Sources */,

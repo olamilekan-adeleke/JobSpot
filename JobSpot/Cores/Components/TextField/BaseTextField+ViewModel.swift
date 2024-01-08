@@ -21,7 +21,7 @@ extension BaseTextField {
 
         var keyboard: UIKeyboardType {
             switch type {
-                case .name, .password:
+                case .name, .password, .code:
                     return .default
                 case .email:
                     return .emailAddress

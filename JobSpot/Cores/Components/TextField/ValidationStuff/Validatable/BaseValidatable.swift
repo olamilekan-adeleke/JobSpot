@@ -39,12 +39,10 @@ extension BaseFormValidatable {
 enum FormValidatableFactory {
     static func validatableForType(type: BaseTextField.TextFieldType) -> BaseFormValidatable {
         switch type {
-            case .name:
-                return NameValidatable()
-            case .email:
-                return EmailValidatable()
-            case .password:
-                return PasswordValidatable()
+            case .name: return NameValidatable()
+            case .email: return EmailValidatable()
+            case .password: return PasswordValidatable()
+            case .code: return CodeValidatable()
         }
     }
 }

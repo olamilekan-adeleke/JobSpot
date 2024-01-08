@@ -19,6 +19,7 @@ final class ForgotPasswordVC: UIViewController {
 extension ForgotPasswordVC {
     private func layout() {
         view.addSubview(bodyView)
+        view.backgroundColor = .white
 
         bodyView.pinEdges(to: view)
     }

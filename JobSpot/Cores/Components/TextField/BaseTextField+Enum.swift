@@ -9,7 +9,7 @@ import Foundation
 
 extension BaseTextField {
     enum TextFieldType: String {
-        case name, email, password
+        case name, email, password, code
 
         func defaultPlaceHolder() -> String {
             return "Enter your \(self.rawValue).."
