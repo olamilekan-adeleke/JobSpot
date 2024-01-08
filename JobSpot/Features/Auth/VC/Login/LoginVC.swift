@@ -19,7 +19,8 @@ class LoginVC: UIViewController {
 
 extension LoginVC {
     public func layout() {
-//        navigationItem.hidesBackButton = true
+        navigationItem.setHidesBackButton(true, animated: true)
+
         view.backgroundColor = .white
         view.addSubview(loginView)
 
