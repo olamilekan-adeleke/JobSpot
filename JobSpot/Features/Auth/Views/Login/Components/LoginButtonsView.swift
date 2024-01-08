@@ -12,7 +12,7 @@ final class LoginButtonsView: UIView {
     private let googleLoginButton = BaseButton(viewModel: .init(type: .secondary, title: "Login With Google"))
     private let createAccountLabel = Label(type: .thin)
 
-    private let vStack = stackView(spacing: 10)
+    private let vStack = stackView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,7 +50,9 @@ extension LoginButtonsView {
 
     private func layout() {
         vStack.addArrangedSubview(loginButton)
+        vStack.setCustomSpacing(15, after: loginButton)
         vStack.addArrangedSubview(googleLoginButton)
+        vStack.setCustomSpacing(10, after: googleLoginButton)
         vStack.addArrangedSubview(createAccountLabel)
 
         addSubview(vStack)
