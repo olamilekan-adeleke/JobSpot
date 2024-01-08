@@ -50,11 +50,6 @@ extension BaseButton {
             trailingAnchor.constraint(equalTo: button.trailingAnchor),
             button.topAnchor.constraint(equalTo: topAnchor),
             button.bottomAnchor.constraint(equalTo: bottomAnchor),
-
-//            button.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-//            button.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-//            button.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-//            button.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
         ])
     }
 }
