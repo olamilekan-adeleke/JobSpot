@@ -30,9 +30,14 @@ extension LogicFormsView {
     public func style() {
         translatesAutoresizingMaskIntoConstraints = false
 
-        forgotPasswordText.text = "Forgot Password ?"
+        let textString = NSMutableAttributedString(string: "Forgot Password ?", attributes: [
+            .font: UIFont.systemFont(ofSize: 12, weight: .thin),
+            .foregroundColor: UIColor.black,
+            .underlineColor: UIColor.black,
+            .underlineStyle: NSUnderlineStyle.single.rawValue,
+        ])
+        forgotPasswordText.attributedText = textString
         forgotPasswordText.textAlignment = .right
-        forgotPasswordText.font = .systemFont(ofSize: 12, weight: .thin)
     }
 
     public func layout() {
