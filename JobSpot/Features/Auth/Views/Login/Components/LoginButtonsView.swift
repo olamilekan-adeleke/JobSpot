@@ -54,9 +54,12 @@ extension LoginButtonsView {
         vStack.addArrangedSubview(createAccountLabel)
 
         addSubview(vStack)
+
+        loginButton.setOnTap(UITapGestureRecognizer(target: self, action: #selector(loginWithEmail)))
+        googleLoginButton.setOnTap(UITapGestureRecognizer(target: self, action: #selector(loginWithGoogle)))
     }
 
-    @objc private func loginWith() {}
-    
-    @objc private func navigateToHome() {}
+    @objc private func loginWithEmail() {}
+
+    @objc private func loginWithGoogle() {}
 }
