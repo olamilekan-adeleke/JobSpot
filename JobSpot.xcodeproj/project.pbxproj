@@ -16,6 +16,9 @@
 		39106BEA2B253DC9009BDA0C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BE92B253DC9009BDA0C /* String+Extension.swift */; };
 		39106BED2B25B814009BDA0C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BEC2B25B814009BDA0C /* UITextField+Extension.swift */; };
 		39324BF02B4C73C90022D24C /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39324BEF2B4C73C90022D24C /* ForgotPasswordVC.swift */; };
+		39324BF42B4C7A540022D24C /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39324BF32B4C7A540022D24C /* ForgetPasswordView.swift */; };
+		39324BF62B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39324BF52B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift */; };
+		39324BF92B4C80E30022D24C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39324BF82B4C80E30022D24C /* ImageView.swift */; };
 		393FBD862B49EDCC00958F14 /* LoginHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393FBD852B49EDCC00958F14 /* LoginHeaderView.swift */; };
 		393FBD882B49EE9D00958F14 /* LogicFormsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393FBD872B49EE9D00958F14 /* LogicFormsView.swift */; };
 		393FBD8A2B49EEA800958F14 /* LoginButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393FBD892B49EEA800958F14 /* LoginButtonsView.swift */; };
@@ -61,6 +64,9 @@
 		39106BE92B253DC9009BDA0C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		39106BEC2B25B814009BDA0C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		39324BEF2B4C73C90022D24C /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		39324BF32B4C7A540022D24C /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
+		39324BF52B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordHeaderWithImageView.swift; sourceTree = "<group>"; };
+		39324BF82B4C80E30022D24C /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		393FBD852B49EDCC00958F14 /* LoginHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHeaderView.swift; sourceTree = "<group>"; };
 		393FBD872B49EE9D00958F14 /* LogicFormsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicFormsView.swift; sourceTree = "<group>"; };
 		393FBD892B49EEA800958F14 /* LoginButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonsView.swift; sourceTree = "<group>"; };
@@ -120,6 +126,7 @@
 		39106BD62B24E3D5009BDA0C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				39324BF72B4C80D70022D24C /* Image */,
 				394595CE2B4AD0AF0097CF7F /* Button */,
 				394595C92B4AC8250097CF7F /* Spacer */,
 				39DE804D2B49BBA20034F517 /* TextField */,
@@ -158,6 +165,31 @@
 				39324BEF2B4C73C90022D24C /* ForgotPasswordVC.swift */,
 			);
 			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		39324BF12B4C78FF0022D24C /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				39324BF22B4C7A3C0022D24C /* Components */,
+				39324BF32B4C7A540022D24C /* ForgetPasswordView.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		39324BF22B4C7A3C0022D24C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				39324BF52B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		39324BF72B4C80D70022D24C /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				39324BF82B4C80E30022D24C /* ImageView.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		393FBD812B49EBE700958F14 /* Login */ = {
@@ -248,6 +280,7 @@
 		3941A4942AFD3CE100FD5DFE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				39324BF12B4C78FF0022D24C /* ForgotPassword */,
 				393FBD832B49ED9500958F14 /* Onboarding */,
 				393FBD812B49EBE700958F14 /* Login */,
 			);
@@ -515,6 +548,7 @@
 				3941A4982AFD3D4E00FD5DFE /* OnBoardingVC.swift in Sources */,
 				394595D02B4AD0CC0097CF7F /* BaseButton.swift in Sources */,
 				39106BD52B24E26D009BDA0C /* UIViewController+Extension.swift in Sources */,
+				39324BF92B4C80E30022D24C /* ImageView.swift in Sources */,
 				39324BF02B4C73C90022D24C /* ForgotPasswordVC.swift in Sources */,
 				39FCC2D12A8807F900A50A7A /* HomeTabViewController.swift in Sources */,
 				39DE805A2B49BBA20034F517 /* BaseTextField+ViewModel.swift in Sources */,
@@ -537,6 +571,8 @@
 				394595CB2B4AC83B0097CF7F /* SpacerView.swift in Sources */,
 				39106BED2B25B814009BDA0C /* UITextField+Extension.swift in Sources */,
 				39DE80622B49CF110034F517 /* LoginVC.swift in Sources */,
+				39324BF42B4C7A540022D24C /* ForgetPasswordView.swift in Sources */,
+				39324BF62B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift in Sources */,
 				39011ABA2B174E53002056C0 /* size_helper.swift in Sources */,
 				393FBD862B49EDCC00958F14 /* LoginHeaderView.swift in Sources */,
 				39FCC2CD2A8807F900A50A7A /* AppDelegate.swift in Sources */,

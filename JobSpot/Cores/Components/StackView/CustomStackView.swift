@@ -10,9 +10,10 @@ import UIKit
 func stackView(axis: NSLayoutConstraint.Axis = .vertical, spacing: CGFloat? = nil) -> UIStackView {
     let stack = UIStackView(frame: .zero)
     stack.axis = axis
-    
-    if spacing != nil { stack.spacing = spacing! }
-    
     stack.translatesAutoresizingMaskIntoConstraints = false
+//    stack.alignment = .top
+//    stack.distribution = .fill
+
+    if spacing != nil { stack.spacing = spacing! }
     return stack
 }
