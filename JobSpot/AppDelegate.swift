@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        rootVc.navigationController?. = .fullScreen
         window?.rootViewController = rootVc
 
+        UINavigationBar.appearance().tintColor = .black
+
         return true
     }
 }
