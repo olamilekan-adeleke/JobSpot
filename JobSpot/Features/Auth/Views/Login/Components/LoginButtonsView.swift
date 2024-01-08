@@ -28,7 +28,7 @@ final class LoginButtonsView: UIView {
 }
 
 extension LoginButtonsView {
-    public func style() {
+    private func style() {
         translatesAutoresizingMaskIntoConstraints = false
 
         createAccountLabel.textAlignment = .center
@@ -48,11 +48,15 @@ extension LoginButtonsView {
         createAccountLabel.attributedText = questionString
     }
 
-    public func layout() {
+    private func layout() {
         vStack.addArrangedSubview(loginButton)
         vStack.addArrangedSubview(googleLoginButton)
         vStack.addArrangedSubview(createAccountLabel)
 
         addSubview(vStack)
     }
+
+    @objc private func loginWith() {}
+    
+    @objc private func navigateToHome() {}
 }
