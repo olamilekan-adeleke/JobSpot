@@ -26,10 +26,6 @@ class OnboardingFooterView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-//    override var intrinsicContentSize: CGSize {
-//        return CGSize(width: DEVICE_WIDTH, height: 400)
-//    }
 }
 
 extension OnboardingFooterView {
@@ -76,7 +72,6 @@ extension OnboardingFooterView {
     public func layout() {
         summaryLabel.translatesAutoresizingMaskIntoConstraints = false
         captionLabel.translatesAutoresizingMaskIntoConstraints = false
-
         arrowIcon.translatesAutoresizingMaskIntoConstraints = false
         iconButton.translatesAutoresizingMaskIntoConstraints = false
 
@@ -99,19 +94,5 @@ extension OnboardingFooterView {
 
     @objc func onIconTapped() {
         pushToVc(vc: LoginVC())
-//        var responder: UIResponder? = self
-//
-//        print("Got here")
-//        while let nextResponder = responder?.next {
-//            if let viewController = nextResponder as? UIViewController {
-//                print("Found")
-        ////                viewController.present(loginVc, animated: true, completion: nil)
-//                viewController.navigationController?.pushViewController(loginVc, animated: true)
-//                break
-//            }
-//
-//            print("Got:: \(String(describing: responder))")
-//            responder = nextResponder
-//        }
     }
 }

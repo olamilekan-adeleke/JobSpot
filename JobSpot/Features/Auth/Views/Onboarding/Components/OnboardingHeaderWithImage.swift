@@ -23,10 +23,6 @@ class OnboardingHeaderWithImage: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-//    override var intrinsicContentSize: CGSize {
-//        CGSize(width: DEVICE_WIDTH, height: 200)
-//    }
 }
 
 extension OnboardingHeaderWithImage {
@@ -45,7 +41,7 @@ extension OnboardingHeaderWithImage {
     public func layout() {
         // App Name
         NSLayoutConstraint.activate([
-            appName.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            appName.topAnchor.constraint(equalTo: topAnchor, constant: 32),
             trailingAnchor.constraint(equalTo: appName.trailingAnchor, constant: 16),
         ])
 

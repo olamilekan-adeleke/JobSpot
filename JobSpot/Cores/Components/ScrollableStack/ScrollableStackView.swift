@@ -86,6 +86,10 @@ public extension ScrollableStackView {
     func remove(view: UIView) {
         stack.removeArrangedSubview(view)
     }
+   
+    func setCustomSpacing(_ spacing: CGFloat, after arrangedSubview: UIView) {
+        stack.setCustomSpacing(spacing, after: arrangedSubview)
+    }
 }
 
 // MARK: - ScrollableStackView - Configuration

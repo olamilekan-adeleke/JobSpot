@@ -61,7 +61,9 @@ extension LoginButtonsView {
         googleLoginButton.setOnTap(UITapGestureRecognizer(target: self, action: #selector(loginWithGoogle)))
     }
 
-    @objc private func loginWithEmail() {}
+    @objc private func loginWithEmail() {
+        pushToVc(vc: HomeVC())
+    }
 
     @objc private func loginWithGoogle() {}
 }

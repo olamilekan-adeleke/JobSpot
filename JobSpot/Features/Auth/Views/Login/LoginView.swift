@@ -42,7 +42,7 @@ extension LoginView {
         vStack.addArrangedSubview(loginButtons)
 
         NSLayoutConstraint.activate([
-            vStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            vStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
             vStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -AppSize.horizontalPadding),
             vStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppSize.horizontalPadding),
             vStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -AppSize.horizontalPadding),
