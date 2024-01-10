@@ -60,7 +60,7 @@ extension ResetPasswordTextFieldAndButton {
         vStack.addArrangedSubview(resendCodeLabel)
         
         addSubview(vStack)
-        vStack.pinEdges(to: self)
+        vStack.pinToEdges(to: self)
     }
     
     @objc private func onButtonTapped() {

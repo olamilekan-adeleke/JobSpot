@@ -5,11 +5,11 @@
 //  Created by Enigma Kod on 10/01/2024.
 //
 
-import UIKit
 import SwiftUI
+import UIKit
 
 final class HomeVC: UIViewController {
-    let vStack = stackView()
+    private let homeBody = HomeView()
 
     override func viewDidLoad() {
         layout()
@@ -18,11 +18,13 @@ final class HomeVC: UIViewController {
 
 extension HomeVC {
     private func layout() {
-        //
-
-        view.addSubview(vStack)
-        vStack.pinEdges(to: view)
+        view.addSubview(homeBody)
+        homeBody.pinToEdges(to: view)
     }
 }
 
-
+struct HomeVC_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeVC().showPreview()
+    }
+}

@@ -22,10 +22,19 @@ extension UIView {
         }
     }
 
-    func pinEdges(to other: UIView) {
+    func pinToEdges(to other: UIView) {
         NSLayoutConstraint.activate([
             leadingAnchor.constraint(equalTo: other.leadingAnchor),
             trailingAnchor.constraint(equalTo: other.trailingAnchor),
+            topAnchor.constraint(equalTo: other.topAnchor),
+            bottomAnchor.constraint(equalTo: other.bottomAnchor),
+        ])
+    }
+
+    func pinToEdgesWithHorizontalPadding(to other: UIView) {
+        NSLayoutConstraint.activate([
+            leadingAnchor.constraint(equalTo: other.leadingAnchor, constant: AppSize.horizontalPadding),
+            trailingAnchor.constraint(equalTo: other.trailingAnchor, constant: -AppSize.horizontalPadding),
             topAnchor.constraint(equalTo: other.topAnchor),
             bottomAnchor.constraint(equalTo: other.bottomAnchor),
         ])

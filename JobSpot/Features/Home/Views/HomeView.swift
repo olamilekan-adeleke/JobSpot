@@ -8,7 +8,8 @@
 import UIKit
 
 final class HomeView: UIView {
-    let vScrollableStack = ScrollableStackView()
+    private let headerView = HomeHeaderView()
+    private let vScrollableStack = ScrollableStackView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,5 +29,10 @@ extension HomeView {
         translatesAutoresizingMaskIntoConstraints = false
     }
 
-    private func layout() {}
+    private func layout() {
+        vScrollableStack.add(view: headerView)
+
+        addSubview(vScrollableStack)
+        vScrollableStack.pinToEdgesWithHorizontalPadding(to: self)
+    }
 }

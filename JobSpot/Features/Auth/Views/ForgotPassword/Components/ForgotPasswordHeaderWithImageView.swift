@@ -10,7 +10,7 @@ import UIKit
 class ForgotPasswordHeaderWithImageView: UIView {
     private let title = Label(type: .bold)
     private let subtitle = Label(type: .regular)
-    private let imageView = CustomImageView(image: UIImage(named: "forgot_password_image"))
+    private let imageView = ImageView(image: UIImage(named: "forgot_password_image"))
 
     private let vStack = stackView()
 
@@ -55,6 +55,6 @@ extension ForgotPasswordHeaderWithImageView {
 //        ])
 
         addSubview(vStack)
-        vStack.pinEdges(to: self)
+        vStack.pinToEdges(to: self)
     }
 }

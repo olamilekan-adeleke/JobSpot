@@ -10,7 +10,7 @@ import UIKit
 class ResetPasswordHeaderWidget: UIView {
     private let title = Label(type: .bold)
     private let subtitle = Label(type: .regular)
-    private let imageView = CustomImageView(image: UIImage(named: "reset_password_image"))
+    private let imageView = ImageView(image: UIImage(named: "reset_password_image"))
     
     private let vStack = stackView()
     
@@ -55,6 +55,6 @@ extension ResetPasswordHeaderWidget {
 //        ])
         
         addSubview(vStack)
-        vStack.pinEdges(to: self)
+        vStack.pinToEdges(to: self)
     }
 }

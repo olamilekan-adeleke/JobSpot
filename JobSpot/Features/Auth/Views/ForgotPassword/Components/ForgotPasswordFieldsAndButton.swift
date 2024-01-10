@@ -40,7 +40,7 @@ extension ForgotPasswordFieldsAndButton {
         vStack.addArrangedSubview(submitButton)
 
         addSubview(vStack)
-        vStack.pinEdges(to: self)
+        vStack.pinToEdges(to: self)
     }
 
     @objc private func onButtonTapped() {
