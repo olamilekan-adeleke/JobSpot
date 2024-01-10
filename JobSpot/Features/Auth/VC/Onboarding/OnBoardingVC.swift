@@ -36,16 +36,8 @@ extension OnBoardingVC {
     }
 }
 
-struct OnBoardingVCRepresentable: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> some UIViewController {
-        return OnBoardingVC()
-    }
-
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
-}
-
 struct OnBoardingVCView_Preview: PreviewProvider {
     static var previews: some View {
-        return OnBoardingVCRepresentable()
+        return OnBoardingVC().showPreview()
     }
 }

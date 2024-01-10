@@ -27,9 +27,9 @@ class OnboardingFooterView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: DEVICE_WIDTH, height: 400)
-    }
+//    override var intrinsicContentSize: CGSize {
+//        return CGSize(width: DEVICE_WIDTH, height: 400)
+//    }
 }
 
 extension OnboardingFooterView {
@@ -83,16 +83,16 @@ extension OnboardingFooterView {
         NSLayoutConstraint.activate([
             iconButton.widthAnchor.constraint(equalToConstant: 60),
             iconButton.heightAnchor.constraint(equalToConstant: 60),
-            iconButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -AppSize.kGobalPadding),
-            iconButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -AppSize.kGobalPadding),
+            iconButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+            iconButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -AppSize.horizontalPadding),
 
             arrowIcon.centerXAnchor.constraint(equalTo: iconButton.centerXAnchor),
             arrowIcon.centerYAnchor.constraint(equalTo: iconButton.centerYAnchor),
 
-            summaryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppSize.kGobalPadding),
-            summaryLabel.bottomAnchor.constraint(equalTo: iconButton.topAnchor),
+            summaryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppSize.horizontalPadding),
+            summaryLabel.bottomAnchor.constraint(equalTo: iconButton.topAnchor, constant: -15),
 
-            captionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppSize.kGobalPadding),
+            captionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppSize.horizontalPadding),
             captionLabel.bottomAnchor.constraint(equalTo: summaryLabel.topAnchor, constant: -8),
         ])
     }

@@ -23,10 +23,6 @@ class OnBoardingView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: DEVICE_WIDTH, height: 200)
-    }
 }
 
 extension OnBoardingView {
@@ -40,11 +36,13 @@ extension OnBoardingView {
 
     public func layout() {
         NSLayoutConstraint.activate([
-            headerView.topAnchor.constraint(equalTo: topAnchor, constant: AppSize.kGobalPadding),
-            headerView.leadingAnchor.constraint(equalTo: leadingAnchor),
-
+            headerView.topAnchor.constraint(equalTo: topAnchor, constant: AppSize.horizontalPadding),
+            headerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppSize.horizontalPadding),
+            headerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -AppSize.horizontalPadding),
+            
             footerView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            footerView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            footerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppSize.horizontalPadding),
+            footerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -AppSize.horizontalPadding),
         ])
     }
 }

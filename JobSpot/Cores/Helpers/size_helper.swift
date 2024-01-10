@@ -5,10 +5,10 @@
 //  Created by Enigma Kod on 29/11/2023.
 //
 
-import Foundation
+import UIKit
 
-let DEVICE_WIDTH = 390
 
 enum AppSize {
-    static let kGobalPadding: CGFloat = 16
+    static let horizontalPadding: CGFloat = 16
+    static let DEVICE_WIDTH = 390
 }

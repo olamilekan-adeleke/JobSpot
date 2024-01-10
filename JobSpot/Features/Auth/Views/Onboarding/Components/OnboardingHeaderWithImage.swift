@@ -24,9 +24,9 @@ class OnboardingHeaderWithImage: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override var intrinsicContentSize: CGSize {
-        CGSize(width: DEVICE_WIDTH, height: 200)
-    }
+//    override var intrinsicContentSize: CGSize {
+//        CGSize(width: DEVICE_WIDTH, height: 200)
+//    }
 }
 
 extension OnboardingHeaderWithImage {

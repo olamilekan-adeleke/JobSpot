@@ -43,9 +43,9 @@ extension LoginView {
 
         NSLayoutConstraint.activate([
             vStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            vStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -AppSize.kGobalPadding),
-            vStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppSize.kGobalPadding),
-            vStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -AppSize.kGobalPadding),
+            vStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -AppSize.horizontalPadding),
+            vStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppSize.horizontalPadding),
+            vStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -AppSize.horizontalPadding),
         ])
     }
 }
