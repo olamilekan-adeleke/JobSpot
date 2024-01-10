@@ -37,7 +37,6 @@ extension HomeHeaderView {
 
         userImage.backgroundColor = .yellow
         userImage.layer.cornerRadius = 40.h() / 2
-//        userImage.image = userImage.image?.roundedCornerImage(with: 40 / 2)
         userImage.image = UIImage(named: "person")
         userImage.clipsToBounds = true
         userImage.contentMode = .scaleAspectFill
