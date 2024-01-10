@@ -18,7 +18,7 @@ struct AppSize {
     
     static var horizontalPadding: CGFloat { 16 }
     
-    mutating func setup(withReferenceWidth referenceWidth: CGFloat, withReferenceHeight referenceHeight: CGFloat) {
+    mutating func setup(width referenceWidth: CGFloat, height referenceHeight: CGFloat) {
         self.referenceWidth = referenceWidth
         self.referenceHeight = referenceHeight
     }
