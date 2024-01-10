@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomImageView: UIImageView {
+class ImageView: UIImageView {
     var customImageName: String? {
         didSet {
             if let imageName = customImageName {

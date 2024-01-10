@@ -21,7 +21,7 @@ extension ResetPasswordVC {
         view.backgroundColor = .white
 
         view.addSubview(bodyView)
-        bodyView.pinEdges(to: view)
+        bodyView.pinToEdges(to: view)
     }
 }
 

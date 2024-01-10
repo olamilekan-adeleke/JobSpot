@@ -21,7 +21,7 @@ extension ForgotPasswordVC {
         view.addSubview(bodyView)
         view.backgroundColor = .white
 
-        bodyView.pinEdges(to: view)
+        bodyView.pinToEdges(to: view)
     }
 }
 

@@ -62,7 +62,7 @@ extension LoginButtonsView {
     }
 
     @objc private func loginWithEmail() {
-        pushToVc(vc: ForgotPasswordVC())
+        pushToVc(vc: HomeVC())
     }
 
     @objc private func loginWithGoogle() {}

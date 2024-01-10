@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		39011ABA2B174E53002056C0 /* size_helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39011AB92B174E53002056C0 /* size_helper.swift */; };
-		39011ABC2B175095002056C0 /* image_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39011ABB2B175095002056C0 /* image_view.swift */; };
 		39011ABE2B17A0B6002056C0 /* OnboardingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39011ABD2B17A0B6002056C0 /* OnboardingFooterView.swift */; };
 		39106BD52B24E26D009BDA0C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BD42B24E26D009BDA0C /* UIViewController+Extension.swift */; };
-		39106BDB2B24E95A009BDA0C /* TextViewCnntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BDA2B24E95A009BDA0C /* TextViewCnntroller.swift */; };
 		39106BDE2B24EA08009BDA0C /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BDD2B24EA08009BDA0C /* CustomStackView.swift */; };
 		39106BEA2B253DC9009BDA0C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BE92B253DC9009BDA0C /* String+Extension.swift */; };
 		39106BED2B25B814009BDA0C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BEC2B25B814009BDA0C /* UITextField+Extension.swift */; };
@@ -36,6 +34,17 @@
 		394595D02B4AD0CC0097CF7F /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595CF2B4AD0CC0097CF7F /* BaseButton.swift */; };
 		394595D22B4C51F80097CF7F /* BaseButton+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595D12B4C51F80097CF7F /* BaseButton+ViewModel.swift */; };
 		394595D42B4C52600097CF7F /* BaseButton+Emun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595D32B4C52600097CF7F /* BaseButton+Emun.swift */; };
+		395FD6972B4F44F7006C539C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395FD6962B4F44F7006C539C /* UIImage+Extension.swift */; };
+		3974C3DE2B4EE1A800079530 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3DD2B4EE1A800079530 /* CGFloat+Extension.swift */; };
+		3974C3E02B4EE30100079530 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3DF2B4EE30100079530 /* Double+Extension.swift */; };
+		3974C3E22B4EE38100079530 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3E12B4EE38100079530 /* Int+Extension.swift */; };
+		3974C3E72B4EEAD400079530 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3E62B4EEAD400079530 /* HomeVC.swift */; };
+		3974C3E92B4EEAEA00079530 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3E82B4EEAEA00079530 /* HomeView.swift */; };
+		3974C3EC2B4EFBA400079530 /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3EB2B4EFBA400079530 /* ScrollableStackView.swift */; };
+		3974C3EE2B4EFF6F00079530 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3ED2B4EFF6F00079530 /* HomeHeaderView.swift */; };
+		3974C3F02B4F0A0D00079530 /* HomeBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3EF2B4F0A0D00079530 /* HomeBannerView.swift */; };
+		3974C3F32B4F0A6A00079530 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3F22B4F0A6A00079530 /* BoxView.swift */; };
+		3974C3F62B4F0C0E00079530 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3F52B4F0C0E00079530 /* UIColor+Extension.swift */; };
 		398A78CE2B4C90D1009F6027 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A78CD2B4C90D0009F6027 /* ResetPasswordView.swift */; };
 		398A78D02B4C92C8009F6027 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A78CF2B4C92C8009F6027 /* ResetPasswordVC.swift */; };
 		398A78D22B4C975D009F6027 /* ResetPasswordHeaderWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A78D12B4C975D009F6027 /* ResetPasswordHeaderWidget.swift */; };
@@ -57,16 +66,14 @@
 		39FCC2D62A8807FB00A50A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39FCC2D52A8807FB00A50A7A /* Assets.xcassets */; };
 		39FCC2D92A8807FB00A50A7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39FCC2D72A8807FB00A50A7A /* LaunchScreen.storyboard */; };
 		39FCC2E32A880C6F00A50A7A /* SharedComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCC2E22A880C6F00A50A7A /* SharedComponent.swift */; };
-		39FCC2E72A880CF600A50A7A /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCC2E62A880CF600A50A7A /* HomeHeaderView.swift */; };
-		39FCC2E92A88174400A50A7A /* HomeBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCC2E82A88174400A50A7A /* HomeBannerView.swift */; };
+		39FCC2E72A880CF600A50A7A /* HomeHeaderViewg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCC2E62A880CF600A50A7A /* HomeHeaderViewg.swift */; };
+		39FCC2E92A88174400A50A7A /* HomeBannerViewd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCC2E82A88174400A50A7A /* HomeBannerViewd.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		39011AB92B174E53002056C0 /* size_helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = size_helper.swift; sourceTree = "<group>"; };
-		39011ABB2B175095002056C0 /* image_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_view.swift; sourceTree = "<group>"; };
 		39011ABD2B17A0B6002056C0 /* OnboardingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFooterView.swift; sourceTree = "<group>"; };
 		39106BD42B24E26D009BDA0C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		39106BDA2B24E95A009BDA0C /* TextViewCnntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewCnntroller.swift; sourceTree = "<group>"; };
 		39106BDD2B24EA08009BDA0C /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
 		39106BE92B253DC9009BDA0C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		39106BEC2B25B814009BDA0C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -91,6 +98,17 @@
 		394595CF2B4AD0CC0097CF7F /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		394595D12B4C51F80097CF7F /* BaseButton+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseButton+ViewModel.swift"; sourceTree = "<group>"; };
 		394595D32B4C52600097CF7F /* BaseButton+Emun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseButton+Emun.swift"; sourceTree = "<group>"; };
+		395FD6962B4F44F7006C539C /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		3974C3DD2B4EE1A800079530 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
+		3974C3DF2B4EE30100079530 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		3974C3E12B4EE38100079530 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		3974C3E62B4EEAD400079530 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		3974C3E82B4EEAEA00079530 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3974C3EB2B4EFBA400079530 /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
+		3974C3ED2B4EFF6F00079530 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		3974C3EF2B4F0A0D00079530 /* HomeBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerView.swift; sourceTree = "<group>"; };
+		3974C3F22B4F0A6A00079530 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
+		3974C3F52B4F0C0E00079530 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		398A78CD2B4C90D0009F6027 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		398A78CF2B4C92C8009F6027 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		398A78D12B4C975D009F6027 /* ResetPasswordHeaderWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordHeaderWidget.swift; sourceTree = "<group>"; };
@@ -114,8 +132,8 @@
 		39FCC2D82A8807FB00A50A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39FCC2DA2A8807FB00A50A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39FCC2E22A880C6F00A50A7A /* SharedComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedComponent.swift; sourceTree = "<group>"; };
-		39FCC2E62A880CF600A50A7A /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
-		39FCC2E82A88174400A50A7A /* HomeBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerView.swift; sourceTree = "<group>"; };
+		39FCC2E62A880CF600A50A7A /* HomeHeaderViewg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewg.swift; sourceTree = "<group>"; };
+		39FCC2E82A88174400A50A7A /* HomeBannerViewd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerViewd.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +158,8 @@
 		39106BD62B24E3D5009BDA0C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3974C3F12B4F0A5B00079530 /* Box */,
+				3974C3EA2B4EFB8900079530 /* ScrollableStack */,
 				39324BF72B4C80D70022D24C /* Image */,
 				394595CE2B4AD0AF0097CF7F /* Button */,
 				394595C92B4AC8250097CF7F /* Spacer */,
@@ -261,6 +281,9 @@
 		3941A48E2AFD3B3700FD5DFE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				395FD6952B4F44E1006C539C /* UIImage */,
+				3974C3F42B4F0BFA00079530 /* UIColor */,
+				3974C3DC2B4EE0F600079530 /* Numbers */,
 				39DE80632B49DFB00034F517 /* UIView */,
 				39DE805D2B49BBF40034F517 /* Publisher */,
 				39106BEB2B25B7FB009BDA0C /* UITextField */,
@@ -281,8 +304,8 @@
 		3941A4902AFD3C9000FD5DFE /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				3974C3DB2B4ECEA500079530 /* Home */,
 				3941A4912AFD3CB200FD5DFE /* Auth */,
-				39106BDA2B24E95A009BDA0C /* TextViewCnntroller.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -352,6 +375,83 @@
 				394595D32B4C52600097CF7F /* BaseButton+Emun.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		395FD6952B4F44E1006C539C /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				395FD6962B4F44F7006C539C /* UIImage+Extension.swift */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		3974C3DB2B4ECEA500079530 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3974C3E42B4EE96900079530 /* Views */,
+				3974C3E32B4EE96000079530 /* VC */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3974C3DC2B4EE0F600079530 /* Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				3974C3DD2B4EE1A800079530 /* CGFloat+Extension.swift */,
+				3974C3DF2B4EE30100079530 /* Double+Extension.swift */,
+				3974C3E12B4EE38100079530 /* Int+Extension.swift */,
+			);
+			path = Numbers;
+			sourceTree = "<group>";
+		};
+		3974C3E32B4EE96000079530 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				3974C3E62B4EEAD400079530 /* HomeVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		3974C3E42B4EE96900079530 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3974C3E52B4EE97800079530 /* Components */,
+				3974C3E82B4EEAEA00079530 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3974C3E52B4EE97800079530 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3974C3ED2B4EFF6F00079530 /* HomeHeaderView.swift */,
+				3974C3EF2B4F0A0D00079530 /* HomeBannerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3974C3EA2B4EFB8900079530 /* ScrollableStack */ = {
+			isa = PBXGroup;
+			children = (
+				3974C3EB2B4EFBA400079530 /* ScrollableStackView.swift */,
+			);
+			path = ScrollableStack;
+			sourceTree = "<group>";
+		};
+		3974C3F12B4F0A5B00079530 /* Box */ = {
+			isa = PBXGroup;
+			children = (
+				3974C3F22B4F0A6A00079530 /* BoxView.swift */,
+			);
+			path = Box;
+			sourceTree = "<group>";
+		};
+		3974C3F42B4F0BFA00079530 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				3974C3F52B4F0C0E00079530 /* UIColor+Extension.swift */,
+			);
+			path = UIColor;
 			sourceTree = "<group>";
 		};
 		398A78DA2B4C9DBA009F6027 /* BaseButtonExtension */ = {
@@ -459,7 +559,6 @@
 			children = (
 				39FCC2E22A880C6F00A50A7A /* SharedComponent.swift */,
 				3941A49B2AFD3EE900FD5DFE /* CustomLabels.swift */,
-				39011ABB2B175095002056C0 /* image_view.swift */,
 			);
 			path = SharedComponent;
 			sourceTree = "<group>";
@@ -486,8 +585,8 @@
 		39FCC2E52A880CBD00A50A7A /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				39FCC2E62A880CF600A50A7A /* HomeHeaderView.swift */,
-				39FCC2E82A88174400A50A7A /* HomeBannerView.swift */,
+				39FCC2E62A880CF600A50A7A /* HomeHeaderViewg.swift */,
+				39FCC2E82A88174400A50A7A /* HomeBannerViewd.swift */,
 				3991633B2A885840003A5343 /* HomeFindJobView.swift */,
 			);
 			path = SubViews;
@@ -564,19 +663,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				394595C42B4ABCF80097CF7F /* EmailTextField.swift in Sources */,
+				3974C3F62B4F0C0E00079530 /* UIColor+Extension.swift in Sources */,
+				3974C3F02B4F0A0D00079530 /* HomeBannerView.swift in Sources */,
 				398A78D22B4C975D009F6027 /* ResetPasswordHeaderWidget.swift in Sources */,
 				398A78D72B4C9BFF009F6027 /* CodeTextField.swift in Sources */,
+				3974C3E72B4EEAD400079530 /* HomeVC.swift in Sources */,
 				398A78D02B4C92C8009F6027 /* ResetPasswordVC.swift in Sources */,
+				3974C3E02B4EE30100079530 /* Double+Extension.swift in Sources */,
 				394595D42B4C52600097CF7F /* BaseButton+Emun.swift in Sources */,
 				393FBD8A2B49EEA800958F14 /* LoginButtonsView.swift in Sources */,
 				398A78D92B4C9C5B009F6027 /* CodeValidatable.swift in Sources */,
 				394595CD2B4ACEF00097CF7F /* PasswordTextField.swift in Sources */,
-				39FCC2E72A880CF600A50A7A /* HomeHeaderView.swift in Sources */,
+				39FCC2E72A880CF600A50A7A /* HomeHeaderViewg.swift in Sources */,
 				39DE80572B49BBA20034F517 /* FormValidationState.swift in Sources */,
 				39DE80592B49BBA20034F517 /* BaseValidatable.swift in Sources */,
 				39106BEA2B253DC9009BDA0C /* String+Extension.swift in Sources */,
 				3941A49A2AFD3EA600FD5DFE /* OnboardingHeaderWithImage.swift in Sources */,
 				393FBD882B49EE9D00958F14 /* LogicFormsView.swift in Sources */,
+				3974C3EC2B4EFBA400079530 /* ScrollableStackView.swift in Sources */,
 				39011ABE2B17A0B6002056C0 /* OnboardingFooterView.swift in Sources */,
 				3941A4982AFD3D4E00FD5DFE /* OnBoardingVC.swift in Sources */,
 				398A78CE2B4C90D1009F6027 /* ResetPasswordView.swift in Sources */,
@@ -586,30 +690,34 @@
 				39324BF02B4C73C90022D24C /* ForgotPasswordVC.swift in Sources */,
 				39FCC2D12A8807F900A50A7A /* HomeTabViewController.swift in Sources */,
 				39DE805A2B49BBA20034F517 /* BaseTextField+ViewModel.swift in Sources */,
-				39106BDB2B24E95A009BDA0C /* TextViewCnntroller.swift in Sources */,
+				3974C3EE2B4EFF6F00079530 /* HomeHeaderView.swift in Sources */,
 				394595C62B4ABD0C0097CF7F /* NameValidatable.swift in Sources */,
 				39DE805B2B49BBA20034F517 /* BaseTextField+Enum.swift in Sources */,
 				39DE80652B49DFC30034F517 /* UIView+Extension.swift in Sources */,
-				39011ABC2B175095002056C0 /* image_view.swift in Sources */,
 				398A78D42B4C99B3009F6027 /* ResetPasswordTextFieldAndButton.swift in Sources */,
 				39106BDE2B24EA08009BDA0C /* CustomStackView.swift in Sources */,
 				39DE805F2B49BC280034F517 /* Publisher+Extension.swift in Sources */,
 				3991633C2A885840003A5343 /* HomeFindJobView.swift in Sources */,
-				39FCC2E92A88174400A50A7A /* HomeBannerView.swift in Sources */,
+				39FCC2E92A88174400A50A7A /* HomeBannerViewd.swift in Sources */,
+				3974C3E22B4EE38100079530 /* Int+Extension.swift in Sources */,
 				39324BFB2B4C89CD0022D24C /* ForgotPasswordFieldsAndButton.swift in Sources */,
 				394595C82B4ABD190097CF7F /* PasswordValidatable.swift in Sources */,
+				3974C3E92B4EEAEA00079530 /* HomeView.swift in Sources */,
 				39FCC2E32A880C6F00A50A7A /* SharedComponent.swift in Sources */,
 				39DE80582B49BBA20034F517 /* EmailValidatable.swift in Sources */,
 				394595D22B4C51F80097CF7F /* BaseButton+ViewModel.swift in Sources */,
 				393FBD8C2B49EEB200958F14 /* LoginView.swift in Sources */,
 				39DE805C2B49BBA20034F517 /* BaseTextField.swift in Sources */,
 				3941A49C2AFD3EE900FD5DFE /* CustomLabels.swift in Sources */,
+				395FD6972B4F44F7006C539C /* UIImage+Extension.swift in Sources */,
+				3974C3DE2B4EE1A800079530 /* CGFloat+Extension.swift in Sources */,
 				394595CB2B4AC83B0097CF7F /* SpacerView.swift in Sources */,
 				39106BED2B25B814009BDA0C /* UITextField+Extension.swift in Sources */,
 				39DE80622B49CF110034F517 /* LoginVC.swift in Sources */,
 				39324BF42B4C7A540022D24C /* ForgetPasswordView.swift in Sources */,
 				39324BF62B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift in Sources */,
 				39011ABA2B174E53002056C0 /* size_helper.swift in Sources */,
+				3974C3F32B4F0A6A00079530 /* BoxView.swift in Sources */,
 				393FBD862B49EDCC00958F14 /* LoginHeaderView.swift in Sources */,
 				39FCC2CD2A8807F900A50A7A /* AppDelegate.swift in Sources */,
 				3941A4932AFD3CD700FD5DFE /* OnboardingView.swift in Sources */,

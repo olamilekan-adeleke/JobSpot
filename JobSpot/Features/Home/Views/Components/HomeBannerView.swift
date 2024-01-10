@@ -1,0 +1,69 @@
+//
+//  HomeBannerView.swift
+//  JobSpot
+//
+//  Created by Enigma Kod on 10/01/2024.
+//
+
+import UIKit
+
+class HomeBannerView: UIView {
+    private let boxView = BoxView()
+    private let messageLabel = Label(type: .thin, str: "50% off \ntake any courses")
+    private let joinButton = BaseButton(viewModel: .init(type: .tertiary, title: "Join Now"))
+    private let vStack = stackView(axis: .vertical)
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        style()
+        layout()
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension HomeBannerView {
+    private func style() {
+        translatesAutoresizingMaskIntoConstraints = false
+
+        boxView.translatesAutoresizingMaskIntoConstraints = false
+        boxView.backgroundColor = UIColor.AppColor.appPrimaryColor
+        boxView.layer.cornerRadius = 6
+
+        messageLabel.textColor = UIColor.white
+        messageLabel.numberOfLines = 2
+        messageLabel.font = .systemFont(ofSize: 18, weight: .regular)
+//        messageLabel.
+    }
+
+    private func layout() {
+        vStack.alignment = .center
+
+        vStack.addArrangedSubview(messageLabel)
+
+        vStack.setCustomSpacing(18, after: messageLabel)
+        vStack.addArrangedSubview(joinButton)
+
+        boxView.addSubview(vStack)
+
+        addSubview(boxView)
+        NSLayoutConstraint.activate([
+            boxView.heightAnchor.constraint(equalToConstant: 143.h()),
+            boxView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            boxView.trailingAnchor.constraint(equalTo: trailingAnchor),
+        ])
+
+        NSLayoutConstraint.activate([
+            vStack.topAnchor.constraint(equalTo: boxView.topAnchor, constant: 24),
+            vStack.leadingAnchor.constraint(equalTo: boxView.leadingAnchor, constant: 16),
+
+            joinButton.widthAnchor.constraint(equalToConstant: 90),
+            joinButton.heightAnchor.constraint(equalToConstant: 27),
+//            joinButton.leadingAnchor.constraint(equalTo: vStack.leadingAnchor),
+        ])
+    }
+}

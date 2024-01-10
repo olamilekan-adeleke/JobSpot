@@ -10,7 +10,7 @@ import UIKit
 final class LogicFormsView: UIView {
     let emailTextField = EmailTextField()
     let passwordTextField = PasswordTextField()
-    let forgotPasswordText = Label(type: .regular)
+    @objc let forgotPasswordText = Label(type: .regular)
     let vStack = stackView(spacing: 15)
 
     override init(frame: CGRect) {
@@ -27,7 +27,7 @@ final class LogicFormsView: UIView {
 }
 
 extension LogicFormsView {
-    public func style() {
+    private func style() {
         translatesAutoresizingMaskIntoConstraints = false
 
         let textString = NSMutableAttributedString(string: "Forgot Password ?", attributes: [
@@ -38,9 +38,13 @@ extension LogicFormsView {
         ])
         forgotPasswordText.attributedText = textString
         forgotPasswordText.textAlignment = .right
+        forgotPasswordText.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(forgotPasswordTapped))
+        )
+        forgotPasswordText.isUserInteractionEnabled = true
     }
 
-    public func layout() {
+    private func layout() {
         vStack.addArrangedSubview(emailTextField)
         vStack.addArrangedSubview(passwordTextField)
         vStack.addArrangedSubview(forgotPasswordText)
@@ -53,5 +57,9 @@ extension LogicFormsView {
             vStack.bottomAnchor.constraint(equalTo: bottomAnchor),
             trailingAnchor.constraint(equalTo: vStack.trailingAnchor),
         ])
+    }
+
+    @objc func forgotPasswordTapped() {
+        pushToVc(vc: ForgotPasswordVC())
     }
 }
