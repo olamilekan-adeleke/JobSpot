@@ -8,7 +8,7 @@
 import UIKit
 
 struct AppSize {
-    static let shared = AppSize()
+    static var shared = AppSize()
     
     private var DEVICE_WIDTH: CGFloat { UIScreen.main.bounds.width }
     private var DEVICE_HEIGHT: CGFloat { UIScreen.main.bounds.height }

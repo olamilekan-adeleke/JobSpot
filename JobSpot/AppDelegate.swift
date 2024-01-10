@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = .black
         
         // Setup AppSize
-        AppSize.shared.setup(withReferenceWidth: 375, withReferenceHeight: 812)
+        AppSize.shared.setup(width: 375, height: 812)
 
         return true
     }
