@@ -18,6 +18,9 @@ final class HomeVC: UIViewController {
 
 extension HomeVC {
     private func layout() {
+        navigationItem.setHidesBackButton(true, animated: true)
+        view.backgroundColor = .white
+        
         view.addSubview(homeBody)
         homeBody.pinToEdges(to: view)
     }

@@ -19,8 +19,9 @@ extension BaseButton {
 
         var backgroundColor: UIColor {
             switch type {
-                case .primary: return UIColor(red: 0.07, green: 0, blue: 0.38, alpha: 1)
+                case .primary: return UIColor.AppColor.appPrimaryColor
                 case .secondary: return UIColor(red: 0.839, green: 0.804, blue: 0.996, alpha: 1)
+                case .tertiary: return UIColor.AppColor.appTertiaryColor
             }
         }
 
@@ -28,6 +29,7 @@ extension BaseButton {
             switch type {
                 case .primary: return UIColor.white
                 case .secondary: return UIColor.black
+                case .tertiary: return UIColor.white
             }
         }
     }

@@ -8,5 +8,5 @@
 import Foundation
 
 extension BaseButton {
-    enum ButtonType { case primary, secondary }
+    enum ButtonType { case primary, secondary, tertiary }
 }

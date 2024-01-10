@@ -36,7 +36,8 @@ extension HomeHeaderView {
         greetingLabel.numberOfLines = 0
 
         userImage.backgroundColor = .yellow
-        userImage.layer.cornerRadius = 42 / 2
+        userImage.layer.cornerRadius = 40.h() / 2
+//        userImage.image = userImage.image?.roundedCornerImage(with: 40 / 2)
         userImage.image = UIImage(named: "person")
         userImage.clipsToBounds = true
         userImage.contentMode = .scaleAspectFill
@@ -53,9 +54,10 @@ extension HomeHeaderView {
             hStack.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             hStack.leadingAnchor.constraint(equalTo: leadingAnchor),
             hStack.trailingAnchor.constraint(equalTo: trailingAnchor),
+            hStack.bottomAnchor.constraint(equalTo: bottomAnchor),
 
-            userImage.heightAnchor.constraint(equalToConstant: 42.h()),
-            userImage.widthAnchor.constraint(equalToConstant: 42.w()),
+            userImage.heightAnchor.constraint(equalToConstant: 40.h()),
+            userImage.widthAnchor.constraint(equalToConstant: 40.h()),
         ])
     }
 }

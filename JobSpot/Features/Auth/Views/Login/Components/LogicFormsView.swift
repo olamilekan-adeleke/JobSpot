@@ -41,6 +41,7 @@ extension LogicFormsView {
         forgotPasswordText.addGestureRecognizer(
             UITapGestureRecognizer(target: self, action: #selector(forgotPasswordTapped))
         )
+        forgotPasswordText.isUserInteractionEnabled = true
     }
 
     private func layout() {
