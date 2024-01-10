@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootVc
 
         UINavigationBar.appearance().tintColor = .black
+        
+        // Setup AppSize
+        AppSize.shared.setup(withReferenceWidth: 375, withReferenceHeight: 812)
 
         return true
     }

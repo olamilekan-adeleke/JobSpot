@@ -36,6 +36,9 @@
 		394595D02B4AD0CC0097CF7F /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595CF2B4AD0CC0097CF7F /* BaseButton.swift */; };
 		394595D22B4C51F80097CF7F /* BaseButton+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595D12B4C51F80097CF7F /* BaseButton+ViewModel.swift */; };
 		394595D42B4C52600097CF7F /* BaseButton+Emun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394595D32B4C52600097CF7F /* BaseButton+Emun.swift */; };
+		3974C3DE2B4EE1A800079530 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3DD2B4EE1A800079530 /* CGFloat+Extension.swift */; };
+		3974C3E02B4EE30100079530 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3DF2B4EE30100079530 /* Double+Extension.swift */; };
+		3974C3E22B4EE38100079530 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3E12B4EE38100079530 /* Int+Extension.swift */; };
 		398A78CE2B4C90D1009F6027 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A78CD2B4C90D0009F6027 /* ResetPasswordView.swift */; };
 		398A78D02B4C92C8009F6027 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A78CF2B4C92C8009F6027 /* ResetPasswordVC.swift */; };
 		398A78D22B4C975D009F6027 /* ResetPasswordHeaderWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398A78D12B4C975D009F6027 /* ResetPasswordHeaderWidget.swift */; };
@@ -91,6 +94,9 @@
 		394595CF2B4AD0CC0097CF7F /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		394595D12B4C51F80097CF7F /* BaseButton+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseButton+ViewModel.swift"; sourceTree = "<group>"; };
 		394595D32B4C52600097CF7F /* BaseButton+Emun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseButton+Emun.swift"; sourceTree = "<group>"; };
+		3974C3DD2B4EE1A800079530 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
+		3974C3DF2B4EE30100079530 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		3974C3E12B4EE38100079530 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		398A78CD2B4C90D0009F6027 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		398A78CF2B4C92C8009F6027 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		398A78D12B4C975D009F6027 /* ResetPasswordHeaderWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordHeaderWidget.swift; sourceTree = "<group>"; };
@@ -261,6 +267,7 @@
 		3941A48E2AFD3B3700FD5DFE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3974C3DC2B4EE0F600079530 /* Numbers */,
 				39DE80632B49DFB00034F517 /* UIView */,
 				39DE805D2B49BBF40034F517 /* Publisher */,
 				39106BEB2B25B7FB009BDA0C /* UITextField */,
@@ -360,6 +367,16 @@
 			children = (
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		3974C3DC2B4EE0F600079530 /* Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				3974C3DD2B4EE1A800079530 /* CGFloat+Extension.swift */,
+				3974C3DF2B4EE30100079530 /* Double+Extension.swift */,
+				3974C3E12B4EE38100079530 /* Int+Extension.swift */,
+			);
+			path = Numbers;
 			sourceTree = "<group>";
 		};
 		398A78DA2B4C9DBA009F6027 /* BaseButtonExtension */ = {
@@ -575,6 +592,7 @@
 				398A78D22B4C975D009F6027 /* ResetPasswordHeaderWidget.swift in Sources */,
 				398A78D72B4C9BFF009F6027 /* CodeTextField.swift in Sources */,
 				398A78D02B4C92C8009F6027 /* ResetPasswordVC.swift in Sources */,
+				3974C3E02B4EE30100079530 /* Double+Extension.swift in Sources */,
 				394595D42B4C52600097CF7F /* BaseButton+Emun.swift in Sources */,
 				393FBD8A2B49EEA800958F14 /* LoginButtonsView.swift in Sources */,
 				398A78D92B4C9C5B009F6027 /* CodeValidatable.swift in Sources */,
@@ -604,6 +622,7 @@
 				39DE805F2B49BC280034F517 /* Publisher+Extension.swift in Sources */,
 				3991633C2A885840003A5343 /* HomeFindJobView.swift in Sources */,
 				39FCC2E92A88174400A50A7A /* HomeBannerView.swift in Sources */,
+				3974C3E22B4EE38100079530 /* Int+Extension.swift in Sources */,
 				39324BFB2B4C89CD0022D24C /* ForgotPasswordFieldsAndButton.swift in Sources */,
 				394595C82B4ABD190097CF7F /* PasswordValidatable.swift in Sources */,
 				39FCC2E32A880C6F00A50A7A /* SharedComponent.swift in Sources */,
@@ -612,6 +631,7 @@
 				393FBD8C2B49EEB200958F14 /* LoginView.swift in Sources */,
 				39DE805C2B49BBA20034F517 /* BaseTextField.swift in Sources */,
 				3941A49C2AFD3EE900FD5DFE /* CustomLabels.swift in Sources */,
+				3974C3DE2B4EE1A800079530 /* CGFloat+Extension.swift in Sources */,
 				394595CB2B4AC83B0097CF7F /* SpacerView.swift in Sources */,
 				39106BED2B25B814009BDA0C /* UITextField+Extension.swift in Sources */,
 				39DE80622B49CF110034F517 /* LoginVC.swift in Sources */,
