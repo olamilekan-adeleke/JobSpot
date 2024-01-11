@@ -43,7 +43,7 @@ extension HomeBannerView {
 //        messageLabel.
         
 //        imageView.backgroundColor = .yellow
-        imageView.contentMode = .center
+        imageView.contentMode = .scaleAspectFit
         
     }
 
@@ -78,7 +78,8 @@ extension HomeBannerView {
             
             imageView.trailingAnchor.constraint(equalTo: boxView.trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: boxView.bottomAnchor),
-//            imageView.heightAnchor.constraint(equalToConstant: 173)
+            imageView.heightAnchor.constraint(equalToConstant: 173),
+            imageView.widthAnchor.constraint(equalToConstant: 156),
         ])
     }
 }
