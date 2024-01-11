@@ -40,9 +40,7 @@ extension HomeBannerView {
         messageLabel.textColor = UIColor.white
         messageLabel.numberOfLines = 2
         messageLabel.font = .systemFont(ofSize: 18, weight: .regular)
-//        messageLabel.
         
-//        imageView.backgroundColor = .yellow
         imageView.contentMode = .scaleAspectFit
         
     }
@@ -54,9 +52,6 @@ extension HomeBannerView {
 
         vStack.setCustomSpacing(18, after: messageLabel)
         vStack.addArrangedSubview(joinButton)
-
-//        hStack.addArrangedSubview(vStack)
-//        hStack.addArrangedSubview(imageView)
 
         boxView.addSubview(vStack)
 
@@ -74,7 +69,6 @@ extension HomeBannerView {
 
             joinButton.widthAnchor.constraint(equalToConstant: 90),
             joinButton.heightAnchor.constraint(equalToConstant: 27),
-//            joinButton.leadingAnchor.constraint(equalTo: vStack.leadingAnchor),
             
             imageView.trailingAnchor.constraint(equalTo: boxView.trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: boxView.bottomAnchor),
