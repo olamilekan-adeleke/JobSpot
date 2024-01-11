@@ -33,7 +33,7 @@ extension HomeView {
     private func layout() {
         vScrollableStack.add(view: headerView)
         
-        vScrollableStack.setCustomSpacing(24, after: headerView)
+        vScrollableStack.setCustomSpacing(10, after: headerView)
         vScrollableStack.add(view: homeBanner)
 
         addSubview(vScrollableStack)
