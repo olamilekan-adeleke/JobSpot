@@ -40,9 +40,8 @@ extension HomeBannerView {
         messageLabel.textColor = UIColor.white
         messageLabel.numberOfLines = 2
         messageLabel.font = .systemFont(ofSize: 18, weight: .regular)
-        
+
         imageView.contentMode = .scaleAspectFit
-        
     }
 
     private func layout() {
@@ -61,6 +60,7 @@ extension HomeBannerView {
             boxView.heightAnchor.constraint(equalToConstant: 113.h()),
             boxView.leadingAnchor.constraint(equalTo: leadingAnchor),
             boxView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            heightAnchor.constraint(equalTo: boxView.heightAnchor, constant: 30),
         ])
 
         NSLayoutConstraint.activate([
@@ -69,7 +69,7 @@ extension HomeBannerView {
 
             joinButton.widthAnchor.constraint(equalToConstant: 90),
             joinButton.heightAnchor.constraint(equalToConstant: 27),
-            
+
             imageView.trailingAnchor.constraint(equalTo: boxView.trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: boxView.bottomAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 173),
