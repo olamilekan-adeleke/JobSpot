@@ -9,8 +9,10 @@ import UIKit
 
 final class HomeRecentJobListView: UIView {
     private let header = Label(type: .bold, str: "Recent Job List")
+    private let jobOption = JobOptionsView()
+
 //    private let tableListView = TableView()
-    private let tableListView = TextView()
+//    private let tableListView = TextView()
     private let vStack = stackView()
 
     override init(frame: CGRect) {
@@ -19,8 +21,7 @@ final class HomeRecentJobListView: UIView {
         style()
         layout()
 
-        tableListView.view.backgroundColor = .red
-        vStack.backgroundColor = .yellow
+//        vStack.backgroundColor = .yellow
     }
 
     @available(*, unavailable)
@@ -37,9 +38,9 @@ extension HomeRecentJobListView {
 
     private func layout() {
         vStack.addArrangedSubview(header)
-        
+
         vStack.setCustomSpacing(15, after: header)
-        vStack.addArrangedSubview(tableListView.view)
+        vStack.addArrangedSubview(jobOption)
 
         addSubview(vStack)
         vStack.pinToEdges(to: self)
