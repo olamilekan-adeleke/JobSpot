@@ -9,7 +9,9 @@ import UIKit
 
 final class HomeRecentJobListView: UIView {
     private let header = Label(type: .bold, str: "Recent Job List")
-    private let jobOption = JobOptionsView()
+    private let jobOptionOne = JobOptionsView()
+    private let jobOptionTwo = JobOptionsView()
+    private let jobOptionThree = JobOptionsView()
 
 //    private let tableListView = TableView()
 //    private let tableListView = TextView()
@@ -40,7 +42,12 @@ extension HomeRecentJobListView {
         vStack.addArrangedSubview(header)
 
         vStack.setCustomSpacing(15, after: header)
-        vStack.addArrangedSubview(jobOption)
+        vStack.addArrangedSubview(jobOptionOne)
+        vStack.setCustomSpacing(10, after: jobOptionOne)
+        vStack.addArrangedSubview(jobOptionTwo)
+        vStack.setCustomSpacing(10, after: jobOptionTwo)
+        vStack.addArrangedSubview(jobOptionThree)
+        vStack.setCustomSpacing(10, after: jobOptionThree)
 
         addSubview(vStack)
         vStack.pinToEdges(to: self)

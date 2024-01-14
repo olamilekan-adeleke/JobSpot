@@ -30,6 +30,8 @@ final class HomeView: UIView {
 extension HomeView {
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
+        
+        vScrollableStack.showsVerticalScrollIndicator = false
     }
 
     private func layout() {
@@ -43,6 +45,9 @@ extension HomeView {
 
         vScrollableStack.setCustomSpacing(25, after: jobStatsView)
         vScrollableStack.add(view: homeRecentJobListView)
+        
+        vScrollableStack.setCustomSpacing(30, after: homeRecentJobListView)
+        vScrollableStack.add(view: UIView())
 
         addSubview(vScrollableStack)
         vScrollableStack.pinToEdgesWithHorizontalPadding(to: self)
