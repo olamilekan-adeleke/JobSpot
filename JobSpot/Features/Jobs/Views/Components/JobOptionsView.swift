@@ -23,6 +23,10 @@ class JobOptionsView: UIView {
     private let tagTwo = TagView(title: "Full time")
     private let tagThree = TagView(title: "Senior designer")
 
+    private let hTimeAndAmountStack = stackView(axis: .horizontal)
+    private let timestampLabel = Label(type: .thin)
+    private let amountLabel = Label(type: .thin)
+
     private let vStack = stackView()
 
     override init(frame: CGRect) {
@@ -43,21 +47,36 @@ class JobOptionsView: UIView {
         vStack.layer.cornerRadius = 20
         vStack.backgroundColor = .white
 
-        hHeaderStack.alignment = .top
+        hHeaderStack.alignment = .center
 
-        companyImageView.backgroundColor = .yellow
+        companyImageView.backgroundColor = .gray.withAlphaComponent(0.2)
         companyImageView.layer.cornerRadius = 38.h() / 2
 
         jobTitle.font = .systemFont(ofSize: 13, weight: .bold)
 
         saveIconView.contentMode = .scaleAspectFit
-        saveIconView.tintColor = .black
+        saveIconView.tintColor = .black.withAlphaComponent(0.5)
 
         descriptionLabel.numberOfLines = 2
         descriptionLabel.font = .systemFont(ofSize: 14, weight: .regular)
         descriptionLabel.text = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam"
         descriptionLabel.numberOfLines = 2
         descriptionLabel.textColor = Config.lightTextColor
+
+        timestampLabel.text = "25 minute ago"
+        timestampLabel.font = .systemFont(ofSize: 10, weight: .light)
+        timestampLabel.textColor = .secondaryLabel
+
+        let firstString = NSMutableAttributedString(string: "$15K", attributes: [
+            .font: UIFont.systemFont(ofSize: 12, weight: .bold),
+        ])
+        let secondString = NSAttributedString(string: "/Mo", attributes: [
+            .font: UIFont.systemFont(ofSize: 10, weight: .regular),
+            .foregroundColor: UIColor.black.withAlphaComponent(0.5),
+        ])
+        
+        firstString.append(secondString)
+        amountLabel.attributedText = firstString
     }
 
     private func layout() {
@@ -79,8 +98,8 @@ class JobOptionsView: UIView {
         hHeaderStack.addArrangedSubview(saveIconView)
         saveIconView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         NSLayoutConstraint.activate([
-            saveIconView.heightAnchor.constraint(equalToConstant: 20.h()),
-            saveIconView.widthAnchor.constraint(equalToConstant: 20.h()),
+            saveIconView.heightAnchor.constraint(equalToConstant: 15.h()),
+            saveIconView.widthAnchor.constraint(equalToConstant: 15.h()),
         ])
 
         vStack.addArrangedSubview(hHeaderStack)
@@ -97,6 +116,11 @@ class JobOptionsView: UIView {
         hTagStack.addArrangedSubview(tagTwo)
         hTagStack.addArrangedSubview(tagThree)
         vStack.addArrangedSubview(hTagStack)
+
+        vStack.setCustomSpacing(20, after: hTagStack)
+        hTimeAndAmountStack.addArrangedSubview(timestampLabel)
+        hTimeAndAmountStack.addArrangedSubview(amountLabel)
+        vStack.addArrangedSubview(hTimeAndAmountStack)
 
         addSubview(vStack)
         NSLayoutConstraint.activate([
@@ -140,7 +164,8 @@ private final class TagView: UIView {
         boxView.layer.cornerRadius = 8
         boxView.layoutMargins = UIEdgeInsets(top: 6, left: 21, bottom: 21, right: 6)
 
-        title.font = .systemFont(ofSize: 12, weight: .regular)
+        title.font = .systemFont(ofSize: 12, weight: .light)
+        title.textColor = .black.withAlphaComponent(0.8)
     }
 
     private func layout() {
@@ -151,7 +176,7 @@ private final class TagView: UIView {
             boxView.heightAnchor.constraint(equalToConstant: 26),
             title.centerXAnchor.constraint(equalTo: centerXAnchor),
             title.centerYAnchor.constraint(equalTo: centerYAnchor),
-            
+
             boxView.widthAnchor.constraint(equalToConstant: 82),
 
             boxView.leadingAnchor.constraint(equalTo: leadingAnchor),
