@@ -51,13 +51,11 @@ class JobOptionsView: UIView {
 
         companyImageView.backgroundColor = .gray.withAlphaComponent(0.08)
         companyImageView.layer.cornerRadius = 38.h() / 2
-        companyImageView.layoutMargins = UIEdgeInsets(top: -7, left: -7, bottom: -7, right: -7)
-        companyImageView.image = UIImage(named: "google_icon")
+//        companyImageView.layoutMargins = UIEdgeInsets(top: -7, left: -7, bottom: -7, right: -7)
+//        companyImageView.image = UIImage(named: "google_icon")
 //        companyImageView.layout
-//        companyImageView.image = UIImage(named: "google_icon")?.withAlignmentRectInsets(
-//            UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5)
-//        )
-        companyImageView.contentMode = .scaleAspectFit
+        companyImageView.image = UIImage(named: "google_icon")?.imageWithInsets(insetDimen: 10)
+        companyImageView.contentMode = .scaleAspectFill
 
         jobTitle.font = .systemFont(ofSize: 13, weight: .bold)
 
