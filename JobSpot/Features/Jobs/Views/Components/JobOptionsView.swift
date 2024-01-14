@@ -51,9 +51,6 @@ class JobOptionsView: UIView {
 
         companyImageView.backgroundColor = .gray.withAlphaComponent(0.08)
         companyImageView.layer.cornerRadius = 38.h() / 2
-//        companyImageView.layoutMargins = UIEdgeInsets(top: -7, left: -7, bottom: -7, right: -7)
-//        companyImageView.image = UIImage(named: "google_icon")
-//        companyImageView.layout
         companyImageView.image = UIImage(named: "google_icon")?.imageWithInsets(insetDimen: 10)
         companyImageView.contentMode = .scaleAspectFill
 
