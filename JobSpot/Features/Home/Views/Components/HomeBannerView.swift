@@ -11,7 +11,8 @@ class HomeBannerView: UIView {
     private let boxView = BoxView()
 
     private let messageLabel = Label(type: .thin, str: "50% off \ntake any courses")
-    private let joinButton = BaseButton(viewModel: .init(type: .tertiary, title: "Join Now"))
+    private let joinButton = BoxView() // BaseButton(viewModel: .init(type: .tertiary, title: "Join Now"))
+    private let joinNowLabel = Label(type: .thin)
     private let vStack = stackView(axis: .vertical)
 
     private let imageView = ImageView(image: UIImage(named: "banner_lady"))
@@ -37,6 +38,13 @@ extension HomeBannerView {
         boxView.backgroundColor = UIColor.AppColor.appPrimaryColor
         boxView.layer.cornerRadius = 6
 
+        joinButton.backgroundColor = UIColor.AppColor.appTertiaryColor
+        joinButton.layer.cornerRadius = 6
+
+        joinNowLabel.text = "Join Now"
+        joinNowLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        joinNowLabel.textColor = .white
+
         messageLabel.textColor = UIColor.white
         messageLabel.numberOfLines = 2
         messageLabel.font = .systemFont(ofSize: 18, weight: .regular)
@@ -50,6 +58,11 @@ extension HomeBannerView {
         vStack.addArrangedSubview(messageLabel)
 
         vStack.setCustomSpacing(18, after: messageLabel)
+        joinButton.addSubview(joinNowLabel)
+        NSLayoutConstraint.activate([
+            joinNowLabel.centerXAnchor.constraint(equalTo: joinButton.centerXAnchor),
+            joinNowLabel.centerYAnchor.constraint(equalTo: joinButton.centerYAnchor),
+        ])
         vStack.addArrangedSubview(joinButton)
 
         boxView.addSubview(vStack)
