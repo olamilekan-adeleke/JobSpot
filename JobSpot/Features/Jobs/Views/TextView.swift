@@ -8,7 +8,7 @@
 import SwiftUI
 import UIKit
 
-class TextView: UIView, UITableViewDelegate, UITableViewDataSource {
+class TextView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let tableview: UITableView = {
         let tv = UITableView()
         tv.backgroundColor = UIColor.white
@@ -17,17 +17,23 @@ class TextView: UIView, UITableViewDelegate, UITableViewDataSource {
         return tv
     }()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.translatesAutoresizingMaskIntoConstraints = false
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        self.translatesAutoresizingMaskIntoConstraints = false
+//
+//        setupTableView()
+//    }
+
+    override func viewDidLoad() {
+//        view.translatesAutoresizingMaskIntoConstraints = false
 
         setupTableView()
     }
 
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    @available(*, unavailable)
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 
     func setupTableView() {
 //        tableview.isScrollEnabled = false
@@ -36,13 +42,18 @@ class TextView: UIView, UITableViewDelegate, UITableViewDataSource {
 
         tableview.register(ThirtyDayCell.self, forCellReuseIdentifier: "cellId")
 
-        addSubview(tableview)
-
+//        addSubview(tableview)
+        view.addSubview(tableview)
         NSLayoutConstraint.activate([
-            tableview.topAnchor.constraint(equalTo: topAnchor),
-            tableview.bottomAnchor.constraint(equalTo: bottomAnchor),
-            tableview.rightAnchor.constraint(equalTo: rightAnchor),
-            tableview.leftAnchor.constraint(equalTo: leftAnchor)
+            tableview.topAnchor.constraint(equalTo: view.topAnchor),
+            tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableview.rightAnchor.constraint(equalTo: view.rightAnchor),
+            tableview.leftAnchor.constraint(equalTo: view.leftAnchor),
+
+//            tableview.topAnchor.constraint(equalTo: topAnchor),
+//            tableview.bottomAnchor.constraint(equalTo: bottomAnchor),
+//            tableview.rightAnchor.constraint(equalTo: rightAnchor),
+//            tableview.leftAnchor.constraint(equalTo: leftAnchor)
         ])
     }
 
@@ -53,7 +64,7 @@ class TextView: UIView, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! ThirtyDayCell
         cell.backgroundColor = UIColor.white
-        cell.textLabel?.text = "Row \(indexPath.row)"
+        cell.textLabel?.text = "Row \(indexPath.row + 1)"
         return cell
     }
 }
@@ -64,6 +75,7 @@ class ThirtyDayCell: UITableViewCell {
 
         heightAnchor.constraint(equalToConstant: 50).isActive = true
         self.selectionStyle = .none
+//        translatesAutoresizingMaskIntoConstraints = false
     }
 
     @available(*, unavailable)
@@ -72,16 +84,24 @@ class ThirtyDayCell: UITableViewCell {
     }
 }
 
-struct TextViewRepresentable: UIViewRepresentable {
+ struct TextViewRepresentable: UIViewRepresentable {
     func makeUIView(context: Context) -> some UIView {
-        return TextView()
+//        let vc = UIViewController()
+//        vc.view = TextView()
+        return TextView().view
     }
 
     func updateUIView(_ uiView: UIViewType, context: Context) {}
-}
-
-struct TextView_Preview: PreviewProvider {
+ }
+ struct TextView_Preview: PreviewProvider {
     static var previews: some View {
         return TextViewRepresentable()
     }
-}
+ }
+
+//struct TextProvider_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let vc = TextView()
+//        return vc.showPreview()
+//    }
+//}
