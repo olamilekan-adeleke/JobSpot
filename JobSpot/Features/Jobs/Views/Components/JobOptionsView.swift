@@ -18,7 +18,7 @@ class JobOptionsView: UIView {
 
     private let descriptionLabel = Label(type: .regular)
 
-    private let hTagStack = stackView(axis: .horizontal)
+    private let hTagStack = stackView(axis: .horizontal, spacing: 10)
     private let tagOne = TagView(title: "Design")
     private let tagTwo = TagView(title: "Full time")
     private let tagThree = TagView(title: "Senior designer")
@@ -92,12 +92,11 @@ class JobOptionsView: UIView {
         vStack.addArrangedSubview(descriptionLabel)
 
         vStack.setCustomSpacing(15, after: descriptionLabel)
+        hTagStack.distribution = .fillProportionally
         hTagStack.addArrangedSubview(tagOne)
         hTagStack.addArrangedSubview(tagTwo)
         hTagStack.addArrangedSubview(tagThree)
         vStack.addArrangedSubview(hTagStack)
-        
-        
 
         addSubview(vStack)
         NSLayoutConstraint.activate([
@@ -137,13 +136,11 @@ private final class TagView: UIView {
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
 
-        boxView.backgroundColor = UIColor(red: 0.796, green: 0.788, blue: 0.831, alpha: 1)
-//        boxView.backgroundColor = .red
+        boxView.backgroundColor = UIColor(rgb: 0xCBC9D4).withAlphaComponent(0.15)
         boxView.layer.cornerRadius = 8
         boxView.layoutMargins = UIEdgeInsets(top: 6, left: 21, bottom: 21, right: 6)
-//        boxView.isLayoutMarginsRelativeArrangement = true
 
-        title.font = .systemFont(ofSize: 10, weight: .regular)
+        title.font = .systemFont(ofSize: 12, weight: .regular)
     }
 
     private func layout() {
@@ -155,10 +152,12 @@ private final class TagView: UIView {
             title.centerXAnchor.constraint(equalTo: centerXAnchor),
             title.centerYAnchor.constraint(equalTo: centerYAnchor),
             
-//            boxView.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            boxView.topAnchor.constraint(equalTo: topAnchor),
-//            boxView.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            boxView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            boxView.widthAnchor.constraint(equalToConstant: 82),
+
+            boxView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            boxView.topAnchor.constraint(equalTo: topAnchor),
+            boxView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            boxView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 }
