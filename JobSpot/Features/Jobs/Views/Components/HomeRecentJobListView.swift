@@ -9,9 +9,12 @@ import UIKit
 
 final class HomeRecentJobListView: UIView {
     private let header = Label(type: .bold, str: "Recent Job List")
-//    private let tableListView = TableView()
-    private let tableListView = TextView()
+    private let jobOptionOne = JobOptionsView()
+    private let jobOptionTwo = JobOptionsView()
+    private let jobOptionThree = JobOptionsView()
 
+//    private let tableListView = TableView()
+//    private let tableListView = TextView()
     private let vStack = stackView()
 
     override init(frame: CGRect) {
@@ -19,9 +22,8 @@ final class HomeRecentJobListView: UIView {
 
         style()
         layout()
-        
-//        tableListView.view.backgroundColor = .yellow
-        vStack.backgroundColor = .yellow
+
+//        vStack.backgroundColor = .yellow
     }
 
     @available(*, unavailable)
@@ -33,13 +35,19 @@ final class HomeRecentJobListView: UIView {
 extension HomeRecentJobListView {
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        tableListView.translatesAutoresizingMaskIntoConstraints = false
+//        tableListView?.translatesAutoresizingMaskIntoConstraints = false
     }
 
     private func layout() {
         vStack.addArrangedSubview(header)
+
         vStack.setCustomSpacing(15, after: header)
-        vStack.addArrangedSubview(tableListView)
+        vStack.addArrangedSubview(jobOptionOne)
+        vStack.setCustomSpacing(10, after: jobOptionOne)
+        vStack.addArrangedSubview(jobOptionTwo)
+        vStack.setCustomSpacing(10, after: jobOptionTwo)
+        vStack.addArrangedSubview(jobOptionThree)
+        vStack.setCustomSpacing(10, after: jobOptionThree)
 
         addSubview(vStack)
         vStack.pinToEdges(to: self)
