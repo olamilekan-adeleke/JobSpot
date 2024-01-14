@@ -49,8 +49,15 @@ class JobOptionsView: UIView {
 
         hHeaderStack.alignment = .center
 
-        companyImageView.backgroundColor = .gray.withAlphaComponent(0.2)
+        companyImageView.backgroundColor = .gray.withAlphaComponent(0.08)
         companyImageView.layer.cornerRadius = 38.h() / 2
+        companyImageView.layoutMargins = UIEdgeInsets(top: -7, left: -7, bottom: -7, right: -7)
+        companyImageView.image = UIImage(named: "google_icon")
+//        companyImageView.layout
+//        companyImageView.image = UIImage(named: "google_icon")?.withAlignmentRectInsets(
+//            UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5)
+//        )
+        companyImageView.contentMode = .scaleAspectFit
 
         jobTitle.font = .systemFont(ofSize: 13, weight: .bold)
 
@@ -74,7 +81,7 @@ class JobOptionsView: UIView {
             .font: UIFont.systemFont(ofSize: 10, weight: .regular),
             .foregroundColor: UIColor.black.withAlphaComponent(0.5),
         ])
-        
+
         firstString.append(secondString)
         amountLabel.attributedText = firstString
     }
