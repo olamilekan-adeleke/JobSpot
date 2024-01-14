@@ -9,9 +9,12 @@ import UIKit
 
 class HomeBannerView: UIView {
     private let boxView = BoxView()
+
     private let messageLabel = Label(type: .thin, str: "50% off \ntake any courses")
     private let joinButton = BaseButton(viewModel: .init(type: .tertiary, title: "Join Now"))
     private let vStack = stackView(axis: .vertical)
+
+    private let imageView = ImageView(image: UIImage(named: "banner_lady"))
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,11 +40,12 @@ extension HomeBannerView {
         messageLabel.textColor = UIColor.white
         messageLabel.numberOfLines = 2
         messageLabel.font = .systemFont(ofSize: 18, weight: .regular)
-//        messageLabel.
+
+        imageView.contentMode = .scaleAspectFit
     }
 
     private func layout() {
-        vStack.alignment = .center
+        vStack.alignment = .leading
 
         vStack.addArrangedSubview(messageLabel)
 
@@ -51,10 +55,12 @@ extension HomeBannerView {
         boxView.addSubview(vStack)
 
         addSubview(boxView)
+        addSubview(imageView)
         NSLayoutConstraint.activate([
-            boxView.heightAnchor.constraint(equalToConstant: 143.h()),
+            boxView.heightAnchor.constraint(equalToConstant: 113.h()),
             boxView.leadingAnchor.constraint(equalTo: leadingAnchor),
             boxView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            heightAnchor.constraint(equalTo: boxView.heightAnchor, constant: 30),
         ])
 
         NSLayoutConstraint.activate([
@@ -63,7 +69,11 @@ extension HomeBannerView {
 
             joinButton.widthAnchor.constraint(equalToConstant: 90),
             joinButton.heightAnchor.constraint(equalToConstant: 27),
-//            joinButton.leadingAnchor.constraint(equalTo: vStack.leadingAnchor),
+
+            imageView.trailingAnchor.constraint(equalTo: boxView.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: boxView.bottomAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: 173),
+            imageView.widthAnchor.constraint(equalToConstant: 156),
         ])
     }
 }

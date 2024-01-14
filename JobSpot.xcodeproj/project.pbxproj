@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		39011ABA2B174E53002056C0 /* size_helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39011AB92B174E53002056C0 /* size_helper.swift */; };
 		39011ABE2B17A0B6002056C0 /* OnboardingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39011ABD2B17A0B6002056C0 /* OnboardingFooterView.swift */; };
+		390D4BD22B5296CD004F0623 /* HomeJobCountStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D4BD12B5296CD004F0623 /* HomeJobCountStatsView.swift */; };
+		390D4BD42B52AA4C004F0623 /* HomeRecentJobListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D4BD32B52AA4C004F0623 /* HomeRecentJobListView.swift */; };
+		390D4BD72B52AF74004F0623 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D4BD62B52AF74004F0623 /* TableView.swift */; };
+		390D4BD92B52BCBB004F0623 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D4BD82B52BCBB004F0623 /* TextView.swift */; };
 		39106BD52B24E26D009BDA0C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BD42B24E26D009BDA0C /* UIViewController+Extension.swift */; };
 		39106BDE2B24EA08009BDA0C /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BDD2B24EA08009BDA0C /* CustomStackView.swift */; };
 		39106BEA2B253DC9009BDA0C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BE92B253DC9009BDA0C /* String+Extension.swift */; };
@@ -73,6 +77,10 @@
 /* Begin PBXFileReference section */
 		39011AB92B174E53002056C0 /* size_helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = size_helper.swift; sourceTree = "<group>"; };
 		39011ABD2B17A0B6002056C0 /* OnboardingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFooterView.swift; sourceTree = "<group>"; };
+		390D4BD12B5296CD004F0623 /* HomeJobCountStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeJobCountStatsView.swift; sourceTree = "<group>"; };
+		390D4BD32B52AA4C004F0623 /* HomeRecentJobListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentJobListView.swift; sourceTree = "<group>"; };
+		390D4BD62B52AF74004F0623 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		390D4BD82B52BCBB004F0623 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		39106BD42B24E26D009BDA0C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		39106BDD2B24EA08009BDA0C /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
 		39106BE92B253DC9009BDA0C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -147,6 +155,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		390D4BCE2B52966B004F0623 /* Jobs */ = {
+			isa = PBXGroup;
+			children = (
+				390D4BCF2B529693004F0623 /* Views */,
+			);
+			path = Jobs;
+			sourceTree = "<group>";
+		};
+		390D4BCF2B529693004F0623 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				390D4BD02B5296AF004F0623 /* Components */,
+				390D4BD82B52BCBB004F0623 /* TextView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		390D4BD02B5296AF004F0623 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				390D4BD12B5296CD004F0623 /* HomeJobCountStatsView.swift */,
+				390D4BD32B52AA4C004F0623 /* HomeRecentJobListView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		390D4BD52B52AF65004F0623 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				390D4BD62B52AF74004F0623 /* TableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		39106BD32B24E250009BDA0C /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +200,7 @@
 		39106BD62B24E3D5009BDA0C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				390D4BD52B52AF65004F0623 /* TableView */,
 				3974C3F12B4F0A5B00079530 /* Box */,
 				3974C3EA2B4EFB8900079530 /* ScrollableStack */,
 				39324BF72B4C80D70022D24C /* Image */,
@@ -304,6 +347,7 @@
 		3941A4902AFD3C9000FD5DFE /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				390D4BCE2B52966B004F0623 /* Jobs */,
 				3974C3DB2B4ECEA500079530 /* Home */,
 				3941A4912AFD3CB200FD5DFE /* Auth */,
 			);
@@ -671,6 +715,7 @@
 				398A78D02B4C92C8009F6027 /* ResetPasswordVC.swift in Sources */,
 				3974C3E02B4EE30100079530 /* Double+Extension.swift in Sources */,
 				394595D42B4C52600097CF7F /* BaseButton+Emun.swift in Sources */,
+				390D4BD22B5296CD004F0623 /* HomeJobCountStatsView.swift in Sources */,
 				393FBD8A2B49EEA800958F14 /* LoginButtonsView.swift in Sources */,
 				398A78D92B4C9C5B009F6027 /* CodeValidatable.swift in Sources */,
 				394595CD2B4ACEF00097CF7F /* PasswordTextField.swift in Sources */,
@@ -685,9 +730,11 @@
 				3941A4982AFD3D4E00FD5DFE /* OnBoardingVC.swift in Sources */,
 				398A78CE2B4C90D1009F6027 /* ResetPasswordView.swift in Sources */,
 				394595D02B4AD0CC0097CF7F /* BaseButton.swift in Sources */,
+				390D4BD92B52BCBB004F0623 /* TextView.swift in Sources */,
 				39106BD52B24E26D009BDA0C /* UIViewController+Extension.swift in Sources */,
 				39324BF92B4C80E30022D24C /* ImageView.swift in Sources */,
 				39324BF02B4C73C90022D24C /* ForgotPasswordVC.swift in Sources */,
+				390D4BD72B52AF74004F0623 /* TableView.swift in Sources */,
 				39FCC2D12A8807F900A50A7A /* HomeTabViewController.swift in Sources */,
 				39DE805A2B49BBA20034F517 /* BaseTextField+ViewModel.swift in Sources */,
 				3974C3EE2B4EFF6F00079530 /* HomeHeaderView.swift in Sources */,
@@ -715,6 +762,7 @@
 				39106BED2B25B814009BDA0C /* UITextField+Extension.swift in Sources */,
 				39DE80622B49CF110034F517 /* LoginVC.swift in Sources */,
 				39324BF42B4C7A540022D24C /* ForgetPasswordView.swift in Sources */,
+				390D4BD42B52AA4C004F0623 /* HomeRecentJobListView.swift in Sources */,
 				39324BF62B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift in Sources */,
 				39011ABA2B174E53002056C0 /* size_helper.swift in Sources */,
 				3974C3F32B4F0A6A00079530 /* BoxView.swift in Sources */,
