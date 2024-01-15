@@ -70,7 +70,7 @@ extension HomeBannerView {
         addSubview(boxView)
         addSubview(imageView)
         NSLayoutConstraint.activate([
-            boxView.heightAnchor.constraint(equalToConstant: 113.h()),
+            boxView.heightAnchor.constraint(equalToConstant: 135.h()),
             boxView.leadingAnchor.constraint(equalTo: leadingAnchor),
             boxView.trailingAnchor.constraint(equalTo: trailingAnchor),
             heightAnchor.constraint(equalTo: boxView.heightAnchor, constant: 30),
