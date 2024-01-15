@@ -13,8 +13,6 @@ final class HomeRecentJobListView: UIView {
     private let jobOptionTwo = JobOptionsView()
     private let jobOptionThree = JobOptionsView()
 
-//    private let tableListView = TableView()
-//    private let tableListView = TextView()
     private let vStack = stackView()
 
     override init(frame: CGRect) {
@@ -22,8 +20,6 @@ final class HomeRecentJobListView: UIView {
 
         style()
         layout()
-
-//        vStack.backgroundColor = .yellow
     }
 
     @available(*, unavailable)
@@ -35,7 +31,6 @@ final class HomeRecentJobListView: UIView {
 extension HomeRecentJobListView {
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
-//        tableListView?.translatesAutoresizingMaskIntoConstraints = false
     }
 
     private func layout() {
@@ -51,7 +46,6 @@ extension HomeRecentJobListView {
 
         addSubview(vStack)
         vStack.pinToEdges(to: self)
-//        tableListView.didMove(toParent: self)
     }
 
     private func setUpTable() {}

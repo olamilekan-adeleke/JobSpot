@@ -179,7 +179,7 @@ private final class TagView: UIView {
             title.centerXAnchor.constraint(equalTo: centerXAnchor),
             title.centerYAnchor.constraint(equalTo: centerYAnchor),
 
-            boxView.widthAnchor.constraint(equalToConstant: 82),
+//            boxView.widthAnchor.constraint(equalToConstant: 82),
 
             boxView.leadingAnchor.constraint(equalTo: leadingAnchor),
             boxView.topAnchor.constraint(equalTo: topAnchor),

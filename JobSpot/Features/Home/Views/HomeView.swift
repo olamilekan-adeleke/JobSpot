@@ -10,8 +10,8 @@ import UIKit
 final class HomeView: UIView {
     private let headerView = HomeHeaderView()
     private let homeBanner = HomeBannerView()
-//    private let jobStatsView = HomeJobCountStatsView()
-//    private let homeRecentJobListView = HomeRecentJobListView()
+    private let jobStatsView = HomeJobCountStatsView()
+    private let homeRecentJobListView = HomeRecentJobListView()
     private let vScrollableStack = ScrollableStackView()
 
     override init(frame: CGRect) {
@@ -40,14 +40,14 @@ extension HomeView {
         vScrollableStack.setCustomSpacing(10, after: headerView)
         vScrollableStack.add(view: homeBanner)
 
-//        vScrollableStack.setCustomSpacing(25, after: homeBanner)
-//        vScrollableStack.add(view: jobStatsView)
+        vScrollableStack.setCustomSpacing(25, after: homeBanner)
+        vScrollableStack.add(view: jobStatsView)
+
+        vScrollableStack.setCustomSpacing(25, after: jobStatsView)
+        vScrollableStack.add(view: homeRecentJobListView)
 //
-//        vScrollableStack.setCustomSpacing(25, after: jobStatsView)
-//        vScrollableStack.add(view: homeRecentJobListView)
-//
-//        vScrollableStack.setCustomSpacing(30, after: homeRecentJobListView)
-//        vScrollableStack.add(view: UIView())
+        vScrollableStack.setCustomSpacing(30, after: homeRecentJobListView)
+        vScrollableStack.add(view: UIView())
 
         addSubview(vScrollableStack)
         vScrollableStack.pinToEdgesWithHorizontalPadding(to: self)

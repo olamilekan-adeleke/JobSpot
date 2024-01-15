@@ -144,4 +144,9 @@ public extension ScrollableStackView {
         get { scrollView.bounces }
         set { scrollView.bounces = newValue }
     }
+    
+    var axis: NSLayoutConstraint.Axis {
+        get { stack.axis }
+        set { stack.axis = newValue }
+    }
 }
