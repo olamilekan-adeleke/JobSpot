@@ -14,14 +14,22 @@ final class HomeVC: UIViewController {
     override func viewDidLoad() {
         layout()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 }
 
 extension HomeVC {
     private func layout() {
-        navigationItem.setHidesBackButton(true, animated: true)
-//        view.backgroundColor = .white
-        view.backgroundColor =  UIColor(red: 0.975, green: 0.975, blue: 0.975, alpha: 1)
-        
+        view.backgroundColor = UIColor(red: 0.975, green: 0.975, blue: 0.975, alpha: 1)
+
         view.addSubview(homeBody)
         homeBody.pinToEdges(to: view)
     }

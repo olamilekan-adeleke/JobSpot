@@ -17,13 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .systemBackground
 
         let rootVc = UINavigationController(rootViewController: OnBoardingVC())
-//        rootVc.navigationController?. = .fullScreen
         window?.rootViewController = rootVc
 
         UINavigationBar.appearance().tintColor = .black
         
         // Setup AppSize
-//        AppSize.shared.setup(width: 375, height: 812)
+        AppSize.shared.setup(width: 375, height: 812)
 
         return true
     }

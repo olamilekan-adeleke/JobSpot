@@ -142,7 +142,7 @@ extension JobOptionsView {
 
 // MARK: - Tag View
 
-private final class TagView: UIView {
+final class TagView: UIView {
     private let boxView = BoxView()
     private let title = Label(type: .thin)
 
@@ -179,7 +179,7 @@ private final class TagView: UIView {
             title.centerXAnchor.constraint(equalTo: centerXAnchor),
             title.centerYAnchor.constraint(equalTo: centerYAnchor),
 
-            boxView.widthAnchor.constraint(equalToConstant: 82),
+//            boxView.widthAnchor.constraint(equalToConstant: 82),
 
             boxView.leadingAnchor.constraint(equalTo: leadingAnchor),
             boxView.topAnchor.constraint(equalTo: topAnchor),
