@@ -42,6 +42,8 @@ extension JobDetailsHeaderView {
 
         companyHeaderImage.backgroundColor = Config.imageBackgroundColor
         companyHeaderImage.layer.cornerRadius = 84.h() / 2
+        companyHeaderImage.image = UIImage(named: "google_icon")?.imageWithInsets(insetDimen: 10)
+        companyHeaderImage.contentMode = .scaleAspectFill
 
         jobTitleLabel.text = "UI/UX Designer"
         jobTitleLabel.font = .systemFont(ofSize: 16, weight: .bold)
