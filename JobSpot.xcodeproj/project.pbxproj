@@ -18,6 +18,7 @@
 		390D4BE72B55A6AB004F0623 /* JobDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D4BE62B55A6AB004F0623 /* JobDetailsHeaderView.swift */; };
 		390D4BE92B55C087004F0623 /* JobDetailDescriptionAndRequirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D4BE82B55C087004F0623 /* JobDetailDescriptionAndRequirements.swift */; };
 		390D4BEB2B55C13F004F0623 /* JobDetailsTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D4BEA2B55C13F004F0623 /* JobDetailsTagView.swift */; };
+		390D4BED2B55DEAE004F0623 /* JobDetailLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D4BEC2B55DEAE004F0623 /* JobDetailLocationView.swift */; };
 		39106BD52B24E26D009BDA0C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BD42B24E26D009BDA0C /* UIViewController+Extension.swift */; };
 		39106BDE2B24EA08009BDA0C /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BDD2B24EA08009BDA0C /* CustomStackView.swift */; };
 		39106BEA2B253DC9009BDA0C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BE92B253DC9009BDA0C /* String+Extension.swift */; };
@@ -91,6 +92,7 @@
 		390D4BE62B55A6AB004F0623 /* JobDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsHeaderView.swift; sourceTree = "<group>"; };
 		390D4BE82B55C087004F0623 /* JobDetailDescriptionAndRequirements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailDescriptionAndRequirements.swift; sourceTree = "<group>"; };
 		390D4BEA2B55C13F004F0623 /* JobDetailsTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsTagView.swift; sourceTree = "<group>"; };
+		390D4BEC2B55DEAE004F0623 /* JobDetailLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailLocationView.swift; sourceTree = "<group>"; };
 		39106BD42B24E26D009BDA0C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		39106BDD2B24EA08009BDA0C /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
 		39106BE92B253DC9009BDA0C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				390D4BE62B55A6AB004F0623 /* JobDetailsHeaderView.swift */,
 				390D4BE82B55C087004F0623 /* JobDetailDescriptionAndRequirements.swift */,
 				390D4BEA2B55C13F004F0623 /* JobDetailsTagView.swift */,
+				390D4BEC2B55DEAE004F0623 /* JobDetailLocationView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				39DE805A2B49BBA20034F517 /* BaseTextField+ViewModel.swift in Sources */,
 				3974C3EE2B4EFF6F00079530 /* HomeHeaderView.swift in Sources */,
 				394595C62B4ABD0C0097CF7F /* NameValidatable.swift in Sources */,
+				390D4BED2B55DEAE004F0623 /* JobDetailLocationView.swift in Sources */,
 				39DE805B2B49BBA20034F517 /* BaseTextField+Enum.swift in Sources */,
 				39DE80652B49DFC30034F517 /* UIView+Extension.swift in Sources */,
 				398A78D42B4C99B3009F6027 /* ResetPasswordTextFieldAndButton.swift in Sources */,
