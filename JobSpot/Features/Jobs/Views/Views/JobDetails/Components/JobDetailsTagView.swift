@@ -11,7 +11,7 @@ class JobDetailsTagView: UIView {
     private let hStack = stackView(axis: .horizontal, spacing: 15)
     private let salaryView = TagView(title: "$15/Mo")
     private let jobTypeView = TagView(title: "Remote")
-    private let positionView = TagView(title: "Seinor Designer")
+    private let positionView = TagView(title: "Senior Designer")
 
     override init(frame: CGRect) {
         super.init(frame: frame)

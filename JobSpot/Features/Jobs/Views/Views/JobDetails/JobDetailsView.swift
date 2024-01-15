@@ -39,7 +39,7 @@ extension JobDetailsView {
         vScrollableStack.setCustomSpacing(20, after: headerView)
         vScrollableStack.add(view: tagsView)
         
-        vScrollableStack.setCustomSpacing(20, after: tagsView)
+        vScrollableStack.setCustomSpacing(30, after: tagsView)
         vScrollableStack.add(view: jobDescriptionAndRequirements)
        
         addSubview(vScrollableStack)
