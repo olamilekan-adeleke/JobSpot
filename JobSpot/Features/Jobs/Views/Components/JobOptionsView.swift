@@ -142,7 +142,7 @@ extension JobOptionsView {
 
 // MARK: - Tag View
 
-private final class TagView: UIView {
+final class TagView: UIView {
     private let boxView = BoxView()
     private let title = Label(type: .thin)
 

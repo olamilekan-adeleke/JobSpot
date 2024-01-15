@@ -10,6 +10,8 @@ import UIKit
 class JobDetailsView: UIView {
     private let vScrollableStack = ScrollableStackView()
     private let headerView = JobDetailsHeaderView()
+    private let tagsView = JobDetailsTagView()
+    private let jobDescriptionAndRequirements = JobDetailDescriptionAndRequirements()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,6 +35,12 @@ extension JobDetailsView {
 
     private func layout() {
         vScrollableStack.add(view: headerView)
+        
+        vScrollableStack.setCustomSpacing(20, after: headerView)
+        vScrollableStack.add(view: tagsView)
+        
+        vScrollableStack.setCustomSpacing(20, after: tagsView)
+        vScrollableStack.add(view: jobDescriptionAndRequirements)
        
         addSubview(vScrollableStack)
         vScrollableStack.pinToEdges(to: self)
