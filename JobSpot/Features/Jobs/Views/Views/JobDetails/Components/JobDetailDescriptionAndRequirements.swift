@@ -64,7 +64,7 @@ extension JobDetailDescriptionAndRequirements {
         descriptionStack.addArrangedSubview(descriptionHeaderLabel)
         descriptionStack.addArrangedSubview(descriptionLabel)
 
-        vStack.setCustomSpacing(10, after: descriptionStack)
+        vStack.setCustomSpacing(20, after: descriptionStack)
         vStack.addArrangedSubview(requirementStack)
         requirementStack.addArrangedSubview(requirementHeaderLabel)
         for option in requirementList {
