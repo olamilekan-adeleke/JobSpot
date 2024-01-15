@@ -82,7 +82,7 @@ extension JobDetailDescriptionAndRequirements {
     }
 }
 
-private final class RequirementTextView: UIView {
+final class RequirementTextView: UIView {
     private let hStack = stackView(axis: .horizontal)
     private let dotLabel = Label(type: .bold, str: "•")
     private let optionLabel = Label(type: .regular)
@@ -102,7 +102,7 @@ private final class RequirementTextView: UIView {
 
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        
+
         hStack.alignment = .leading
 
         optionLabel.font = .systemFont(ofSize: 12, weight: .regular)

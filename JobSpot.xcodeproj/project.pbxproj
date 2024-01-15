@@ -20,6 +20,7 @@
 		390D4BEB2B55C13F004F0623 /* JobDetailsTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D4BEA2B55C13F004F0623 /* JobDetailsTagView.swift */; };
 		390D4BED2B55DEAE004F0623 /* JobDetailLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D4BEC2B55DEAE004F0623 /* JobDetailLocationView.swift */; };
 		390D4BEF2B55EC78004F0623 /* JobDetailsInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D4BEE2B55EC78004F0623 /* JobDetailsInformationView.swift */; };
+		390D4BF12B55FA55004F0623 /* JobDetailFacilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D4BF02B55FA55004F0623 /* JobDetailFacilitiesView.swift */; };
 		39106BD52B24E26D009BDA0C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BD42B24E26D009BDA0C /* UIViewController+Extension.swift */; };
 		39106BDE2B24EA08009BDA0C /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BDD2B24EA08009BDA0C /* CustomStackView.swift */; };
 		39106BEA2B253DC9009BDA0C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39106BE92B253DC9009BDA0C /* String+Extension.swift */; };
@@ -95,6 +96,7 @@
 		390D4BEA2B55C13F004F0623 /* JobDetailsTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsTagView.swift; sourceTree = "<group>"; };
 		390D4BEC2B55DEAE004F0623 /* JobDetailLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailLocationView.swift; sourceTree = "<group>"; };
 		390D4BEE2B55EC78004F0623 /* JobDetailsInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsInformationView.swift; sourceTree = "<group>"; };
+		390D4BF02B55FA55004F0623 /* JobDetailFacilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailFacilitiesView.swift; sourceTree = "<group>"; };
 		39106BD42B24E26D009BDA0C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		39106BDD2B24EA08009BDA0C /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
 		39106BE92B253DC9009BDA0C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				390D4BEA2B55C13F004F0623 /* JobDetailsTagView.swift */,
 				390D4BEC2B55DEAE004F0623 /* JobDetailLocationView.swift */,
 				390D4BEE2B55EC78004F0623 /* JobDetailsInformationView.swift */,
+				390D4BF02B55FA55004F0623 /* JobDetailFacilitiesView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -832,6 +835,7 @@
 				39324BF42B4C7A540022D24C /* ForgetPasswordView.swift in Sources */,
 				390D4BD42B52AA4C004F0623 /* HomeRecentJobListView.swift in Sources */,
 				39324BF62B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift in Sources */,
+				390D4BF12B55FA55004F0623 /* JobDetailFacilitiesView.swift in Sources */,
 				39011ABA2B174E53002056C0 /* size_helper.swift in Sources */,
 				3974C3F32B4F0A6A00079530 /* BoxView.swift in Sources */,
 				393FBD862B49EDCC00958F14 /* LoginHeaderView.swift in Sources */,

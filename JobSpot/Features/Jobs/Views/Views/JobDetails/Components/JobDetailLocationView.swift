@@ -16,6 +16,7 @@ class JobDetailLocationView: UIView {
         let map = MKMapView()
         map.translatesAutoresizingMaskIntoConstraints = false
         map.overrideUserInterfaceStyle = .dark
+        map.showsUserLocation = true
         return map
     }()
 
