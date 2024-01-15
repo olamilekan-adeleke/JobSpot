@@ -15,6 +15,7 @@ class JobDetailsView: UIView {
     private let locationView = JobDetailLocationView()
     private let jobInformationView = JobDetailsInformationView()
     private let facilitiesView = JobDetailFacilitiesView()
+    private let applyButton = JobDetailsButtonView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,15 +45,21 @@ extension JobDetailsView {
 
         vScrollableStack.setCustomSpacing(20, after: tagsView)
         vScrollableStack.add(view: jobDescriptionAndRequirements)
-        
+
         vScrollableStack.setCustomSpacing(20, after: jobDescriptionAndRequirements)
         vScrollableStack.add(view: locationView)
-        
+
         vScrollableStack.setCustomSpacing(40, after: locationView)
         vScrollableStack.add(view: jobInformationView)
-        
+
         vScrollableStack.setCustomSpacing(40, after: jobInformationView)
         vScrollableStack.add(view: facilitiesView)
+
+        vScrollableStack.setCustomSpacing(40, after: facilitiesView)
+        vScrollableStack.add(view: applyButton)
+
+        vScrollableStack.setCustomSpacing(20, after: applyButton)
+        vScrollableStack.add(view: UIView())
 
         addSubview(vScrollableStack)
         vScrollableStack.pinToEdges(to: self)
