@@ -58,19 +58,19 @@ extension JobDetailsHeaderView {
 
         boxView.addSubview(vStack)
 
-        boxView.addSubview(companyHeaderImage)
+        addSubview(companyHeaderImage)
         NSLayoutConstraint.activate([
             companyHeaderImage.topAnchor.constraint(equalTo: topAnchor),
             companyHeaderImage.heightAnchor.constraint(equalToConstant: 84.h()),
             companyHeaderImage.widthAnchor.constraint(equalToConstant: 84.h()),
-
-            companyHeaderImage.topAnchor.constraint(equalTo: vStack.topAnchor, constant: -20),
+            companyHeaderImage.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
+        companyHeaderImage.layer.zPosition = 1
 
         addSubview(boxView)
         vStack.pinToEdges(to: boxView)
         NSLayoutConstraint.activate([
-            boxView.topAnchor.constraint(equalTo: companyHeaderImage.bottomAnchor),
+            boxView.topAnchor.constraint(equalTo: companyHeaderImage.bottomAnchor, constant: -20),
             boxView.leadingAnchor.constraint(equalTo: leadingAnchor),
             boxView.trailingAnchor.constraint(equalTo: trailingAnchor),
             boxView.bottomAnchor.constraint(equalTo: bottomAnchor),
