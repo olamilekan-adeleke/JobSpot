@@ -26,6 +26,8 @@ class CustomTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
+        backgroundColor = .red
+        
         addSubview(customLabel)
         
         NSLayoutConstraint.activate([
@@ -38,9 +40,7 @@ class CustomTableViewCell: UITableViewCell {
 }
 
 class CustomTableViewContainerView: UIView, UITableViewDelegate, UITableViewDataSource {
-    var tableViewHeightConstraint: NSLayoutConstraint?
-
-    let tableView: UITableView = {
+    private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
 //        tableView.rowHeight = UITableView.automaticDimension
@@ -93,9 +93,9 @@ class CustomTableViewContainerView: UIView, UITableViewDelegate, UITableViewData
     }
 }
 
-//class CustomView: UIView {
+// class CustomView: UIView {
 //    let stackVieww = stackView()
-//    
+//
 //    override init(frame: CGRect) {
 //        super.init(frame: frame)
 //
@@ -115,16 +115,16 @@ class CustomTableViewContainerView: UIView, UITableViewDelegate, UITableViewData
 //    private func layout() {
 //        let tableViewContainer = CustomTableViewContainerView()
 //        stackVieww.addArrangedSubview(tableViewContainer)
-//        
+//
 //        addSubview(stackVieww)
 //        NSLayoutConstraint.activate([
 //            stackVieww.topAnchor.constraint(equalTo: topAnchor),
 //            stackVieww.leadingAnchor.constraint(equalTo: leadingAnchor),
 //            stackVieww.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            
+//
 //            stackVieww.bottomAnchor.constraint(equalTo: bottomAnchor),
 //            stackVieww.heightAnchor.constraint(greaterThanOrEqualToConstant: 200),
 ////            tableViewContainer.widthAnchor.constraint(equalToConstant: 50),
 //        ])
 //    }
-//}
+// }
