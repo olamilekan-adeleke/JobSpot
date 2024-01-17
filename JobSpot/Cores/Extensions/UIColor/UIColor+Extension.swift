@@ -22,5 +22,6 @@ extension UIColor {
         static let appPrimaryColor = UIColor(rgb: 0x130160)
         static let appSecondaryColor = UIColor(rgb: 0xFF9228)
         static let appTertiaryColor = UIColor(rgb: 0xFF9228)
+        static let appTertiaryLightColor = UIColor(red: 1, green: 0.698, blue: 0.698, alpha: 1).withAlphaComponent(0.15)
     }
 }
