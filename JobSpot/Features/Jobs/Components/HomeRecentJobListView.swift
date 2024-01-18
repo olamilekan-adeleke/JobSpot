@@ -97,6 +97,7 @@ extension HomeRecentJobListView {
 import SwiftUI
 
 class CustomView: UIViewController {
+    let vStack = stackView()
     let body = HomeRecentJobListView()
 
     override func viewDidLoad() {
@@ -109,8 +110,13 @@ extension CustomView {
     private func style() {}
 
     private func layout() {
-        view.addSubview(body)
-        body.pinToEdges(to: view)
+        vStack.backgroundColor = .yellow
+        
+        vStack.addSubview(body)
+
+        body.widthAnchor.constraint(equalToConstant: 100.sw() - 40).isActive = true
+        view.addSubview(vStack)
+        vStack.pinToEdges(to: view)
     }
 }
 

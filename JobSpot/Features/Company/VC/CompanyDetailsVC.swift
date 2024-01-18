@@ -8,6 +8,9 @@
 import SwiftUI
 import UIKit
 
+
+// Segmented Control
+
 class CompanyDetailsVC: UIViewController {
     private let bodyView = CompanyDetailsView()
 
