@@ -11,7 +11,7 @@ final class HomeRecentJobListView: UIView, UITableViewDelegate, UITableViewDataS
     private let header = Label(type: .bold, str: "Recent Job List")
     private let tableView: UITableView = .init()
 
-//    private let jobOptionOne = JobOptionsView()
+    private let jobOptionOne = JobOptionsView()
 //    private let jobOptionTwo = JobOptionsView()
 //    private let jobOptionThree = JobOptionsView()
 
@@ -26,7 +26,7 @@ final class HomeRecentJobListView: UIView, UITableViewDelegate, UITableViewDataS
         tableView.delegate = self
         tableView.dataSource = self
 
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "customCell")
+        tableView.register(JobOptionsView.self, forCellReuseIdentifier: "JobOptionsViewCell")
         tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
 
@@ -37,7 +37,8 @@ final class HomeRecentJobListView: UIView, UITableViewDelegate, UITableViewDataS
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "contentSize" {
-            tableView.heightAnchor.constraint(equalToConstant: tableView.contentSize.height).isActive = true
+            print("Height:: \(tableView.contentSize.height)")
+//            tableView.heightAnchor.constraint(equalToConstant: tableView.contentSize.height).isActive = true
         }
     }
 
@@ -46,22 +47,26 @@ final class HomeRecentJobListView: UIView, UITableViewDelegate, UITableViewDataS
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomTableViewCell
-        cell.textLabel?.text = "Row \(indexPath.row)"
-        cell.configure(withText: "Row \(indexPath.row)")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "JobOptionsViewCell", for: indexPath) as! JobOptionsView // as! CustomTableViewCell
+//        cell.textLabel?.text = "Row \(indexPath.row)"
+//        cell.configure(withText: "Row \(indexPath.row)")
         return cell
     }
 
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20.0 // Adjust this value to set the desired spacing between cells
+    override var intrinsicContentSize: CGSize {
+        return tableView.contentSize
     }
+
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 20.0 // Adjust this value to set the desired spacing between cells
+//    }
 }
 
 extension HomeRecentJobListView {
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
 
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.isScrollEnabled = false
         tableView.separatorColor = .white
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
@@ -87,4 +92,30 @@ extension HomeRecentJobListView {
     }
 
     private func setUpTable() {}
+}
+
+import SwiftUI
+
+class CustomView: UIViewController {
+    let body = HomeRecentJobListView()
+
+    override func viewDidLoad() {
+        style()
+        layout()
+    }
+}
+
+extension CustomView {
+    private func style() {}
+
+    private func layout() {
+        view.addSubview(body)
+        body.pinToEdges(to: view)
+    }
+}
+
+struct Custom_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomView().showPreview()
+    }
 }
