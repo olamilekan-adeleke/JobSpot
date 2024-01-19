@@ -9,7 +9,15 @@ import SwiftUI
 import UIKit
 
 final class HomeVC: UIViewController {
-    private let homeBody = HomeView()
+    private let headerView = HomeHeaderView()
+    private let homeBanner = HomeBannerView()
+    private let jobStatsView = HomeJobCountStatsView()
+    private let homeRecentJobListView = HomeRecentJobListView()
+    private let vScrollableStack = ScrollableStackView()
+
+    private let tableViewContainer = CustomTableViewContainerView()
+
+//    private let homeBody = HomeView()
 
     override func viewDidLoad() {
         layout()
@@ -30,8 +38,25 @@ extension HomeVC {
     private func layout() {
         view.backgroundColor = UIColor(red: 0.975, green: 0.975, blue: 0.975, alpha: 1)
 
-        view.addSubview(homeBody)
-        homeBody.pinToEdges(to: view)
+//        view.addSubview(homeBody)
+//        homeBody.pinToEdges(to: view)
+
+        vScrollableStack.add(view: headerView)
+
+        vScrollableStack.setCustomSpacing(10, after: headerView)
+        vScrollableStack.add(view: homeBanner)
+
+        vScrollableStack.setCustomSpacing(25, after: homeBanner)
+        vScrollableStack.add(view: jobStatsView)
+
+        vScrollableStack.setCustomSpacing(25, after: jobStatsView)
+        vScrollableStack.add(view: homeRecentJobListView.view)
+
+        //        vScrollableStack.setCustomSpacing(30, after: homeRecentJobListView)
+        //        vScrollableStack.add(view: tableViewContainer)
+
+        view.addSubview(vScrollableStack)
+        vScrollableStack.pinToEdgesWithHorizontalPadding(to: view)
     }
 }
 

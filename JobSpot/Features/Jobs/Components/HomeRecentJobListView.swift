@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeRecentJobListView: UIView, UITableViewDelegate, UITableViewDataSource {
+final class HomeRecentJobListView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private let header = Label(type: .bold, str: "Recent Job List")
     private let tableView: UITableView = .init()
 
@@ -17,8 +17,8 @@ final class HomeRecentJobListView: UIView, UITableViewDelegate, UITableViewDataS
 
     private let vStack = stackView()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func viewDidLoad() {
+//        super.init(frame: )
 
         style()
         layout()
@@ -26,36 +26,47 @@ final class HomeRecentJobListView: UIView, UITableViewDelegate, UITableViewDataS
         tableView.delegate = self
         tableView.dataSource = self
 
-        tableView.register(JobOptionsView.self, forCellReuseIdentifier: "JobOptionsViewCell")
-        tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+//        tableView.register(JobOptionsView.self, forCellReuseIdentifier: "JobOptionsViewCell")
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "JobOptionsViewCell")
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "JobOptionsViewCell")
+
+//        tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+
+//        tableView.rowHeight = 44.0
     }
 
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    @available(*, unavailable)
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "contentSize" {
-            print("Height:: \(tableView.contentSize.height)")
-//            tableView.heightAnchor.constraint(equalToConstant: tableView.contentSize.height).isActive = true
-        }
-    }
+//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
+//        if keyPath == "contentSize" {
+//            print("Height:: \(tableView.contentSize.height)")
+    ////            tableView.heightAnchor.constraint(equalToConstant: tableView.contentSize.height).isActive = true
+//        }
+//    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 7
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "JobOptionsViewCell", for: indexPath) as! JobOptionsView // as! CustomTableViewCell
-//        cell.textLabel?.text = "Row \(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "JobOptionsViewCell", for: indexPath) as! CustomTableViewCell
+
+        // as! JobOptionsView
+        cell.textLabel?.text = "Row \(indexPath.row)"
 //        cell.configure(withText: "Row \(indexPath.row)")
         return cell
     }
 
-    override var intrinsicContentSize: CGSize {
-        return tableView.contentSize
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        300 // Cell Image Height: 200 (+20 space)
+//    }
+
+//    override var intrinsicContentSize: CGSize {
+//        return tableView.contentSize
+//    }
 
 //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 //        return 20.0 // Adjust this value to set the desired spacing between cells
@@ -64,12 +75,12 @@ final class HomeRecentJobListView: UIView, UITableViewDelegate, UITableViewDataS
 
 extension HomeRecentJobListView {
     private func style() {
-        translatesAutoresizingMaskIntoConstraints = false
+//        view.translatesAutoresizingMaskIntoConstraints = false
 
 //        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.isScrollEnabled = false
+//        tableView.isScrollEnabled = false
         tableView.separatorColor = .white
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
+//        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
 //        tableView.backgroundColor = UIColor.clear
     }
 
@@ -87,8 +98,8 @@ extension HomeRecentJobListView {
 //        vStack.addArrangedSubview(jobOptionThree)
 //        vStack.setCustomSpacing(10, after: jobOptionThree)
 
-        addSubview(vStack)
-        vStack.pinToEdges(to: self)
+        view.addSubview(vStack)
+        vStack.pinToEdges(to: view)
     }
 
     private func setUpTable() {}
@@ -97,7 +108,7 @@ extension HomeRecentJobListView {
 import SwiftUI
 
 class CustomView: UIViewController {
-    let vStack = stackView()
+    let vStack = ScrollableStackView() // stackView()
     let body = HomeRecentJobListView()
 
     override func viewDidLoad() {
@@ -110,13 +121,16 @@ extension CustomView {
     private func style() {}
 
     private func layout() {
-        vStack.backgroundColor = .yellow
-        
-        vStack.addSubview(body)
+        addChild(body)
+//        vStack.backgroundColor = .yellow
 
-        body.widthAnchor.constraint(equalToConstant: 100.sw() - 40).isActive = true
+        vStack.addSubview(body.view)
+
+//        body.view.widthAnchor.constraint(equalToConstant: 100.sw() - 40).isActive = true
         view.addSubview(vStack)
         vStack.pinToEdges(to: view)
+
+        body.didMove(toParent: self)
     }
 }
 
