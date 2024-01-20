@@ -11,11 +11,11 @@ final class HomeRecentJobListView: UIViewController, UITableViewDelegate, UITabl
     private let header = Label(type: .bold, str: "Recent Job List")
     private let tableView: UITableView = .init()
 
-    private let jobOptionOne = JobOptionsView()
+//    private let jobOptionOne = JobOptionsView()
 //    private let jobOptionTwo = JobOptionsView()
 //    private let jobOptionThree = JobOptionsView()
 
-    private let vStack = stackView()
+//    private let vStack = stackView()
 
     override func viewDidLoad() {
 //        super.init(frame: )
@@ -26,9 +26,11 @@ final class HomeRecentJobListView: UIViewController, UITableViewDelegate, UITabl
         tableView.delegate = self
         tableView.dataSource = self
 
+        tableView.isScrollEnabled = false
+
 //        tableView.register(JobOptionsView.self, forCellReuseIdentifier: "JobOptionsViewCell")
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "JobOptionsViewCell")
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "JobOptionsViewCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "JobOptionsViewCell")
+//        tableView.register(JobOptionsView.self, forCellReuseIdentifier: "JobOptionsViewCell")
 
 //        tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
 
@@ -48,14 +50,14 @@ final class HomeRecentJobListView: UIViewController, UITableViewDelegate, UITabl
 //    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "JobOptionsViewCell", for: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "JobOptionsViewCell", for: indexPath) // as! JobOptionsView
 
         // as! JobOptionsView
-        cell.textLabel?.text = "Row \(indexPath.row)"
+//        cell.textLabel?.text = "Row \(indexPath.row)"
 //        cell.configure(withText: "Row \(indexPath.row)")
         return cell
     }
@@ -85,10 +87,10 @@ extension HomeRecentJobListView {
     }
 
     private func layout() {
-        vStack.addArrangedSubview(header)
-
-        vStack.setCustomSpacing(15, after: header)
-        vStack.addArrangedSubview(tableView)
+//        vStack.addArrangedSubview(header)
+//
+//        vStack.setCustomSpacing(15, after: header)
+//        vStack.addArrangedSubview(tableView)
 
 //        vStack.setCustomSpacing(15, after: header)
 //        vStack.addArrangedSubview(jobOptionOne)
@@ -98,8 +100,8 @@ extension HomeRecentJobListView {
 //        vStack.addArrangedSubview(jobOptionThree)
 //        vStack.setCustomSpacing(10, after: jobOptionThree)
 
-        view.addSubview(vStack)
-        vStack.pinToEdges(to: view)
+        view.addSubview(tableView)
+        tableView.pinToEdges(to: view)
     }
 
     private func setUpTable() {}
@@ -130,7 +132,7 @@ extension CustomView {
         view.addSubview(vStack)
         vStack.pinToEdges(to: view)
 
-        body.didMove(toParent: self)
+//        body.didMove(toParent: self)
     }
 }
 
