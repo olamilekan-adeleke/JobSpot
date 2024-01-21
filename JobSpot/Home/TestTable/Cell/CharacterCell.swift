@@ -32,13 +32,17 @@ final class CharacterCell: UITableViewCell {
         self.character = character
 
         title.text = character.name
+//        title.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+//        title.setContentCompressionResistancePriority(.required, for: .horizontal)
+        
         side.text = character.side.rawValue
+        
 
         profileImage.layer.cornerRadius = Config.imageSize / 2
         profileImage.backgroundColor = .gray.withAlphaComponent(0.2)
 
-        vStack.setContentHuggingPriority(.defaultLow, for: .vertical)
-        vStack.setContentHuggingPriority(.defaultLow, for: .horizontal)
+//        vStack.setContentHuggingPriority(.defaultHigh, for: .vertical)
+//        vStack.setContentHuggingPriority(.defaultLow, for: .horizontal)
     }
 
     private func setUpUI() {
@@ -61,7 +65,7 @@ final class CharacterCell: UITableViewCell {
             hStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             hStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             hStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            hStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+//            hStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
         ])
     }
 

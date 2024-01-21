@@ -39,7 +39,7 @@ final class LocationCell: UITableViewCell {
         des.text = location.description.trimmingCharacters(in: .whitespacesAndNewlines)
         des.font = .systemFont(ofSize: 12, weight: .light)
         des.textColor = .lightGray
-        des.numberOfLines = 5
+        des.numberOfLines = 4
         des.textAlignment = .left
     }
 
