@@ -55,6 +55,11 @@
 		39578A0A2B5AD38700CFF574 /* TestTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39578A092B5AD38700CFF574 /* TestTableView.swift */; };
 		39578A0D2B5AD66C00CFF574 /* TableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39578A0C2B5AD66C00CFF574 /* TableCollectionViewCell.swift */; };
 		395FD6972B4F44F7006C539C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395FD6962B4F44F7006C539C /* UIImage+Extension.swift */; };
+		396852CE2B5D28D500017C68 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396852CD2B5D28D500017C68 /* TestTableViewController.swift */; };
+		396852D02B5D2A9700017C68 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396852CF2B5D2A9700017C68 /* Models.swift */; };
+		396852D22B5D624B00017C68 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396852D12B5D624B00017C68 /* CharacterCell.swift */; };
+		396852D52B5D626400017C68 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396852D42B5D626400017C68 /* LocationCell.swift */; };
+		396852D72B5D626C00017C68 /* CoursesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396852D62B5D626C00017C68 /* CoursesCell.swift */; };
 		3974C3DE2B4EE1A800079530 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3DD2B4EE1A800079530 /* CGFloat+Extension.swift */; };
 		3974C3E02B4EE30100079530 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3DF2B4EE30100079530 /* Double+Extension.swift */; };
 		3974C3E22B4EE38100079530 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974C3E12B4EE38100079530 /* Int+Extension.swift */; };
@@ -139,6 +144,11 @@
 		39578A092B5AD38700CFF574 /* TestTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableView.swift; sourceTree = "<group>"; };
 		39578A0C2B5AD66C00CFF574 /* TableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCollectionViewCell.swift; sourceTree = "<group>"; };
 		395FD6962B4F44F7006C539C /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		396852CD2B5D28D500017C68 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		396852CF2B5D2A9700017C68 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		396852D12B5D624B00017C68 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		396852D42B5D626400017C68 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		396852D62B5D626C00017C68 /* CoursesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesCell.swift; sourceTree = "<group>"; };
 		3974C3DD2B4EE1A800079530 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		3974C3DF2B4EE30100079530 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		3974C3E12B4EE38100079530 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
@@ -548,6 +558,26 @@
 			path = UIImage;
 			sourceTree = "<group>";
 		};
+		396852CC2B5D285000017C68 /* TestTable */ = {
+			isa = PBXGroup;
+			children = (
+				396852D32B5D625100017C68 /* Cell */,
+				396852CD2B5D28D500017C68 /* TestTableViewController.swift */,
+				396852CF2B5D2A9700017C68 /* Models.swift */,
+			);
+			path = TestTable;
+			sourceTree = "<group>";
+		};
+		396852D32B5D625100017C68 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				396852D12B5D624B00017C68 /* CharacterCell.swift */,
+				396852D42B5D626400017C68 /* LocationCell.swift */,
+				396852D62B5D626C00017C68 /* CoursesCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		3974C3DB2B4ECEA500079530 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -739,6 +769,7 @@
 		39FCC2E42A880CAE00A50A7A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				396852CC2B5D285000017C68 /* TestTable */,
 				39FCC2E52A880CBD00A50A7A /* SubViews */,
 				39FCC2D02A8807F900A50A7A /* HomeTabViewController.swift */,
 				39578A092B5AD38700CFF574 /* TestTableView.swift */,
@@ -851,6 +882,8 @@
 				394933C92B5700F500197F7D /* CompanyDetailsVC.swift in Sources */,
 				390D4BE92B55C087004F0623 /* JobDetailDescriptionAndRequirements.swift in Sources */,
 				390D4BDC2B545A77004F0623 /* JobOptionsView.swift in Sources */,
+				396852D02B5D2A9700017C68 /* Models.swift in Sources */,
+				396852D22B5D624B00017C68 /* CharacterCell.swift in Sources */,
 				3941A49A2AFD3EA600FD5DFE /* OnboardingHeaderWithImage.swift in Sources */,
 				393FBD882B49EE9D00958F14 /* LogicFormsView.swift in Sources */,
 				3974C3EC2B4EFBA400079530 /* ScrollableStackView.swift in Sources */,
@@ -858,6 +891,7 @@
 				3941A4982AFD3D4E00FD5DFE /* OnBoardingVC.swift in Sources */,
 				398A78CE2B4C90D1009F6027 /* ResetPasswordView.swift in Sources */,
 				394595D02B4AD0CC0097CF7F /* BaseButton.swift in Sources */,
+				396852CE2B5D28D500017C68 /* TestTableViewController.swift in Sources */,
 				39106BD52B24E26D009BDA0C /* UIViewController+Extension.swift in Sources */,
 				39324BF92B4C80E30022D24C /* ImageView.swift in Sources */,
 				39324BF02B4C73C90022D24C /* ForgotPasswordVC.swift in Sources */,
@@ -884,6 +918,7 @@
 				39578A0A2B5AD38700CFF574 /* TestTableView.swift in Sources */,
 				394595C82B4ABD190097CF7F /* PasswordValidatable.swift in Sources */,
 				3974C3E92B4EEAEA00079530 /* HomeView.swift in Sources */,
+				396852D72B5D626C00017C68 /* CoursesCell.swift in Sources */,
 				39FCC2E32A880C6F00A50A7A /* SharedComponent.swift in Sources */,
 				39DE80582B49BBA20034F517 /* EmailValidatable.swift in Sources */,
 				390D4BE42B55A4E1004F0623 /* JobDetailsView.swift in Sources */,
@@ -900,6 +935,7 @@
 				39324BF42B4C7A540022D24C /* ForgetPasswordView.swift in Sources */,
 				390D4BD42B52AA4C004F0623 /* HomeRecentJobListView.swift in Sources */,
 				39324BF62B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift in Sources */,
+				396852D52B5D626400017C68 /* LocationCell.swift in Sources */,
 				390D4BF12B55FA55004F0623 /* JobDetailFacilitiesView.swift in Sources */,
 				39011ABA2B174E53002056C0 /* size_helper.swift in Sources */,
 				3974C3F32B4F0A6A00079530 /* BoxView.swift in Sources */,

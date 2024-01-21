@@ -16,6 +16,8 @@ final class HomeRecentJobListView: UIViewController, UITableViewDelegate, UITabl
 //    private let jobOptionThree = JobOptionsView()
 
 //    private let vStack = stackView()
+    
+//    private let cells = []
 
     override func viewDidLoad() {
 //        super.init(frame: )
@@ -26,7 +28,7 @@ final class HomeRecentJobListView: UIViewController, UITableViewDelegate, UITabl
         tableView.delegate = self
         tableView.dataSource = self
 
-        tableView.isScrollEnabled = false
+//        tableView.isScrollEnabled = false
 
 //        tableView.register(JobOptionsView.self, forCellReuseIdentifier: "JobOptionsViewCell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "JobOptionsViewCell")
@@ -61,45 +63,18 @@ final class HomeRecentJobListView: UIViewController, UITableViewDelegate, UITabl
 //        cell.configure(withText: "Row \(indexPath.row)")
         return cell
     }
-
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        300 // Cell Image Height: 200 (+20 space)
-//    }
-
-//    override var intrinsicContentSize: CGSize {
-//        return tableView.contentSize
-//    }
-
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 20.0 // Adjust this value to set the desired spacing between cells
-//    }
 }
 
 extension HomeRecentJobListView {
     private func style() {
-//        view.translatesAutoresizingMaskIntoConstraints = false
-
-//        tableView.translatesAutoresizingMaskIntoConstraints = false
-//        tableView.isScrollEnabled = false
         tableView.separatorColor = .white
 //        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
 //        tableView.backgroundColor = UIColor.clear
     }
 
     private func layout() {
-//        vStack.addArrangedSubview(header)
-//
-//        vStack.setCustomSpacing(15, after: header)
-//        vStack.addArrangedSubview(tableView)
-
-//        vStack.setCustomSpacing(15, after: header)
-//        vStack.addArrangedSubview(jobOptionOne)
-//        vStack.setCustomSpacing(10, after: jobOptionOne)
-//        vStack.addArrangedSubview(jobOptionTwo)
-//        vStack.setCustomSpacing(10, after: jobOptionTwo)
-//        vStack.addArrangedSubview(jobOptionThree)
-//        vStack.setCustomSpacing(10, after: jobOptionThree)
-
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
         view.addSubview(tableView)
         tableView.pinToEdges(to: view)
     }
@@ -109,35 +84,35 @@ extension HomeRecentJobListView {
 
 import SwiftUI
 
-class CustomView: UIViewController {
-    let vStack = ScrollableStackView() // stackView()
-    let body = HomeRecentJobListView()
-
-    override func viewDidLoad() {
-        style()
-        layout()
-    }
-}
-
-extension CustomView {
-    private func style() {}
-
-    private func layout() {
-        addChild(body)
-//        vStack.backgroundColor = .yellow
-
-        vStack.addSubview(body.view)
-
-//        body.view.widthAnchor.constraint(equalToConstant: 100.sw() - 40).isActive = true
-        view.addSubview(vStack)
-        vStack.pinToEdges(to: view)
-
-//        body.didMove(toParent: self)
-    }
-}
+// class CustomView: UIViewController {
+////    let vStack = ScrollableStackView() // stackView()
+//    let body = HomeRecentJobListView()
+//
+//    override func viewDidLoad() {
+//        style()
+//        layout()
+//    }
+// }
+//
+// extension CustomView {
+//    private func style() {}
+//
+//    private func layout() {
+//        addChild(body)
+////        vStack.backgroundColor = .yellow
+//
+//        vStack.addSubview(body.view)
+//
+////        body.view.widthAnchor.constraint(equalToConstant: 100.sw() - 40).isActive = true
+//        view.addSubview(vStack)
+//        vStack.pinToEdges(to: view)
+//
+////        body.didMove(toParent: self)
+//    }
+// }
 
 struct Custom_Previews: PreviewProvider {
     static var previews: some View {
-        CustomView().showPreview()
+        HomeRecentJobListView().showPreview()
     }
 }
