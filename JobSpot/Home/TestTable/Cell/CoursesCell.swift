@@ -50,7 +50,7 @@ final class CoursesCell: UITableViewCell {
         vStack.setCustomSpacing(5, after: des)
         vStack.addArrangedSubview(courseImage)
         NSLayoutConstraint.activate([
-            courseImage.heightAnchor.constraint(equalToConstant: 50.h()),
+            courseImage.heightAnchor.constraint(equalToConstant: 60.h()),
             courseImage.leadingAnchor.constraint(equalTo: vStack.leadingAnchor),
             courseImage.trailingAnchor.constraint(equalTo: vStack.trailingAnchor),
         ])

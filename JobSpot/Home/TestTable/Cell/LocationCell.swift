@@ -45,6 +45,7 @@ final class LocationCell: UITableViewCell {
 
     private func setupUI() {
         vStack.addArrangedSubview(title)
+        vStack.setCustomSpacing(5, after: title)
         vStack.addArrangedSubview(des)
         hStack.addArrangedSubview(vStack)
 

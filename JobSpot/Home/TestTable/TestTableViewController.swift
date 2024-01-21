@@ -49,10 +49,9 @@ class TestTableViewController: UIViewController {
     }
 
     private func layoutTable() {
-//        tableView.backgroundColor = .yellow
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorColor = UIColor.clear
 
-//        tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableView.automaticDimension
 
         view.addSubview(tableView)
@@ -101,7 +100,6 @@ extension TestTableViewController: UITableViewDataSource, UITableViewDelegate {
                 }
                 let item = items[indexPath.row]
                 cell.configure(with: item)
-//                cell.textLabel?.text = "Courses"
                 return cell
         }
     }

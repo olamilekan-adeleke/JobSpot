@@ -12,7 +12,7 @@ final class CharacterCell: UITableViewCell {
 
     private let hStack = stackView(axis: .horizontal)
 
-    private let profileImage = ImageView(image: UIImage(named: "person"))
+    private let profileImage = BoxView() // ImageView(image: UIImage(named: "person"))
 
     private let vStack = stackView()
     private let title = Label(type: .regular)
@@ -35,8 +35,7 @@ final class CharacterCell: UITableViewCell {
         side.text = character.side.rawValue
 
         profileImage.layer.cornerRadius = Config.imageSize / 2
-        profileImage.contentMode = .scaleAspectFill
-        profileImage.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        profileImage.backgroundColor = .gray.withAlphaComponent(0.2)
 
         vStack.setContentHuggingPriority(.defaultLow, for: .vertical)
         vStack.setContentHuggingPriority(.defaultLow, for: .horizontal)
