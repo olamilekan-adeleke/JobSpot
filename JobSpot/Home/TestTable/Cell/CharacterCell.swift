@@ -66,6 +66,6 @@ final class CharacterCell: UITableViewCell {
     }
 
     enum Config {
-        static let imageSize: CGFloat = 35.h()
+        static let imageSize: CGFloat = 38.h()
     }
 }
