@@ -85,7 +85,6 @@ extension TestTableViewController: UITableViewDataSource, UITableViewDelegate {
                 }
                 let item = items[indexPath.row]
                 cell.configure(with: item)
-//                cell.textLabel?.text = "Character"
                 return cell
 
             case .location(let items):
@@ -94,7 +93,6 @@ extension TestTableViewController: UITableViewDataSource, UITableViewDelegate {
                 }
                 let item = items[indexPath.row]
                 cell.configure(with: item)
-//                cell.textLabel?.text = "Location"
                 return cell
 
             case .course(let items):
@@ -103,7 +101,7 @@ extension TestTableViewController: UITableViewDataSource, UITableViewDelegate {
                 }
                 let item = items[indexPath.row]
                 cell.configure(with: item)
-                cell.textLabel?.text = "Courses"
+//                cell.textLabel?.text = "Courses"
                 return cell
         }
     }
