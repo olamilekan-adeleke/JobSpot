@@ -94,7 +94,7 @@ extension TestTableViewController: UITableViewDataSource, UITableViewDelegate {
                 }
                 let item = items[indexPath.row]
                 cell.configure(with: item)
-                cell.textLabel?.text = "Location"
+//                cell.textLabel?.text = "Location"
                 return cell
 
             case .course(let items):
