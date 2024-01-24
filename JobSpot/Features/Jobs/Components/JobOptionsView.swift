@@ -8,20 +8,20 @@
 import UIKit
 
 class JobOptionsView: UITableViewCell {
-//    private let hHeaderStack = stackView(axis: .horizontal)
+    private let hHeaderStack = stackView(axis: .horizontal)
 
-//    private let vTextStack = stackView(axis: .vertical)
-//    private let companyImageView = ImageView(image: UIImage())
-//    private let jobTitle = Label(type: .bold, str: "UI/UX Designer")
-//    private let locationTitle = Label(type: .thin, str: "Google inc - California, USA")
-//    private let saveIconView = ImageView(image: UIImage(systemName: "bookmark"))
+    private let vTextStack = stackView(axis: .vertical)
+    private let companyImageView = ImageView(image: UIImage())
+    private let jobTitle = Label(type: .bold, str: "UI/UX Designer")
+    private let locationTitle = Label(type: .thin, str: "Google inc - California, USA")
+    private let saveIconView = ImageView(image: UIImage(systemName: "bookmark"))
 
     private let descriptionLabel = Label(type: .regular)
 
-//    private let hTagStack = stackView(axis: .horizontal, spacing: 10)
-//    private let tagOne = TagView(title: "Design")
-//    private let tagTwo = TagView(title: "Full time")
-//    private let tagThree = TagView(title: "Senior designer")
+    private let hTagStack = stackView(axis: .horizontal, spacing: 10)
+    private let tagOne = TagView(title: "Design")
+    private let tagTwo = TagView(title: "Full time")
+    private let tagThree = TagView(title: "Senior designer")
 
     private let hTimeAndAmountStack = stackView(axis: .horizontal)
     private let timestampLabel = Label(type: .thin, debug: true)
@@ -47,17 +47,17 @@ class JobOptionsView: UITableViewCell {
         vStack.layer.cornerRadius = 20
         vStack.backgroundColor = .white
 
-//        hHeaderStack.alignment = .center
+        hHeaderStack.alignment = .center
 
-//        companyImageView.backgroundColor = .gray.withAlphaComponent(0.08)
-//        companyImageView.layer.cornerRadius = 38.h() / 2
-//        companyImageView.image = UIImage(named: "google_icon")?.imageWithInsets(insetDimen: 10)
-//        companyImageView.contentMode = .scaleAspectFill
-//
-//        jobTitle.font = .systemFont(ofSize: 13, weight: .bold)
-//
-//        saveIconView.contentMode = .scaleAspectFit
-//        saveIconView.tintColor = .black.withAlphaComponent(0.5)
+        companyImageView.backgroundColor = .gray.withAlphaComponent(0.08)
+        companyImageView.layer.cornerRadius = 38.h() / 2
+        companyImageView.image = UIImage(named: "google_icon")?.imageWithInsets(insetDimen: 10)
+        companyImageView.contentMode = .scaleAspectFill
+
+        jobTitle.font = .systemFont(ofSize: 13, weight: .bold)
+
+        saveIconView.contentMode = .scaleAspectFit
+        saveIconView.tintColor = .black.withAlphaComponent(0.5)
 
         descriptionLabel.numberOfLines = 2
         descriptionLabel.font = .systemFont(ofSize: 14, weight: .regular)
@@ -90,44 +90,44 @@ class JobOptionsView: UITableViewCell {
         vStack.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 16, right: 20)
         vStack.isLayoutMarginsRelativeArrangement = true
 
-//        hHeaderStack.addArrangedSubview(companyImageView)
-//        hHeaderStack.setCustomSpacing(10, after: companyImageView)
-//        NSLayoutConstraint.activate([
-//            companyImageView.heightAnchor.constraint(equalToConstant: 38.h()),
-//            companyImageView.widthAnchor.constraint(equalToConstant: 38.h()),
-//        ])
-//
-//        vTextStack.addArrangedSubview(jobTitle)
-//        vTextStack.setCustomSpacing(2, after: jobTitle)
-//        vTextStack.addArrangedSubview(locationTitle)
-//        hHeaderStack.addArrangedSubview(vTextStack)
-//
-//        hHeaderStack.addArrangedSubview(saveIconView)
-//        saveIconView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-//        NSLayoutConstraint.activate([
-//            saveIconView.heightAnchor.constraint(equalToConstant: 15.h()),
-//            saveIconView.widthAnchor.constraint(equalToConstant: 15.h()),
-//        ])
+        hHeaderStack.addArrangedSubview(companyImageView)
+        hHeaderStack.setCustomSpacing(10, after: companyImageView)
+        NSLayoutConstraint.activate([
+            companyImageView.heightAnchor.constraint(equalToConstant: 38.h()),
+            companyImageView.widthAnchor.constraint(equalToConstant: 38.h()),
+        ])
 
-//        vStack.addArrangedSubview(hHeaderStack)
-//        NSLayoutConstraint.activate([
-            //            hHeaderStack.heightAnchor.constraint(equalToConstant: 40.h()),
-//        ])
+        vTextStack.addArrangedSubview(jobTitle)
+        vTextStack.setCustomSpacing(2, after: jobTitle)
+        vTextStack.addArrangedSubview(locationTitle)
+        hHeaderStack.addArrangedSubview(vTextStack)
 
-//        vStack.setCustomSpacing(10, after: hHeaderStack)
+        hHeaderStack.addArrangedSubview(saveIconView)
+        saveIconView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        NSLayoutConstraint.activate([
+            saveIconView.heightAnchor.constraint(equalToConstant: 15.h()),
+            saveIconView.widthAnchor.constraint(equalToConstant: 15.h()),
+        ])
+
+        vStack.addArrangedSubview(hHeaderStack)
+        NSLayoutConstraint.activate([
+                        hHeaderStack.heightAnchor.constraint(equalToConstant: 40.h()),
+        ])
+
+        vStack.setCustomSpacing(10, after: hHeaderStack)
         vStack.addArrangedSubview(descriptionLabel)
-
-        vStack.setCustomSpacing(15, after: descriptionLabel)
+//
+//        vStack.setCustomSpacing(15, after: descriptionLabel)
 //        hTagStack.distribution = .fillProportionally
 //        hTagStack.addArrangedSubview(tagOne)
 //        hTagStack.addArrangedSubview(tagTwo)
 //        hTagStack.addArrangedSubview(tagThree)
 //        vStack.addArrangedSubview(hTagStack)
-
+//
 //        vStack.setCustomSpacing(20, after: hTagStack)
-        hTimeAndAmountStack.addArrangedSubview(timestampLabel)
-        hTimeAndAmountStack.addArrangedSubview(amountLabel)
-        vStack.addArrangedSubview(hTimeAndAmountStack)
+//        hTimeAndAmountStack.addArrangedSubview(timestampLabel)
+//        hTimeAndAmountStack.addArrangedSubview(amountLabel)
+//        vStack.addArrangedSubview(hTimeAndAmountStack)
 
         contentView.addSubview(vStack)
         NSLayoutConstraint.activate([
