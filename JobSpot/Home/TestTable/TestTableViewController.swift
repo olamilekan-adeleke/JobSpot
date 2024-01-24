@@ -115,8 +115,8 @@ private extension TestTableViewController {
         let locationsItem = Section.location(items: KLocation.harryPotterLocations)
         let coursesItem = Section.course(items: KCourses.harryPotterCourses)
 
-//        return [charactersItem, locationsItem, coursesItem]
-        return [charactersItem]
+        return [charactersItem, locationsItem, coursesItem]
+//        return [charactersItem]
     }
 }
 
