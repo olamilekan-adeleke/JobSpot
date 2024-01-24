@@ -7,17 +7,21 @@
 
 import UIKit
 
-class HomeHeaderView: UIView {
+class HomeHeaderView: HomeVcBaseCell {
     private let greetingLabel = Label(type: .bold, str: "Hello \nKod Enigma")
     private let userImage = ImageView(image: UIImage())
     private let hStack = stackView(axis: .horizontal)
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override class var id: String { return "HomeHeaderViewCell" }
 
-        style()
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        setupStyle()
         layout()
     }
+
+//    override init(frame: CGRect) { super.init(frame: frame) }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
@@ -26,7 +30,7 @@ class HomeHeaderView: UIView {
 }
 
 extension HomeHeaderView {
-    private func style() {
+    private func setupStyle() {
         translatesAutoresizingMaskIntoConstraints = false
 
         hStack.alignment = .center
@@ -48,12 +52,12 @@ extension HomeHeaderView {
         hStack.setCustomSpacing(40, after: greetingLabel)
         hStack.addArrangedSubview(userImage)
 
-        addSubview(hStack)
+        contentView.addSubview(hStack)
         NSLayoutConstraint.activate([
-            hStack.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            hStack.leadingAnchor.constraint(equalTo: leadingAnchor),
-            hStack.trailingAnchor.constraint(equalTo: trailingAnchor),
-            hStack.bottomAnchor.constraint(equalTo: bottomAnchor),
+            hStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            hStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            hStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            hStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 
             userImage.heightAnchor.constraint(equalToConstant: 40.h()),
             userImage.widthAnchor.constraint(equalToConstant: 40.h()),
