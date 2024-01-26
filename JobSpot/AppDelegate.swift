@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
 
-        let rootVc = UINavigationController(rootViewController: HomeVC())
+        let rootVc = UINavigationController(rootViewController: HomeRecentJobListView())
         window?.rootViewController = rootVc
 
         UINavigationBar.appearance().tintColor = .black
