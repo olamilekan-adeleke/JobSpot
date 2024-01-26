@@ -7,7 +7,7 @@
 
 import UIKit
 
-class JobOptionsView: UIView {
+class JobOptionsView: UITableViewCell {
     private let hHeaderStack = stackView(axis: .horizontal)
 
     private let vTextStack = stackView(axis: .vertical)
@@ -24,15 +24,15 @@ class JobOptionsView: UIView {
     private let tagThree = TagView(title: "Senior designer")
 
     private let hTimeAndAmountStack = stackView(axis: .horizontal)
-    private let timestampLabel = Label(type: .thin)
+    private let timestampLabel = Label(type: .thin, debug: true)
     private let amountLabel = Label(type: .thin)
 
     private let vStack = stackView()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        style()
+        setupStyle()
         layout()
     }
 
@@ -41,8 +41,8 @@ class JobOptionsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func style() {
-        translatesAutoresizingMaskIntoConstraints = false
+    private func setupStyle() {
+//        translatesAutoresizingMaskIntoConstraints = false
 
         vStack.layer.cornerRadius = 20
         vStack.backgroundColor = .white
@@ -65,9 +65,13 @@ class JobOptionsView: UIView {
         descriptionLabel.numberOfLines = 2
         descriptionLabel.textColor = Config.lightTextColor
 
+        hTimeAndAmountStack.distribution = .fillEqually
+//        hTimeAndAmountStack.alignment = .
+
         timestampLabel.text = "25 minute ago"
         timestampLabel.font = .systemFont(ofSize: 10, weight: .light)
         timestampLabel.textColor = .secondaryLabel
+        timestampLabel.textAlignment = .left
 
         let firstString = NSMutableAttributedString(string: "$15K", attributes: [
             .font: UIFont.systemFont(ofSize: 12, weight: .bold),
@@ -79,6 +83,7 @@ class JobOptionsView: UIView {
 
         firstString.append(secondString)
         amountLabel.attributedText = firstString
+        amountLabel.textAlignment = .right
     }
 
     private func layout() {
@@ -106,30 +111,33 @@ class JobOptionsView: UIView {
 
         vStack.addArrangedSubview(hHeaderStack)
         NSLayoutConstraint.activate([
-            hHeaderStack.heightAnchor.constraint(equalToConstant: 40.h()),
+                        hHeaderStack.heightAnchor.constraint(equalToConstant: 40.h()),
         ])
 
         vStack.setCustomSpacing(10, after: hHeaderStack)
         vStack.addArrangedSubview(descriptionLabel)
+//
+//        vStack.setCustomSpacing(15, after: descriptionLabel)
+//        hTagStack.distribution = .fillProportionally
+//        hTagStack.addArrangedSubview(tagOne)
+//        hTagStack.addArrangedSubview(tagTwo)
+//        hTagStack.addArrangedSubview(tagThree)
+//        vStack.addArrangedSubview(hTagStack)
+//
+//        vStack.setCustomSpacing(20, after: hTagStack)
+//        hTimeAndAmountStack.addArrangedSubview(timestampLabel)
+//        hTimeAndAmountStack.addArrangedSubview(amountLabel)
+//        vStack.addArrangedSubview(hTimeAndAmountStack)
 
-        vStack.setCustomSpacing(15, after: descriptionLabel)
-        hTagStack.distribution = .fillProportionally
-        hTagStack.addArrangedSubview(tagOne)
-        hTagStack.addArrangedSubview(tagTwo)
-        hTagStack.addArrangedSubview(tagThree)
-        vStack.addArrangedSubview(hTagStack)
-
-        vStack.setCustomSpacing(20, after: hTagStack)
-        hTimeAndAmountStack.addArrangedSubview(timestampLabel)
-        hTimeAndAmountStack.addArrangedSubview(amountLabel)
-        vStack.addArrangedSubview(hTimeAndAmountStack)
-
-        addSubview(vStack)
+        contentView.addSubview(vStack)
         NSLayoutConstraint.activate([
-            vStack.topAnchor.constraint(equalTo: topAnchor),
-            vStack.leadingAnchor.constraint(equalTo: leadingAnchor),
-            vStack.trailingAnchor.constraint(equalTo: trailingAnchor),
-            vStack.bottomAnchor.constraint(equalTo: bottomAnchor),
+            vStack.topAnchor.constraint(equalTo: contentView.topAnchor),
+            vStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+//            vStack.trailingAnchor.constraint(equalTo: trailingAnchor),
+            vStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+
+            vStack.widthAnchor.constraint(equalToConstant: 100.sw() - 32),
+//            vStack.heightAnchor.constraint(equalToConstant: 200),
         ])
     }
 }

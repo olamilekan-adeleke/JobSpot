@@ -7,7 +7,9 @@
 
 import UIKit
 
-class HomeBannerView: UIView {
+class HomeBannerView: HomeVcBaseCell {
+    override class var id: String { return "HomeVcBaseCell" }
+
     private let boxView = BoxView()
 
     private let messageLabel = Label(type: .thin, str: "50% off \ntake any courses")
@@ -15,12 +17,12 @@ class HomeBannerView: UIView {
     private let joinNowLabel = Label(type: .thin)
     private let vStack = stackView(axis: .vertical)
 
-    private let imageView = ImageView(image: UIImage(named: "banner_lady"))
+    private let _imageView = ImageView(image: UIImage(named: "banner_lady"))
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        style()
+        setupStyle()
         layout()
     }
 
@@ -31,7 +33,7 @@ class HomeBannerView: UIView {
 }
 
 extension HomeBannerView {
-    private func style() {
+    private func setupStyle() {
         translatesAutoresizingMaskIntoConstraints = false
 
         boxView.translatesAutoresizingMaskIntoConstraints = false
@@ -49,7 +51,7 @@ extension HomeBannerView {
         messageLabel.numberOfLines = 2
         messageLabel.font = .systemFont(ofSize: 18, weight: .regular)
 
-        imageView.contentMode = .scaleAspectFit
+        _imageView.contentMode = .scaleAspectFit
     }
 
     private func layout() {
@@ -67,13 +69,14 @@ extension HomeBannerView {
 
         boxView.addSubview(vStack)
 
-        addSubview(boxView)
-        addSubview(imageView)
+        contentView.addSubview(boxView)
+        contentView.addSubview(_imageView)
         NSLayoutConstraint.activate([
-            boxView.heightAnchor.constraint(equalToConstant: 135.h()),
-            boxView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            boxView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            heightAnchor.constraint(equalTo: boxView.heightAnchor, constant: 30),
+            boxView.heightAnchor.constraint(equalToConstant: 115.h()),
+            boxView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            boxView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+
+            contentView.heightAnchor.constraint(equalTo: boxView.heightAnchor, constant: 30),
         ])
 
         NSLayoutConstraint.activate([
@@ -83,10 +86,10 @@ extension HomeBannerView {
             joinButton.widthAnchor.constraint(equalToConstant: 90),
             joinButton.heightAnchor.constraint(equalToConstant: 27),
 
-            imageView.trailingAnchor.constraint(equalTo: boxView.trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: boxView.bottomAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 173),
-            imageView.widthAnchor.constraint(equalToConstant: 156),
+            _imageView.trailingAnchor.constraint(equalTo: boxView.trailingAnchor),
+            _imageView.bottomAnchor.constraint(equalTo: boxView.bottomAnchor),
+            _imageView.heightAnchor.constraint(equalToConstant: 173),
+            _imageView.widthAnchor.constraint(equalToConstant: 156),
         ])
     }
 }

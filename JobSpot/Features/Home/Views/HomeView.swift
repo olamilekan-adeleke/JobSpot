@@ -14,6 +14,8 @@ final class HomeView: UIView {
     private let homeRecentJobListView = HomeRecentJobListView()
     private let vScrollableStack = ScrollableStackView()
 
+    private let tableViewContainer = CustomTableViewContainerView()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -30,7 +32,7 @@ final class HomeView: UIView {
 extension HomeView {
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        
+
         vScrollableStack.showsVerticalScrollIndicator = false
     }
 
@@ -44,10 +46,10 @@ extension HomeView {
         vScrollableStack.add(view: jobStatsView)
 
         vScrollableStack.setCustomSpacing(25, after: jobStatsView)
-        vScrollableStack.add(view: homeRecentJobListView)
-//
-        vScrollableStack.setCustomSpacing(30, after: homeRecentJobListView)
-        vScrollableStack.add(view: UIView())
+        vScrollableStack.add(view: homeRecentJobListView.view)
+
+//        vScrollableStack.setCustomSpacing(30, after: homeRecentJobListView)
+//        vScrollableStack.add(view: tableViewContainer)
 
         addSubview(vScrollableStack)
         vScrollableStack.pinToEdgesWithHorizontalPadding(to: self)

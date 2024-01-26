@@ -8,11 +8,19 @@
 import SwiftUI
 import UIKit
 
-final class HomeVC: UIViewController {
-    private let homeBody = HomeView()
+class HomeVC: UIViewController {
+    private let tableView = UITableView()
+    private var cellsID = [String]()
 
     override func viewDidLoad() {
         layout()
+
+        registerAndAddCell(HomeHeaderView.self)
+        registerAndAddCell(HomeBannerView.self)
+        registerAndAddCell(HomeJobCountStatsView.self)
+
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -27,11 +35,39 @@ final class HomeVC: UIViewController {
 }
 
 extension HomeVC {
+    private func registerAndAddCell<CellType: HomeVcBaseCell>(_ cellType: CellType.Type) {
+        tableView.register(cellType, forCellReuseIdentifier: cellType.id)
+        cellsID.append(cellType.id)
+    }
+
     private func layout() {
         view.backgroundColor = UIColor(red: 0.975, green: 0.975, blue: 0.975, alpha: 1)
 
-        view.addSubview(homeBody)
-        homeBody.pinToEdges(to: view)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorColor = UIColor.clear
+
+        tableView.rowHeight = UITableView.automaticDimension
+
+        view.addSubview(tableView)
+        tableView.pinToEdgesWithHorizontalPadding(to: view)
+    }
+}
+
+extension HomeVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cellsID.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let id = cellsID[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as? HomeVcBaseCell else {
+            return UITableViewCell()
+        }
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30.h()
     }
 }
 

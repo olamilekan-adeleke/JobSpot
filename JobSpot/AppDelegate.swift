@@ -16,11 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
 
-        let rootVc = UINavigationController(rootViewController: OnBoardingVC())
+        let rootVc = UINavigationController(rootViewController: HomeRecentJobListView())
         window?.rootViewController = rootVc
 
         UINavigationBar.appearance().tintColor = .black
-        
+
         // Setup AppSize
         AppSize.shared.setup(width: 375, height: 812)
 

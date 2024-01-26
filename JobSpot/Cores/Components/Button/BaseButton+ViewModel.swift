@@ -22,6 +22,7 @@ extension BaseButton {
                 case .primary: return UIColor.AppColor.appPrimaryColor
                 case .secondary: return UIColor(red: 0.839, green: 0.804, blue: 0.996, alpha: 1)
                 case .tertiary: return UIColor.AppColor.appTertiaryColor
+                case .iconButton: return UIColor.AppColor.appTertiaryLightColor
             }
         }
 
@@ -30,6 +31,7 @@ extension BaseButton {
                 case .primary: return UIColor.white
                 case .secondary: return UIColor.black
                 case .tertiary: return UIColor.white
+                case .iconButton: return UIColor(red: 0.988, green: 0.276, blue: 0.276, alpha: 1)
             }
         }
     }

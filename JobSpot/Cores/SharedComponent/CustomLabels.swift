@@ -33,6 +33,8 @@ class Label: UILabel {
         self.font = getFont()
         self.text = self.str
         self.textAlignment = .left
+
+        self.setContentHuggingPriority(.defaultHigh, for: .vertical)
     }
 
     enum LabelType {

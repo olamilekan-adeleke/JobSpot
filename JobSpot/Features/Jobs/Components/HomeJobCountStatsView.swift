@@ -7,7 +7,9 @@
 
 import UIKit
 
-class HomeJobCountStatsView: UIView {
+class HomeJobCountStatsView: HomeVcBaseCell {
+    override class var id: String { return "HomeJobCountStatsView" }
+
     private let header = Label(type: .bold, str: "Find Your Job")
 
     private let statsBox = BoxView()
@@ -17,9 +19,13 @@ class HomeJobCountStatsView: UIView {
 
     private let vStack = stackView()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
 
+        setup()
+    }
+
+    private func setup() {
         style()
         layout()
     }
@@ -36,6 +42,10 @@ extension HomeJobCountStatsView {
     }
 
     private func layout() {
+        let box = BoxView()
+        box.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        vStack.addArrangedSubview(box)
+
         vStack.addArrangedSubview(header)
 
         statsBox.addSubview(remoteJobStats)
@@ -56,8 +66,13 @@ extension HomeJobCountStatsView {
         vStack.setCustomSpacing(15, after: header)
         vStack.addArrangedSubview(statsBox)
 
-        addSubview(vStack)
-        vStack.pinToEdges(to: self)
+        contentView.addSubview(vStack)
+        NSLayoutConstraint.activate([
+            vStack.topAnchor.constraint(equalTo: contentView.topAnchor),
+            vStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            vStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            vStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+        ])
     }
 
     enum Config {
@@ -127,7 +142,7 @@ class StatsBoxView: UIView {
         }
 
         vStack.addArrangedSubview(countLabel)
-        
+
         vStack.setCustomSpacing(8, after: countLabel)
         vStack.addArrangedSubview(titleLabel)
 

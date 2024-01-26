@@ -27,6 +27,11 @@ final class BaseButton: UIView {
     func setOnTap(_ gestureRecognizer: UITapGestureRecognizer) {
         button.addGestureRecognizer(gestureRecognizer)
     }
+
+    func setImage(_ image: UIImage) {
+        button.setImage(image, for: .normal)
+//        button.
+    }
 }
 
 extension BaseButton {
@@ -38,7 +43,7 @@ extension BaseButton {
         button.clipsToBounds = true
 
         button.backgroundColor = viewModel.backgroundColor
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.titleLabel?.font = viewModel.type == .iconButton ? .systemFont(ofSize: 14, weight: .light) : UIFont.boldSystemFont(ofSize: 16)
         button.setTitle(viewModel.title, for: .normal)
         button.setTitleColor(viewModel.textColor, for: .normal)
     }
@@ -46,10 +51,16 @@ extension BaseButton {
     public func layout() {
         addSubview(button)
 
-        NSLayoutConstraint.activate([
-            button.heightAnchor.constraint(equalToConstant: 45),
-            widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32),
+        if viewModel.type == .iconButton {
+            button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            widthAnchor.constraint(equalToConstant: (UIScreen.main.bounds.width / 2) - 32).isActive = true
+        }
+        else {
+            button.heightAnchor.constraint(equalToConstant: 45).isActive = true
+            widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32).isActive = true
+        }
 
+        NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: centerXAnchor),
 
             button.leadingAnchor.constraint(equalTo: leadingAnchor),
