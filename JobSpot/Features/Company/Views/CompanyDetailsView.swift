@@ -11,12 +11,13 @@ class CompanyDetailsView: UIView {
     private let vStack = ScrollableStackView()
     private let headerView = CompanyDetailHeaderView()
     private let actionButton = CompanyDetailActionButtons()
+    private let subTabview = CompanyDetailsSegmentedControlView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         style()
-        layout()
+        layout();
     }
 
     @available(*, unavailable)
@@ -37,6 +38,9 @@ extension CompanyDetailsView {
         
         vStack.setCustomSpacing(20, after: headerView)
         vStack.add(view: actionButton)
+        
+        vStack.setCustomSpacing(20, after: actionButton)
+        vStack.add(view: subTabview.view)
         
         addSubview(vStack)
         vStack.pinToEdges(to: self)

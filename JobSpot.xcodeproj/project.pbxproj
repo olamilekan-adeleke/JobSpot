@@ -55,6 +55,8 @@
 		394933D02B5703EA00197F7D /* CompanyDetailActionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394933CF2B5703EA00197F7D /* CompanyDetailActionButtons.swift */; };
 		39578A0A2B5AD38700CFF574 /* TestTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39578A092B5AD38700CFF574 /* TestTableView.swift */; };
 		39578A0D2B5AD66C00CFF574 /* TableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39578A0C2B5AD66C00CFF574 /* TableCollectionViewCell.swift */; };
+		3958762A2B651FBE0007C959 /* CompanyDetailsSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395876292B651FBE0007C959 /* CompanyDetailsSegmentedControlView.swift */; };
+		3958762C2B6581140007C959 /* CompanyDetailAboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958762B2B6581140007C959 /* CompanyDetailAboutUsView.swift */; };
 		395FD6972B4F44F7006C539C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395FD6962B4F44F7006C539C /* UIImage+Extension.swift */; };
 		396852CE2B5D28D500017C68 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396852CD2B5D28D500017C68 /* TestTableViewController.swift */; };
 		396852D02B5D2A9700017C68 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396852CF2B5D2A9700017C68 /* Models.swift */; };
@@ -145,6 +147,8 @@
 		394933CF2B5703EA00197F7D /* CompanyDetailActionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailActionButtons.swift; sourceTree = "<group>"; };
 		39578A092B5AD38700CFF574 /* TestTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableView.swift; sourceTree = "<group>"; };
 		39578A0C2B5AD66C00CFF574 /* TableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCollectionViewCell.swift; sourceTree = "<group>"; };
+		395876292B651FBE0007C959 /* CompanyDetailsSegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsSegmentedControlView.swift; sourceTree = "<group>"; };
+		3958762B2B6581140007C959 /* CompanyDetailAboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailAboutUsView.swift; sourceTree = "<group>"; };
 		395FD6962B4F44F7006C539C /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		396852CD2B5D28D500017C68 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		396852CF2B5D2A9700017C68 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -537,6 +541,7 @@
 		394933CC2B57032700197F7D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3958762D2B65882B0007C959 /* CampanyDetailsSegmentedView */,
 				394933CD2B57035500197F7D /* CompanyDetailHeaderView.swift */,
 				394933CF2B5703EA00197F7D /* CompanyDetailActionButtons.swift */,
 			);
@@ -550,6 +555,15 @@
 				39316C6A2B5AF448006FCA8B /* CollectionTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		3958762D2B65882B0007C959 /* CampanyDetailsSegmentedView */ = {
+			isa = PBXGroup;
+			children = (
+				395876292B651FBE0007C959 /* CompanyDetailsSegmentedControlView.swift */,
+				3958762B2B6581140007C959 /* CompanyDetailAboutUsView.swift */,
+			);
+			path = CampanyDetailsSegmentedView;
 			sourceTree = "<group>";
 		};
 		395FD6952B4F44E1006C539C /* UIImage */ = {
@@ -882,6 +896,7 @@
 				394933D02B5703EA00197F7D /* CompanyDetailActionButtons.swift in Sources */,
 				39DE80572B49BBA20034F517 /* FormValidationState.swift in Sources */,
 				39DE80592B49BBA20034F517 /* BaseValidatable.swift in Sources */,
+				3958762C2B6581140007C959 /* CompanyDetailAboutUsView.swift in Sources */,
 				39106BEA2B253DC9009BDA0C /* String+Extension.swift in Sources */,
 				394933C92B5700F500197F7D /* CompanyDetailsVC.swift in Sources */,
 				390D4BE92B55C087004F0623 /* JobDetailDescriptionAndRequirements.swift in Sources */,
@@ -899,6 +914,7 @@
 				39106BD52B24E26D009BDA0C /* UIViewController+Extension.swift in Sources */,
 				39324BF92B4C80E30022D24C /* ImageView.swift in Sources */,
 				39324BF02B4C73C90022D24C /* ForgotPasswordVC.swift in Sources */,
+				3958762A2B651FBE0007C959 /* CompanyDetailsSegmentedControlView.swift in Sources */,
 				390D4BD72B52AF74004F0623 /* TableView.swift in Sources */,
 				39FCC2D12A8807F900A50A7A /* HomeTabViewController.swift in Sources */,
 				39DE805A2B49BBA20034F517 /* BaseTextField+ViewModel.swift in Sources */,
