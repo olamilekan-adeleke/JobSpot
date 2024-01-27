@@ -13,7 +13,7 @@ class CompanyDetailsSegmentedControlView: UIViewController {
     private let segmentedControl = UISegmentedControl(items: ["About Us", "Jobs"])
 
     private let viewBody = CompanyDetailAboutUsView()
-    private let firstView = FirstViewController()
+    private let firstView = CompanyDetailsJobsView()
 
     override func viewDidLoad() {
         style()
@@ -36,7 +36,6 @@ extension CompanyDetailsSegmentedControlView {
         segmentedControl.tintColor = UIColor.AppColor.appPrimaryColor
         segmentedControl.backgroundColor = UIColor.white
         segmentedControl.selectedSegmentTintColor = UIColor(red: 0.988, green: 0.639, blue: 0.302, alpha: 1)
-
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
 
         segmentedControl.addTarget(self, action: #selector(segmentedValueChanged), for: .valueChanged)

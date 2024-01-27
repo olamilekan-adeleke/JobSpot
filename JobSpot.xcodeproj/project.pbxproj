@@ -57,6 +57,7 @@
 		39578A0D2B5AD66C00CFF574 /* TableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39578A0C2B5AD66C00CFF574 /* TableCollectionViewCell.swift */; };
 		3958762A2B651FBE0007C959 /* CompanyDetailsSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395876292B651FBE0007C959 /* CompanyDetailsSegmentedControlView.swift */; };
 		3958762C2B6581140007C959 /* CompanyDetailAboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958762B2B6581140007C959 /* CompanyDetailAboutUsView.swift */; };
+		3958762F2B658A220007C959 /* CompanyDetailsJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958762E2B658A210007C959 /* CompanyDetailsJobsView.swift */; };
 		395FD6972B4F44F7006C539C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395FD6962B4F44F7006C539C /* UIImage+Extension.swift */; };
 		396852CE2B5D28D500017C68 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396852CD2B5D28D500017C68 /* TestTableViewController.swift */; };
 		396852D02B5D2A9700017C68 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396852CF2B5D2A9700017C68 /* Models.swift */; };
@@ -149,6 +150,7 @@
 		39578A0C2B5AD66C00CFF574 /* TableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCollectionViewCell.swift; sourceTree = "<group>"; };
 		395876292B651FBE0007C959 /* CompanyDetailsSegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsSegmentedControlView.swift; sourceTree = "<group>"; };
 		3958762B2B6581140007C959 /* CompanyDetailAboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailAboutUsView.swift; sourceTree = "<group>"; };
+		3958762E2B658A210007C959 /* CompanyDetailsJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsJobsView.swift; sourceTree = "<group>"; };
 		395FD6962B4F44F7006C539C /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		396852CD2B5D28D500017C68 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		396852CF2B5D2A9700017C68 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -562,6 +564,7 @@
 			children = (
 				395876292B651FBE0007C959 /* CompanyDetailsSegmentedControlView.swift */,
 				3958762B2B6581140007C959 /* CompanyDetailAboutUsView.swift */,
+				3958762E2B658A210007C959 /* CompanyDetailsJobsView.swift */,
 			);
 			path = CampanyDetailsSegmentedView;
 			sourceTree = "<group>";
@@ -952,6 +955,7 @@
 				394595CB2B4AC83B0097CF7F /* SpacerView.swift in Sources */,
 				39106BED2B25B814009BDA0C /* UITextField+Extension.swift in Sources */,
 				39DE80622B49CF110034F517 /* LoginVC.swift in Sources */,
+				3958762F2B658A220007C959 /* CompanyDetailsJobsView.swift in Sources */,
 				39324BF42B4C7A540022D24C /* ForgetPasswordView.swift in Sources */,
 				390D4BD42B52AA4C004F0623 /* HomeRecentJobListView.swift in Sources */,
 				39324BF62B4C7C4E0022D24C /* ForgotPasswordHeaderWithImageView.swift in Sources */,
