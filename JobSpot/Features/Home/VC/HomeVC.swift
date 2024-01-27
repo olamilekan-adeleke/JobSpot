@@ -49,6 +49,7 @@ extension HomeVC {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = UIColor.clear
         tableView.separatorColor = UIColor.clear
+        tableView.showsVerticalScrollIndicator = false
 
         tableView.rowHeight = UITableView.automaticDimension
 

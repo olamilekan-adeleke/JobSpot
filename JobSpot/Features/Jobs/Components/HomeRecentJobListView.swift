@@ -62,11 +62,9 @@ extension HomeRecentJobListView: UITableViewDelegate, UITableViewDataSource {
     }
 
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-        // `collectionView.contentSize` has a wrong width because in this nested example, the sizing pass occurs before the layout pass,
-        // so we need to force a layout pass with the correct width.
         contentView.frame = bounds
         contentView.layoutIfNeeded()
-        // Returns `collectionView.contentSize` in order to set the UITableVieweCell height a value greater than 0.
+
         return tableView.contentSize
     }
 
@@ -76,6 +74,7 @@ extension HomeRecentJobListView: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        pushToVc(vc: JobDetailsVC())
     }
 }
 
@@ -86,7 +85,7 @@ extension HomeRecentJobListView {
 
         tableView.backgroundColor = UIColor(red: 0.975, green: 0.975, blue: 0.975, alpha: 1)
         tableView.separatorColor = .clear
-        
+
         tableView.sectionHeaderTopPadding = 0
     }
 
