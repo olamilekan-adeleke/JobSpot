@@ -34,7 +34,7 @@ class HomeBannerView: HomeVcBaseCell {
 
 extension HomeBannerView {
     private func setupStyle() {
-        translatesAutoresizingMaskIntoConstraints = false
+        contentView.backgroundColor = UIColor(red: 0.975, green: 0.975, blue: 0.975, alpha: 1)
 
         boxView.translatesAutoresizingMaskIntoConstraints = false
         boxView.backgroundColor = UIColor.AppColor.appPrimaryColor
@@ -72,11 +72,13 @@ extension HomeBannerView {
         contentView.addSubview(boxView)
         contentView.addSubview(_imageView)
         NSLayoutConstraint.activate([
-            boxView.heightAnchor.constraint(equalToConstant: 115.h()),
+            boxView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
             boxView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             boxView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
 
-            contentView.heightAnchor.constraint(equalTo: boxView.heightAnchor, constant: 30),
+            boxView.heightAnchor.constraint(equalToConstant: 125.h()),
+            contentView.bottomAnchor.constraint(greaterThanOrEqualTo: boxView.bottomAnchor),
+
         ])
 
         NSLayoutConstraint.activate([
