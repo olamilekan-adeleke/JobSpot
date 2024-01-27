@@ -156,12 +156,14 @@ private class CompanyImageView: UIView {
 
     private func layout() {
         hStack.distribution = .equalSpacing
+        hStack.alignment = .fill
 
         let imageOne = ImageView(image: UIImage(named: images[0]))
+        imageOne.frame = CGRect(x: 0, y: 0, width: Config.width, height: Config.height)
         let imageTwo = ImageView(image: UIImage(named: images[1]))
 
-        imageOne.contentMode = .scaleAspectFit
-        imageTwo.contentMode = .scaleAspectFit
+        imageOne.contentMode = .scaleAspectFill
+        imageTwo.contentMode = .scaleAspectFill
 
         imageOne.layer.cornerRadius = 8
         imageOne.clipsToBounds = true

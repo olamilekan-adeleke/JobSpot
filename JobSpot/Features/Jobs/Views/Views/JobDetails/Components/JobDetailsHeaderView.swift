@@ -32,7 +32,7 @@ class JobDetailsHeaderView: UIView {
 extension JobDetailsHeaderView {
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        
+
         boxView.backgroundColor = .yellow
 
         vStack.alignment = .center
@@ -44,6 +44,8 @@ extension JobDetailsHeaderView {
         companyHeaderImage.layer.cornerRadius = 84.h() / 2
         companyHeaderImage.image = UIImage(named: "google_icon")?.imageWithInsets(insetDimen: 12)
         companyHeaderImage.contentMode = .scaleAspectFill
+        companyHeaderImage.isUserInteractionEnabled = true
+        companyHeaderImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onImageTap)))
 
         jobTitleLabel.text = "UI/UX Designer"
         jobTitleLabel.font = .systemFont(ofSize: 16, weight: .bold)
@@ -77,6 +79,10 @@ extension JobDetailsHeaderView {
             boxView.trailingAnchor.constraint(equalTo: trailingAnchor),
             boxView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
+    }
+
+    @objc private func onImageTap() {
+        pushToVc(vc: CompanyDetailsVC())
     }
 
     enum Config {
