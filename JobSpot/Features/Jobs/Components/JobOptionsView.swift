@@ -24,7 +24,7 @@ class JobOptionsView: UITableViewCell {
     private let tagThree = TagView(title: "Senior designer")
 
     private let hTimeAndAmountStack = stackView(axis: .horizontal)
-    private let timestampLabel = Label(type: .thin, debug: true)
+    private let timestampLabel = Label(type: .thin)
     private let amountLabel = Label(type: .thin)
 
     private let vStack = stackView()
@@ -40,9 +40,16 @@ class JobOptionsView: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//
+//        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
+//    }
 
     private func setupStyle() {
 //        translatesAutoresizingMaskIntoConstraints = false
+        contentView.backgroundColor = UIColor(red: 0.975, green: 0.975, blue: 0.975, alpha: 1)
 
         vStack.layer.cornerRadius = 20
         vStack.backgroundColor = .white
@@ -64,9 +71,9 @@ class JobOptionsView: UITableViewCell {
         descriptionLabel.text = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam"
         descriptionLabel.numberOfLines = 2
         descriptionLabel.textColor = Config.lightTextColor
+        
 
         hTimeAndAmountStack.distribution = .fillEqually
-//        hTimeAndAmountStack.alignment = .
 
         timestampLabel.text = "25 minute ago"
         timestampLabel.font = .systemFont(ofSize: 10, weight: .light)
@@ -116,27 +123,30 @@ class JobOptionsView: UITableViewCell {
 
         vStack.setCustomSpacing(10, after: hHeaderStack)
         vStack.addArrangedSubview(descriptionLabel)
-//
-//        vStack.setCustomSpacing(15, after: descriptionLabel)
-//        hTagStack.distribution = .fillProportionally
-//        hTagStack.addArrangedSubview(tagOne)
-//        hTagStack.addArrangedSubview(tagTwo)
-//        hTagStack.addArrangedSubview(tagThree)
-//        vStack.addArrangedSubview(hTagStack)
-//
-//        vStack.setCustomSpacing(20, after: hTagStack)
-//        hTimeAndAmountStack.addArrangedSubview(timestampLabel)
-//        hTimeAndAmountStack.addArrangedSubview(amountLabel)
-//        vStack.addArrangedSubview(hTimeAndAmountStack)
+//        NSLayoutConstraint.activate([
+//            descriptionLabel.widthAnchor.constraint(equalTo: vStack.widthAnchor),
+//        ])
+
+        vStack.setCustomSpacing(15, after: descriptionLabel)
+        hTagStack.distribution = .fillProportionally
+        hTagStack.addArrangedSubview(tagOne)
+        hTagStack.addArrangedSubview(tagTwo)
+        hTagStack.addArrangedSubview(tagThree)
+        vStack.addArrangedSubview(hTagStack)
+
+        vStack.setCustomSpacing(20, after: hTagStack)
+        hTimeAndAmountStack.addArrangedSubview(timestampLabel)
+        hTimeAndAmountStack.addArrangedSubview(amountLabel)
+        vStack.addArrangedSubview(hTimeAndAmountStack)
 
         contentView.addSubview(vStack)
         NSLayoutConstraint.activate([
             vStack.topAnchor.constraint(equalTo: contentView.topAnchor),
             vStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-//            vStack.trailingAnchor.constraint(equalTo: trailingAnchor),
+            vStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             vStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 
-            vStack.widthAnchor.constraint(equalToConstant: 100.sw() - 32),
+//            vStack.widthAnchor.constraint(equalToConstant: 100.sw() - 32),
 //            vStack.heightAnchor.constraint(equalToConstant: 200),
         ])
     }
