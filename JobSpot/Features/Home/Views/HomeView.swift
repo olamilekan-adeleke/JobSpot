@@ -45,8 +45,9 @@ extension HomeView {
         vScrollableStack.setCustomSpacing(25, after: homeBanner)
         vScrollableStack.add(view: jobStatsView)
 
-        vScrollableStack.setCustomSpacing(25, after: jobStatsView)
-        vScrollableStack.add(view: homeRecentJobListView.view)
+//        vScrollableStack.setCustomSpacing(25, after: jobStatsView)
+//        vScrollableStack.setCustomSpacing(25, after: jobStatsView)
+//        vScrollableStack.add(view: homeRecentJobListView.view)
 
 //        vScrollableStack.setCustomSpacing(30, after: homeRecentJobListView)
 //        vScrollableStack.add(view: tableViewContainer)

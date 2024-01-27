@@ -111,7 +111,7 @@ class JobOptionsView: UITableViewCell {
 
         vStack.addArrangedSubview(hHeaderStack)
         NSLayoutConstraint.activate([
-                        hHeaderStack.heightAnchor.constraint(equalToConstant: 40.h()),
+            hHeaderStack.heightAnchor.constraint(equalToConstant: 40.h()),
         ])
 
         vStack.setCustomSpacing(10, after: hHeaderStack)
@@ -168,7 +168,7 @@ final class TagView: UIView {
     }
 
     private func style() {
-        translatesAutoresizingMaskIntoConstraints = false
+//        translatesAutoresizingMaskIntoConstraints = false
 
         boxView.backgroundColor = UIColor(rgb: 0xCBC9D4).withAlphaComponent(0.15)
         boxView.layer.cornerRadius = 8

@@ -39,6 +39,7 @@ class HomeJobCountStatsView: HomeVcBaseCell {
 extension HomeJobCountStatsView {
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
+//        backgroundColor = .red
     }
 
     private func layout() {

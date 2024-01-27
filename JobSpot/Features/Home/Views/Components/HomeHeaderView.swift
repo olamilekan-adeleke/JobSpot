@@ -31,7 +31,9 @@ class HomeHeaderView: HomeVcBaseCell {
 
 extension HomeHeaderView {
     private func setupStyle() {
-        translatesAutoresizingMaskIntoConstraints = false
+//        translatesAutoresizingMaskIntoConstraints = false
+        contentView.backgroundColor = UIColor.clear
+        backgroundColor = .clear
 
         hStack.alignment = .center
 

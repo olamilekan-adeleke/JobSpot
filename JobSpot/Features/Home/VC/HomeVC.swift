@@ -16,11 +16,14 @@ class HomeVC: UIViewController {
         layout()
 
         registerAndAddCell(HomeHeaderView.self)
-        registerAndAddCell(HomeBannerView.self)
-        registerAndAddCell(HomeJobCountStatsView.self)
+//        registerAndAddCell(HomeBannerView.self)
+//        registerAndAddCell(HomeJobCountStatsView.self)
+        registerAndAddCell(HomeRecentJobListView.self)
 
         tableView.dataSource = self
         tableView.delegate = self
+
+        tableView.reloadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +47,7 @@ extension HomeVC {
         view.backgroundColor = UIColor(red: 0.975, green: 0.975, blue: 0.975, alpha: 1)
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = UIColor.clear
         tableView.separatorColor = UIColor.clear
 
         tableView.rowHeight = UITableView.automaticDimension
