@@ -39,12 +39,12 @@ class HomeJobCountStatsView: HomeVcBaseCell {
 extension HomeJobCountStatsView {
     private func style() {
 //        translatesAutoresizingMaskIntoConstraints = false
-//        backgroundColor = .red
+        backgroundColor = UIColor(red: 0.975, green: 0.975, blue: 0.975, alpha: 1)
     }
 
     private func layout() {
         let box = BoxView()
-        box.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        box.heightAnchor.constraint(equalToConstant: 20).isActive = true
         vStack.addArrangedSubview(box)
 
         vStack.addArrangedSubview(header)

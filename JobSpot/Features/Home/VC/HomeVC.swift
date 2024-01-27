@@ -18,7 +18,7 @@ class HomeVC: UIViewController {
         registerAndAddCell(HomeHeaderView.self)
         registerAndAddCell(HomeBannerView.self)
         registerAndAddCell(HomeJobCountStatsView.self)
-//        registerAndAddCell(HomeRecentJobListView.self)
+        registerAndAddCell(HomeRecentJobListView.self)
 
         tableView.dataSource = self
         tableView.delegate = self
